@@ -49,3 +49,6 @@ else
   touch "$TARGET_FILE"
   override_keybox
 fi
+
+sleep 2
+am start -a android.intent.action.VIEW -d tg://resolve?domain=yuriiroot >/dev/null 2>&1
