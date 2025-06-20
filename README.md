@@ -1,5 +1,5 @@
 # yurikey
-A systemless Magisk module to install the Yuri keybox.
+A Systemless Module to install Yuri keybox.
 
 ---
 
