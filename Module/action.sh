@@ -12,11 +12,16 @@ ui_print() {
 
 version() {
   ui_print "- Checking latest available keybox..."
-  # If curl fails, fallback message
-  if [ -z "$VERSION" ]; then
-    ui_print "- Failed to fetch version info."
-  else
+
+  if command -v curl >/dev/null 2>&1; then
+    VERSION=$(curl -fsSL "$VERSION_URL")
     ui_print "- $VERSION version available."
+  elif command -v wget >/dev/null 2>&1; then
+    VERSION=$(wget -qO- "$VERSION_URL")
+    ui_print "- $VERSION version available."
+  else
+    VERSION=""
+    ui_print "- Failed to fetch version info."
   fi
 }
 
