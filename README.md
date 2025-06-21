@@ -1,6 +1,10 @@
 # yurikey
 A systemless Magisk module to install the Yuri keybox.
 
+**[Download](https://github.com/dpejoh/yurikey/raw/refs/heads/main/Module/Module.zip) •
+[Changelog](https://raw.githubusercontent.com/yurikey/blob/main/changelog.md) •
+[Telegram](https://t.me/dpejoh)**
+
 ---
 
 ## How to use
