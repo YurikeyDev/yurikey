@@ -1,7 +1,7 @@
 # YuriKey
 A Systemless Module to install Yuri keybox.
 
-**[Download](https://github.com/dpejoh/yurikey/raw/refs/heads/main/Module/Module.zip) •
+**[Download](https://github.com/dpejoh/yurikey/releases/download/v1.1/module.zip) •
 [Changelog](https://raw.githubusercontent.com/dpejoh/yurikey/refs/heads/main/changelog.md) •
 [Telegram](https://t.me/dpejoh)**
 

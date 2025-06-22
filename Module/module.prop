@@ -1,7 +1,7 @@
 id=yurikey
 name=Yuri Keybox Manager
 version=v1.2
-versionCode=1
+versionCode=1.2
 author=dpejoh
-description=A module for getting latest Yuri keybox
-updateJson=https://raw.githubusercontent.com/dpejoh/yurikey/refs/heads/main/release.json
+description=Getting latest Yuri keybox
+updateJson=https://raw.githubusercontent.com/dpejoh/yurikey/refs/heads/main/update.json
