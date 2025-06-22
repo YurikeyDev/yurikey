@@ -1,7 +1,7 @@
 #!/system/bin/sh
 
 TRICKY_DIR="/data/adb/tricky_store"
-REMOTE_URL="https://raw.githubusercontent.com/dpejoh/yurikey/refs/heads/main/yurikey.xml"
+REMOTE_URL="https://raw.githubusercontent.com/dpejoh/yurikey/refs/heads/main/conf"
 TARGET_FILE="$TRICKY_DIR/keybox.xml"
 BACKUP_FILE="$TRICKY_DIR/keybox.xml.bak"
 
@@ -18,9 +18,9 @@ ui_print ""
 override_keybox() {
   ui_print "- Downloading and overriding keybox.xml..."
   if command -v curl >/dev/null 2>&1; then
-    curl -fsSL "$REMOTE_URL" -o "$TARGET_FILE" && ui_print "- keybox.xml successfully updated."
+    curl -fsSL "$REMOTE_URL" | base64 -d > "$TARGET_FILE"  && ui_print "- keybox.xml successfully updated."
   elif command -v wget >/dev/null 2>&1; then
-    wget -qO "$TARGET_FILE" "$REMOTE_URL" && ui_print "- keybox.xml successfully updated."
+    wget -qO- "$REMOTE_URL" | base64 -d > "$TARGET_FILE" && ui_print "- keybox.xml successfully updated."
   else
     ui_print "- Error: curl or wget not available."
     ui_print "- Cannot fetch remote keybox."
