@@ -4,4 +4,4 @@ version=v1.2
 versionCode=1
 author=dpejoh
 description=A module for getting latest Yuri keybox
-updateJson=https://github.com/dpejoh/yurikey/blob/main/release.json
+updateJson=https://raw.githubusercontent.com/dpejoh/yurikey/refs/heads/main/release.json
