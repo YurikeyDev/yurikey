@@ -15,5 +15,5 @@ https://t.me/yuriiroot
 
 ## How to use ?
 
-- Install the module via your root manager
+- Install module by your root manager
 - To update the keybox later, tap the **Actions** button in the module.
