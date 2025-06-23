@@ -1,5 +1,5 @@
 # YuriKey
-A Systemless Module to install Yuri keybox.
+A Systemless Module to get Yuri keybox.
 
 [Download](https://github.com/dpejoh/yurikey/releases/tag/v1.2) 
 
