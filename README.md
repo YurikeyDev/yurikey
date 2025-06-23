@@ -14,6 +14,6 @@ https://t.me/yuriiroot
 ---
 
 ## How to use ?
-
-- Install module by your root manager (Magisk/Apatch/KernelSu/Fork of KernelSU)
+- Install module Tricky Store
+- Install module Yurikey by your root manager (Magisk/Apatch/KernelSu/Fork of KernelSU)
 - To update the keybox later, tap the **Actions** button in the module.
