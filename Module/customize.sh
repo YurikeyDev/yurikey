@@ -5,10 +5,6 @@ REMOTE_URL="https://raw.githubusercontent.com/dpejoh/yurikey/refs/heads/main/con
 TARGET_FILE="$TRICKY_DIR/keybox.xml"
 BACKUP_FILE="$TRICKY_DIR/keybox.xml.bak"
 
-ui_print() {
-  echo "$1"
-}
-
 ui_print ""
 ui_print "*********************************"
 ui_print "*****Yuri Keybox Installer*******"
