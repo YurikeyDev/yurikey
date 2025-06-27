@@ -86,7 +86,7 @@ detect_current_keybox_version() {
 
 install_keybox_from_remote_archive() {
   local archive_url="$ARCHIVE_BASE_URL/$LATEST_VERSION/yurikey.xml"
-  ui_print "- Installing keybox from: $archive_url"
+  ui_print "- Installing keybox from dpejoh/yurikey"
 
   if [ -f "$TARGET_FILE" ]; then
     ui_print "- Backing up existing keybox..."
