@@ -1,9 +1,9 @@
 # YuriKey
 A Systemless Module to get Yuri keybox.
 
-[Download](https://github.com/dpejoh/yurikey/releases/tag/v1.2) 
+[Download](https://github.com/dpejoh/yurikey/releases/latest) 
 
-[Changelog](https://raw.githubusercontent.com/dpejoh/yurikey/refs/heads/main/changelog.md) 
+[Changelog](https://raw.githubusercontent.com/dpejoh/yurikey/main/changelog.md) 
 
 Join group telegram:
 

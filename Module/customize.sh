@@ -1,7 +1,7 @@
 #!/system/bin/sh
 
 TRICKY_DIR="/data/adb/tricky_store"
-REMOTE_URL="https://raw.githubusercontent.com/dpejoh/yurikey/refs/heads/main/conf"
+REMOTE_URL="https://raw.githubusercontent.com/dpejoh/yurikey/main/conf"
 TARGET_FILE="$TRICKY_DIR/keybox.xml"
 BACKUP_FILE="$TRICKY_DIR/keybox.xml.bak"
 
