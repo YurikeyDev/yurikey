@@ -1,48 +1,74 @@
 #!/system/bin/sh
 
 TRICKY_DIR="/data/adb/tricky_store"
-REMOTE_URL="https://raw.githubusercontent.com/dpejoh/yurikey/main/conf"
 TARGET_FILE="$TRICKY_DIR/keybox.xml"
-BACKUP_FILE="$TRICKY_DIR/keybox.xml.bak"
+VERSION_URL="https://raw.githubusercontent.com/dpejoh/yurikey/main/version"
+ARCHIVE_BASE_URL="https://raw.githubusercontent.com/dpejoh/yurikey/main/archive"
 
-ui_print ""
-ui_print "*********************************"
-ui_print "*****Yuri Keybox Installer*******"
-ui_print "*********************************"
-ui_print ""
+LATEST_VERSION=""
 
-override_keybox() {
-  ui_print "- Downloading and overriding keybox.xml..."
+ui_print() {
+  echo "$1"
+}
+
+fetch_latest_version() {
+  ui_print "- Checking latest available keybox version..."
   if command -v curl >/dev/null 2>&1; then
-    curl -fsSL "$REMOTE_URL" | base64 -d > "$TARGET_FILE"  && ui_print "- keybox.xml successfully updated."
+    LATEST_VERSION=$(curl -fsSL "$VERSION_URL")
   elif command -v wget >/dev/null 2>&1; then
-    wget -qO- "$REMOTE_URL" | base64 -d > "$TARGET_FILE" && ui_print "- keybox.xml successfully updated."
+    LATEST_VERSION=$(wget -qO- "$VERSION_URL")
   else
-    ui_print "- Error: curl or wget not available."
-    ui_print "- Cannot fetch remote keybox."
+    ui_print "- ❌ Error: curl or wget not available."
+    exit 1
+  fi
+
+  if [ -n "$LATEST_VERSION" ]; then
+    ui_print "- Latest version is: $LATEST_VERSION"
+  else
+    ui_print "- ❌ Failed to fetch version info."
+    exit 1
   fi
 }
 
-# Start logic
-ui_print "- Checking if there is an existing keybox..."
+install_from_remote_archive() {
+  local archive_url="$ARCHIVE_BASE_URL/$LATEST_VERSION/yurikey.xml"
+
+  ui_print "- Downloading keybox from: $archive_url"
+
+  # Eski dosya varsa sil
+  [ -f "$TARGET_FILE" ] && rm -f "$TARGET_FILE"
+
+  if command -v curl >/dev/null 2>&1; then
+    curl -fsSL "$archive_url" | base64 -d > "$TARGET_FILE"
+  elif command -v wget >/dev/null 2>&1; then
+    wget -qO- "$archive_url" | base64 -d > "$TARGET_FILE"
+  else
+    ui_print "- ❌ Error: curl or wget not available."
+    exit 1
+  fi
+
+  if [ $? -eq 0 ]; then
+    ui_print "- ✅ keybox.xml successfully installed from remote archive version: $LATEST_VERSION"
+  else
+    ui_print "- ❌ Failed to decode and install keybox."
+    exit 1
+  fi
+}
+
+# =====================
+# 🚀 Starting Point
+# =====================
+
+ui_print ""
+ui_print "*********************************"
+ui_print "***** Yuri Keybox Installer *****"
+ui_print "*********************************"
+ui_print ""
 
 mkdir -p "$TRICKY_DIR"
 
-if [ -f "$TARGET_FILE" ]; then
-  if grep -q "yuriiroot" "$TARGET_FILE"; then
-    ui_print "- Existing Yuri Keybox found."
-    override_keybox
-  else
-    ui_print "- Existing keybox not by Yuri."
-    ui_print "- Creating a backup..."
-    mv "$TARGET_FILE" "$BACKUP_FILE"
-    override_keybox
-  fi
-else
-  ui_print "- No keybox found. Creating a new one."
-  touch "$TARGET_FILE"
-  override_keybox
-fi
+fetch_latest_version
+install_from_remote_archive
 
 sleep 2
 am start -a android.intent.action.VIEW -d tg://resolve?domain=yuriiroot >/dev/null 2>&1
