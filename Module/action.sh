@@ -3,8 +3,8 @@
 TRICKY_DIR="/data/adb/tricky_store"
 TARGET_FILE="$TRICKY_DIR/keybox.xml"
 BACKUP_FILE="$TRICKY_DIR/keybox.xml.bak"
-REMOTE_URL="https://raw.githubusercontent.com/dpejoh/yurikey/refs/heads/main/conf"
-VERSION_URL="https://raw.githubusercontent.com/dpejoh/yurikey/refs/heads/main/version"
+REMOTE_URL="https://raw.githubusercontent.com/dpejoh/yurikey/main/conf"
+VERSION_URL="https://raw.githubusercontent.com/dpejoh/yurikey/main/version"
 
 ui_print() {
   echo "$1"
