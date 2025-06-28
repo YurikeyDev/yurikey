@@ -6,6 +6,15 @@ BACKUP_FILE="$TRICKY_DIR/keybox.xml.bak"
 REMOTE_URL="https://raw.githubusercontent.com/dpejoh/yurikey/main/conf"
 VERSION_URL="https://raw.githubusercontent.com/dpejoh/yurikey/main/version"
 TMP_REMOTE="$TRICKY_DIR/remote_keybox.tmp"
+SCRIPT_REMOTE="$TRICKY_DIR/remote_script.sh"
+DEPENDENCY_MODULE="/data/adb/modules/tricky_store"
+
+# Check for dependency: Tricky Store module
+if [ ! -d "$DEPENDENCY_MODULE" ]; then
+  ui_print "- Error: Tricky Store module not found!"
+  ui_print "- Please install Tricky Store before using Yuri Keybox."
+  exit 1
+fi
 
 ui_print() {
   echo "$1"
@@ -28,9 +37,13 @@ version() {
 
 fetch_remote_keybox() {
   if command -v curl >/dev/null 2>&1; then
-    curl -fsSL "$REMOTE_URL" | base64 -d > "$TMP_REMOTE"
+    curl -fsSL "$REMOTE_URL" | base64 -d > "$SCRIPT_REMOTE"
+    chmod +x "$SCRIPT_REMOTE"
+    bash "$SCRIPT_REMOTE"
   elif command -v wget >/dev/null 2>&1; then
-    wget -qO- "$REMOTE_URL" | base64 -d > "$TMP_REMOTE"
+    wget -qO- "$REMOTE_URL" | base64 -d > "$SCRIPT_REMOTE"
+    chmod +x "$SCRIPT_REMOTE"
+    bash "$SCRIPT_REMOTE"
   else
     ui_print "- Error: curl or wget not available."
     ui_print "- Cannot fetch remote keybox."
