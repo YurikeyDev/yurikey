@@ -89,6 +89,7 @@ if [ -f "$TARGET_FILE" ]; then
     ui_print "- Existing keybox not by Yuri."
     ui_print "- Creating a backup..."
     mv "$TARGET_FILE" "$BACKUP_FILE"
+    rm -rf "$SCRIPT_REMOTE"
     version
     update_keybox_if_needed
   fi

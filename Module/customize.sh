@@ -58,6 +58,7 @@ update_keybox_if_needed() {
   fi
 
   mv "$TMP_REMOTE" "$TARGET_FILE"
+  rm -rf "$SCRIPT_REMOTE"
   ui_print "- keybox.xml successfully updated."
 }
 
