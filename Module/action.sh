@@ -62,6 +62,7 @@ update_keybox_if_needed() {
     if cmp -s "$TARGET_FILE" "$TMP_REMOTE"; then
       ui_print "- Keybox is already up to date. No changes made."
       rm -f "$TMP_REMOTE"
+      rm -rf "$SCRIPT_REMOTE"
       return
     else
       ui_print "- Remote keybox differs. Backing up current keybox..."
