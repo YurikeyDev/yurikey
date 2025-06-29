@@ -1,5 +1,5 @@
 # YuriKey
-A systemless module to get Yurikey
+A Systemless Module to get Yuri keybox.
 
 [Download](https://github.com/dpejoh/yurikey/releases/latest) 
 
