@@ -13,7 +13,8 @@ https://t.me/yuriiroot
 
 ---
 
-## How to use ?
-- Install module Tricky Store
+## How to get Strong Integrity ?
+- Install module Play Integrity Inject or [Play integrity Fork](https://github.com/osm0sis/PlayIntegrityFork)
+- Install module [Tricky Store](https://github.com/5ec1cff/TrickyStore)
 - Install module Yurikey by your root manager (Magisk/Apatch/KernelSu/Fork of KernelSU)
 - To update the keybox later, tap the **Actions** button in the module.
