@@ -18,7 +18,9 @@ echo "android" >> "$t"
 echo "com.android.vending!" >> "$t"
 echo "com.google.android.gsf!" >> "$t"
 echo "com.google.android.gms!" >> "$t"
-echo "com.reveny.nativecheck" >> "$t"
+echo "com.google.android.apps.walletnfcrel" >> "$t"
+echo "com.openai.chatgpt!" >> "$t"
+echo "com.reveny.nativecheck!" >> "$t"
 echo "io.github.vvb2060.keyattestation!" >> "$t"
 echo "io.github.vvb2060.mahoshojo!" >> "$t"
 echo "icu.nullptr.nativetest!" >> "$t"
@@ -30,13 +32,15 @@ echo "com.zhenxi.hunter!" >> "$t"
 echo "gr.nikolasspyr.integritycheck!" >> "$t"
 echo "com.youhu.laifu!" >> "$t"
 
+
+
 # add list
 log_message "Writing"
 add_packages() {
     pm list packages "$1" | cut -d ":" -f 2 | while read -r pkg; do
         if [ -n "$pkg" ] && ! grep -q "^$pkg" "$t"; then
             if [ "$teeBroken" = "true" ]; then
-                echo "$pkg" >> "$t"
+                echo "$pkg!" >> "$t"
             else
                 echo "$pkg" >> "$t"
             fi
