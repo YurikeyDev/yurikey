@@ -1,5 +1,5 @@
 # YuriKey
-A systemless module to easily get Strong Integrity
+A systemless module to get Yurikey
 
 [Download](https://github.com/dpejoh/yurikey/releases/latest) 
 
