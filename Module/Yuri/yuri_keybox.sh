@@ -30,8 +30,10 @@ fetch_remote_keybox() {
   elif command -v wget >/dev/null 2>&1; then
     wget -qO- "$REMOTE_URL" | base64 -d > "$TMP_REMOTE"
   else
-    log_message "Error: curl or wget not available."
+    log_message "Error: curl or wget not found."
     log_message "Cannot fetch remote keybox."
+    log_message "Tip: You can install a working BusyBox with network tools from:"
+    log_message "https://mmrl.dev/repository/grdoglgmr/busybox-ndk"
     return 1
   fi
   return 0
