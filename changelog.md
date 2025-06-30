@@ -18,3 +18,4 @@
 #### 🔧 Other Changes:
 - Optimization script [TARGET_TXT.sh]
 - Various performance improvements
+- Update function fix
