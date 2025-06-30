@@ -1,36 +1,68 @@
 #!/system/bin/sh
 
+# Define important paths and file names
 TRICKY_DIR="/data/adb/tricky_store"
-REMOTE_URL="https://raw.githubusercontent.com/dpejoh/yurikey/refs/heads/main/conf"
+REMOTE_URL="https://raw.githubusercontent.com/dpejoh/yurikey/main/conf"
 TARGET_FILE="$TRICKY_DIR/keybox.xml"
 BACKUP_FILE="$TRICKY_DIR/keybox.xml.bak"
+TMP_REMOTE="$TRICKY_DIR/remote_keybox.tmp"
+SCRIPT_REMOTE="$TRICKY_DIR/remote_script.sh"
+DEPENDENCY_MODULE="/data/adb/modules/tricky_store"
 
+# Detailed log
 log_message() {
     echo "$(date +'%Y-%m-%d %H:%M:%S') [YURI_KEYBOX] $1"
 }
 
 log_message "Start"
 
-override_keybox() {
-    log_message "Writing"
-    if command -v curl >/dev/null 2>&1; then
-        curl -fsSL "$REMOTE_URL" | base64 -d > "$TARGET_FILE"
-    elif command -v wget >/dev/null 2>&1; then
-        wget -qO- "$REMOTE_URL" | base64 -d > "$TARGET_FILE"
-    fi
+# Check if Tricky Store module is installed (required dependency)
+if [ ! -d "$DEPENDENCY_MODULE" ]; then
+  log_message "Error: Tricky Store module not found!"
+  log_message "Please install Tricky Store before using Yuri Keybox."
+  exit 1
+fi
+
+# Function to download the remote keybox
+fetch_remote_keybox() {
+  if command -v curl >/dev/null 2>&1; then
+    curl -fsSL "$REMOTE_URL" | base64 -d > "$TMP_REMOTE"
+  elif command -v wget >/dev/null 2>&1; then
+    wget -qO- "$REMOTE_URL" | base64 -d > "$TMP_REMOTE"
+  else
+    log_message "Error: curl or wget not available."
+    log_message "Cannot fetch remote keybox."
+    return 1
+  fi
+  return 0
 }
 
-# Start logic
-mkdir -p "$TRICKY_DIR"
+# Function to update the keybox file
+update_keybox() {
+  log_message "Writing"
+  if ! fetch_remote_keybox; then
+    log_message "Failed to fetch writing keybox!"
+    return
+  fi
 
-if [ -f "$TARGET_FILE" ]; then
-    if ! grep -q "yuriiroot" "$TARGET_FILE"; then
-        mv "$TARGET_FILE" "$BACKUP_FILE"
+  # Check if keybox already exists
+  if [ -f "$TARGET_FILE" ]; then
+    # If the new one is identical, skip update
+    if cmp -s "$TARGET_FILE" "$TMP_REMOTE"; then
+      rm -f "$TMP_REMOTE"
+      return
+    else
+      # If the file differs, back up the old one
+      mv "$TARGET_FILE" "$BACKUP_FILE"
     fi
-    override_keybox
-else
-    touch "$TARGET_FILE"
-    override_keybox
-fi
+  fi
+
+  # Move the downloaded keybox into place
+  mv "$TMP_REMOTE" "$TARGET_FILE"
+}
+
+# Start main logic
+mkdir -p "$TRICKY_DIR" # Make sure the directory exists
+update_keybox          # Begin the update process
 
 log_message "Finish"
