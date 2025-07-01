@@ -1,4 +1,5 @@
-  body {
+  body
+   {
       margin: 0;
       padding: 1rem;
       background-color: #1a1b26;
@@ -7,9 +8,20 @@
       font-size: 14px;
       line-height: 1.6;
     }
+    .header {
+      margin-top: 2.5rem;
+      text-align: left;
+    }
+    .header h3 {
+      font-size: 1rem;
+      color: #bb9af7;
+      margin: 0;
+      padding: 0.5rem 0;
+      text-shadow: 0 0 4px rgba(187, 154, 247, 0.3);
+    }
     .lang-select {
       position: absolute;
-      top: 2.2rem;
+      top: 4rem;
       right: 0.5rem;
       background: none;
       border: none;
@@ -105,30 +117,27 @@
       color: #7aa2f7;
       font-size: 12px;
     }
-    
-.join-button-wrapper {
-  display: flex;
-  justify-content: center;
-  margin-top: 1rem;
-}
-
-.join-button {
-  max-width: 280px;
-  width: auto;
-  text-align: center;
-  padding: 0.5rem 1.2rem;
-  border-radius: 6px;
-  border: 1px solid #3b4261;
-  background-color: #1f2335;
-  color: #c0caf5;
-  font-size: 14px;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-.join-button:hover {
-  background-color: #292e42;
-}
+    .join-button-wrapper {
+      display: flex;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+    .join-button {
+      max-width: 280px;
+      width: auto;
+      text-align: center;
+      padding: 0.5rem 1.2rem;
+      border-radius: 6px;
+      border: 1px solid #3b4261;
+      background-color: #1f2335;
+      color: #c0caf5;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+    .join-button:hover {
+      background-color: #292e42;
+    }
     .toast {
       position: fixed;
       bottom: 1rem;
@@ -144,3 +153,4 @@
     .toast.show {
       opacity: 1;
     }
+    
