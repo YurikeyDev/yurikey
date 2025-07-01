@@ -1,21 +1,19 @@
-## Yuri Keybox Manager
+**_✨ v1.4 version changes:_**
 
-### v1.31 version changes:
+**🌐 Add WebUI function with individual function buttons:**
+→ Force stop & Clear Data Play Store
+→ Set Yuri Keybox
+→ Set Target.txt
+→ Set Security patch
 
-#### ✨ Auto Script with the action button:
-- Force stop & clear data Play Store 
-  → [KILL_GOOGLE_PROGRESS.sh]
+**🖱️ One click Action = Strong Integrity with All automatic script:**
+→ [KILL GOOGLE].sh
+→ [YURI_KEYBOX].sh
+→ [TARGET_TXT].sh
+→ [SECURITY_PATCH]
 
-- Set Yuri keybox  
-  → [YURI_KEYBOX.sh]
+**🔒 Anti-Theft Protection:**
+→ Implemented detection & warning for forked/modified versions (e.g. MagiskLabs, Ak )
 
-- Set target.txt  
-  → [TARGET_TXT.sh]
-
-- Set security patch  
-  → [SECURITY_PATCH.sh]
-
-#### 🔧 Other Changes:
-- Optimization script [TARGET_TXT.sh]
-- Various performance improvements
-- Update function fix
+**🔧 Other Changes:**
+→ Various performance improvement.
