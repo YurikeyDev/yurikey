@@ -6,6 +6,7 @@ on:
       - 'Module/**'
     branches:
       - main
+      - dev
   workflow_dispatch:
 
 jobs:
