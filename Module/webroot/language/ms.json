@@ -1,0 +1,43 @@
+{
+  "translations": [
+    "1️⃣ Paksa & Padam Data Play Store",
+    "2️⃣ Sediakan Yuri Keybox",
+    "3️⃣ Sediakan target.txt",
+    "4️⃣ Tetapkan Patch Keselamatan"
+  ],
+  "buttonOrder": [
+    "kill_google_process.sh",
+    "yuri_keybox.sh",
+    "target_txt.sh",
+    "security_patch.sh"
+  ],
+  "meta": {
+    "menu_title": "========== MENU UTAMA ==========",
+    "language_label": "🌐: ",
+    "toast_no_ksu": "❌ API KernelSU WebUI tidak tersedia.",
+    "toast_running": "⏳ Menjalankan {script}...",
+    "toast_done": "✅ {script} selesai.",
+    "toast_fail": "❌ Gagal: {error}",
+    "toast_lang_changed": "🌐 Ditukar kepada {lang}",
+    "toast_lang_failed": "❌ Gagal memuat fail bahasa",
+    "join_button_text": "💬 Sertai kumpulan sembang Yuri",
+    "footer_initializing": "⏳ Memulakan...",
+    "contributors_title": "👨‍💻 Penyumbang Projek",
+    "modded_by": "Dimodifikasi oleh",
+    "note_title": "Nota",
+    "note_desc": "Skrip ini berdasarkan versi asal oleh",
+    "features_title": "Ciri-ciri",
+    "feature_1": "Pembersihan data Play Store secara automatik",
+    "feature_2": "Integrasi Yuri Keybox",
+    "feature_3": "Penyediaan target.txt",
+    "feature_4": "Konfigurasi patch keselamatan",
+    "skills": {
+      "Yuri (Yurii0307)": "Pengasas & Pembangun Modul",
+      "yourbestregard": "Pembangun Modul",
+      "CEHunter (cvnertnc)": "Pembangun Modul",
+      "ZG089": "Pembangun Modul",
+      "MunchUser": "Pembangun WebUI",
+      "Khx (dpejoh)": "Bekas Pembangun Modul"
+    }
+  }
+}
