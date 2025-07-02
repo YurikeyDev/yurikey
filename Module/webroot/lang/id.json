@@ -1,0 +1,29 @@
+{
+  "nav_home": "Beranda",
+  "nav_menu": "Menu",
+  "nav_update": "Pembaruan",
+  "nav_settings": "Pengaturan",
+
+  "home_version": "Versi Modul",
+  "home_root": "Implementasi Root",
+  "home_refresh": "Perbarui Info",
+
+  "menu_title": "MENU UTAMA",
+  "menu_force_clear": "Paksa & Hapus Data Play Store",
+  "menu_keybox": "Siapkan Yuri Keybox",
+  "menu_target": "Siapkan target.txt",
+  "menu_patch": "Siapkan Patch Keamanan",
+
+  "update_title": "PEMBARUAN & DUKUNGAN",
+  "update_desc": "Tetap terbarui dengan versi terbaru Yurikey, perbaikan bug, dan fitur baru.",
+  "update_github": "Lihat di GitHub",
+  "update_telegram": "Gabung Channel Telegram",
+  "update_note": "Gabung ke channel Telegram kami atau cek GitHub untuk pembaruan, kontribusi, dan diskusi teknis.",
+
+  "settings_contributors": "KONTRIBUTOR PROYEK",
+
+  "role_Founder & Module Developer": "Pendiri & Pengembang Modul",
+  "role_Module Developer": "Pengembang Modul",
+  "role_WebUI Developer": "Pengembang WebUI",
+  "role_Ex Module Developer": "Mantan Pengembang Modul"
+}

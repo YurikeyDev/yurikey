@@ -1,248 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Head Meta & Styles -->
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>🚀 Yurikey Manager</title>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
-  <script type="module" crossorigin src="scripts.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#121212" />
+  <title>Yurikey Manager</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-    <div class="content">
-        <div class="header">
-    <h3>
-       🚀 Yurikey Manager
-      <span id="version-text"></span>
-    </h3>
+  <div id="app">
+    <main id="page-content">
+
+      <!-- Home Section -->
+      <section id="home-page" class="page active">
+        <div class="content">
+          <h1>Yurikey Manager</h1>
+
+          <!-- Internet Status Box -->
+          <div class="status-box red">
+            <div id="internet-status">Internet: Checking...</div>
+            <div id="net-speed">Speed: -</div>
+            <div id="clock"></div>
+          </div>
+
+          <!-- Device Info Table -->
+          <div class="info-box">
+            <button id="refresh-info-btn" data-i18n="home_refresh" data-script="device-info.sh" class="refresh-btn">Refresh Info</button>
+
+            <table class="info-table">
+              <tbody>
+                <tr><th data-i18n="home_version">Version Module</th><td id="version-text">Loading...</td></tr>
+                <tr><th>Android</th><td id="android-version">Detecting...</td></tr>
+                <tr><th>Kernel</th><td id="kernel-version">Detecting...</td></tr>
+                <tr><th data-i18n="home_root">Root Implementation</th><td id="root-type">Detecting...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Actions Section -->
+      <section id="actions-page" class="page">
+        <div class="action-box">
+          <h3 class="action-title" data-i18n="menu_title">Main Menu</h3>
+          <div class="action-buttons">
+            <button data-i18n="menu_force_clear" data-script="kill_google_process.sh">Force & Clear Data Play Store</button>
+            <button data-i18n="menu_keybox" data-script="yuri_keybox.sh">Set up Yuri Keybox</button>
+            <button data-i18n="menu_target" data-script="target_txt.sh">Set up target.txt</button>
+            <button data-i18n="menu_patch" data-script="security_patch.sh">Set up Security Patch</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Update Section -->
+      <section id="update-page" class="page">
+        <div class="update-box">
+          <h3 class="action-title" data-i18n="update_title">Update & Support</h3>
+          <p data-i18n="update_desc">Stay up-to-date with the latest version of <strong>YuriKey</strong>, bug fixes, and new features.</p>
+
+          <!-- External Links -->
+          <div class="update-links">
+            <button class="update-link" data-url="https://github.com/dpejoh/yurikey">
+              <img src="/common/assets/icon/github.gif" class="update-icon" alt="GitHub" />
+              <span data-i18n="update_github">View on GitHub</span>
+            </button>
+
+            <button class="update-link" data-url="https://t.me/yuriiroot">
+              <img src="/common/assets/icon/telegram.gif" class="update-icon" alt="Telegram" />
+              <span data-i18n="update_telegram">Join Telegram Channel</span>
+            </button>
+          </div>
+
+          <p class="note" data-i18n="update_note">
+            Join our Telegram channel or check GitHub for updates, contributions, and technical discussions.
+          </p>
+        </div>
+      </section>
+
+      <!-- Settings Section -->
+      <section id="settings-page" class="page">
+        <!-- Language Dropdown -->
+        <div class="custom-dropdown">
+          <button id="lang-btn" class="setting-btn">🇬🇧 English</button>
+          <ul id="lang-options" class="dropdown-list">
+            <li data-lang="ar">🇸🇦 Arabic</li>
+            <li data-lang="en">🇬🇧 English</li>
+            <li data-lang="id">🇮🇩 Indonesia</li>
+            <li data-lang="ms">🇲🇾 Malaysia</li>
+            <li data-lang="ph">🇵🇭 Philippines</li>
+            <li data-lang="th">🇹🇭 Thailand</li>
+            <li data-lang="tr">🇹🇷 Turkish</li>
+            <li data-lang="vn">🇻🇳 Vietnam</li>
+          </ul>
+        </div>
+
+        <!-- Contributors Grid -->
+        <div class="update-box" id="dev-info">
+          <h3 class="action-title" data-i18n="settings_contributors">Project Contributors</h3>
+          <div id="contrib-list" class="contrib-grid"></div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+      <button class="nav-btn active" data-target="home-page">
+        <img src="/common/assets/navbar/home.svg" alt="Home" class="nav-icon" />
+        <span data-i18n="nav_home">Home</span>
+      </button>
+      <button class="nav-btn" data-target="actions-page">
+        <img src="/common/assets/navbar/menu.svg" alt="Menu" class="nav-icon" />
+        <span data-i18n="nav_menu">Menu</span>
+      </button>
+      <button class="nav-btn" data-target="update-page">
+        <img src="/common/assets/navbar/community.png" alt="Update" class="nav-icon" />
+        <span data-i18n="nav_update">Update</span>
+      </button>
+      <button class="nav-btn" data-target="settings-page">
+        <img src="/common/assets/navbar/settings.svg" alt="Settings" class="nav-icon" />
+        <span data-i18n="nav_settings">Settings</span>
+      </button>
+    </nav>
+
+    <!-- Scripts -->
+    <script src="js/redirect.js"></script>
+    <script src="js/device.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/version.js"></script>
+    <script src="js/dev.js"></script>
+    <script src="js/language.js"></script>
   </div>
-  <div class="main-menu">
-  
-    <div class="highlight" id="menu-title">========== MAIN MENU ==========</div>
-    <div class="button-group" id="menu-buttons">
-      <button class="cli-button" onclick="runScript('kill_google_process.sh')">1️⃣ Force & Clear Data Play Store</button>
-      <button class="cli-button" onclick="runScript('yuri_keybox.sh')">2️⃣ Set up Yuri Keybox</button>
-      <button class="cli-button" onclick="runScript('target_txt.sh')">3️⃣ Set up target.txt</button>
-      <button class="cli-button" onclick="runScript('security_patch.sh')">4️⃣ Set up Security Patch</button>
-    </div>
-  </div>
-  
-  <div class="footer" id="footer-status">⏳ Initializing...</div>
-  
-
-<div class="join-button-wrapper">
-  <button class="join-button" id="join-button">
-    <span id="join-button-text">Join yuri chat group</span>
-  </button>
-</div>
-
-<div class="credits">
-  <h3 id="contributors-title">👨‍💻 Project Contributors</h3>
-  <div class="credits-grid" id="contributors-list">
-    <div><span class="name">Yuri (Yurii0307)</span><span class="role" id="contrib-1-role">Founder, Keybox Provider</span></div>
-    <div><span class="name">Khx (dpejoh)</span><span class="role" id="contrib-2-role">Module Developer, Initiator</span></div>
-    <div><span class="name">yourbestregard</span><span class="role" id="contrib-3-role">Module Developer, Auto Setup Programmer</span></div>
-    <div><span class="name">MunchUser</span><span class="role" id="contrib-4-role">WebUI Developer, Programmer</span></div>
-    <div><span class="name">CEHunter (cvnertnc)</span><span class="role" id="contrib-5-role">Module Developer</span></div>
-    <div><span class="name">ZG089</span><span class="role" id="contrib-6-role">Module Developer</span></div>
-  </div>
-</div>
-
-  <div class="lang-select">
-     🌐:<select id="language-select" onchange="changeLanguage(this.value)">
-      <option value="en">🇬🇧 English</option>
-      <option value="id">🇮🇩 Indonesia</option>
-      <option value="ms">🇲🇾 Malaysia</option>
-      <option value="vn">🇻🇳 Vietnam</option>
-      <option value="ph">🇵🇭 Philipina</option>
-      <option value="th">🇹🇭 Thailand</option>
-      <option value="tr">🇹🇷 Turkish</option>
-    </select>
-  </div>
-
-  <div class="toast" id="toast"></div>
-
-  <script>
-    const BASE_SCRIPT = "/data/adb/modules/Yurikey/Yuri/";
-    let langMeta = {};
-
-    function showToast(msg) {
-      const toast = document.getElementById("toast");
-      toast.textContent = msg;
-      toast.classList.add("show");
-      setTimeout(() => toast.classList.remove("show"), 3000);
-    }
-
-    function getLangMeta(key) {
-      return langMeta?.[key] || null;
-    }
-
-    function runScript(scriptName) {
-      const fullPath = BASE_SCRIPT + scriptName;
-      if (typeof ksu !== "object" || typeof ksu.exec !== "function") {
-        showToast(getLangMeta("toast_no_ksu") || "❌ KernelSU WebUI API not available.");
-        return;
-      }
-      showToast((getLangMeta("toast_running") || "⏳ Running {script}...").replace("{script}", scriptName));
-      const cbId = "cb_" + Date.now();
-      window[cbId] = (code, stdout, stderr) => {
-        delete window[cbId];
-        if (code === 0) {
-          showToast((getLangMeta("toast_done") || "✅ {script} completed.").replace("{script}", scriptName));
-        } else {
-          showToast((getLangMeta("toast_fail") || "❌ Failed: {error}").replace("{error}", stderr || "Script error."));
-        }
-      };
-      ksu.exec(`sh '${fullPath}'`, "{}", cbId);
-    }
-
-    async function changeLanguage(langCode, silent = false) {
-      const filePath = `language/${langCode}.json`;
-      try {
-        const res = await fetch(filePath);
-        const data = await res.json();
-        const { translations, buttonOrder, meta } = data;
-        langMeta = meta || {};
-        applyTranslation(translations, buttonOrder);
-        applyMeta(meta);
-        saveLangPreference(langCode);
-        if (!silent) {
-          showToast((meta?.toast_lang_changed || "🌐 Switched to {lang}").replace("{lang}", langCode.toUpperCase()));
-        }
-      } catch {
-        if (!silent) {
-          showToast(langMeta?.toast_lang_failed || "❌ Failed to load language file");
-        }
-      }
-    }
-
-    function applyTranslation(translations, buttonOrder) {
-      const buttons = document.querySelectorAll(".cli-button");
-      for (let i = 0; i < buttonOrder.length; i++) {
-        const scriptName = buttonOrder[i];
-        const label = translations[i] || scriptName;
-        const btn = [...buttons].find(b => b.onclick?.toString().includes(scriptName));
-        if (btn) btn.innerHTML = label;
-      }
-    }
-
-function applyMeta(meta) {
-  if (!meta) return;
-
-  const map = {
-    "menu-title": meta.menu_title,
-    "language-label": meta.language_label,
-    "toast-no-ksu": meta.toast_no_ksu,
-    "toast-running": meta.toast_running,
-    "toast-done": meta.toast_done,
-    "toast-fail": meta.toast_fail,
-    "toast-lang-changed": meta.toast_lang_changed,
-    "toast-lang-failed": meta.toast_lang_failed,
-    "join-button-text": meta.join_button_text,
-    "footer-status": meta.footer_initializing,
-    "contributors-title": meta.contributors_title,
-    "modded-by": meta.modded_by,
-    "note-title": meta.note_title,
-    "features-title": meta.features_title,
-    "feature-1": meta.feature_1,
-    "feature-2": meta.feature_2,
-    "feature-3": meta.feature_3,
-    "feature-4": meta.feature_4
-  };
-
-  for (const id in map) {
-    const el = document.getElementById(id);
-    if (el && map[id]) el.textContent = map[id];
-  }
-
-  const noteDesc = document.getElementById("note-desc");
-  if (noteDesc) {
-    const link = `<a href='https://github.com/dpejoh/yurikey' target='_blank' style='color:#7aa2f7;'>dpejoh</a>.`;
-    noteDesc.innerHTML = `${meta.note_desc || "This script is based on the original by"} ${link}`;
-  }
-  
-const joinBtnText = document.getElementById("join-button-text");
-if (joinBtnText && meta.join_button_text) {
-  joinBtnText.textContent = meta.join_button_text;
-}
-  
-  const skills = meta.skills;
-  const container = document.getElementById("contributors-list");
-  if (skills && container) {
-    container.innerHTML = ""; // clear it out first
-    Object.entries(skills).forEach(([name, role]) => {
-      const div = document.createElement("div");
-      div.innerHTML = `<span class="name">${name}</span><span class="role">${role}</span>`;
-      container.appendChild(div);
-    });
-  }
-}
-
-    function saveLangPreference(langCode) {
-      const data = JSON.stringify({ lang: langCode });
-      if (typeof ksu !== "undefined" && ksu.write) {
-        ksu.write("/data/adb/modules/Yurikey/webroot/language", data, (ok) => {
-          if (!ok) {
-            ksu.write("/data/adb/modules/Yurikey/webroot/language", data);
-          }
-        });
-      } else {
-        localStorage.setItem("lang", langCode);
-      }
-    }
-
-    function loadSavedLanguage() {
-      if (typeof ksu !== "undefined" && ksu.read) {
-        ksu.read("/data/adb/modules/Yurikey/webroot/language", (ok, content) => {
-          if (ok) {
-            try {
-              const obj = JSON.parse(content);
-              const lang = obj.lang || "en";
-              document.getElementById("language-select").value = lang;
-              changeLanguage(lang, true);
-            } catch {
-              changeLanguage("en", true);
-            }
-          } else {
-            changeLanguage("en", true);
-          }
-        });
-      } else {
-        const lang = localStorage.getItem("lang") || "en";
-        document.getElementById("language-select").value = lang;
-        changeLanguage(lang, true);
-      }
-    }
-
-    async function updateFooter() {
-      const footer = document.getElementById("footer-status");
-      const time = new Date().toLocaleTimeString();
-      let battery = "🔋 Unknown";
-      let netStatus = "📶 Checking...";
-
-      if (navigator.getBattery) {
-        try {
-          const batt = await navigator.getBattery();
-          battery = (batt.charging ? "⚡" : "🔋") + " " + Math.round(batt.level * 100) + "%";
-        } catch {
-          battery = "🔋 N/A";
-        }
-      }
-
-      try {
-        await fetch("https://www.google.com", { method: "HEAD", mode: "no-cors" });
-        netStatus = "📶 Online";
-      } catch {
-        netStatus = "📶 Offline";
-      }
-
-      footer.textContent = `⏰ ${time} | ${netStatus} | ${battery}`;
-    }
-
-    updateFooter();
-    setInterval(updateFooter, 1000);
-    window.addEventListener("DOMContentLoaded", loadSavedLanguage);
-  </script>
-
 </body>
 </html>
