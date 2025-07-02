@@ -1,0 +1,29 @@
+{
+  "nav_home": "الرئيسية",
+  "nav_menu": "القائمة",
+  "nav_update": "التحديث",
+  "nav_settings": "الإعدادات",
+
+  "home_version": "إصدار الوحدة",
+  "home_root": "نوع الروت",
+  "home_refresh": "تحديث المعلومات",
+
+  "menu_title": "القائمة الرئيسية",
+  "menu_force_clear": "فرض وإفراغ بيانات متجر Play",
+  "menu_keybox": "إعداد Yuri Keybox",
+  "menu_target": "إعداد target.txt",
+  "menu_patch": "إعداد التصحيح الأمني",
+
+  "update_title": "التحديث والدعم",
+  "update_desc": "ابق على اطلاع بأحدث إصدار من YuriKey، إصلاحات الأخطاء، والميزات الجديدة.",
+  "update_github": "عرض على GitHub",
+  "update_telegram": "انضم إلى قناة التليجرام",
+  "update_note": "انضم إلى قناتنا على التليجرام أو تحقق من GitHub للحصول على التحديثات والمساهمات والمناقشات الفنية.",
+
+  "settings_contributors": "مساهمو المشروع",
+
+  "role_Founder & Module Developer": "المؤسس ومطور الوحدة",
+  "role_Module Developer": "مطور الوحدة",
+  "role_WebUI Developer": "مطور واجهة الويب",
+  "role_Ex Module Developer": "مطور وحدة سابق"
+}

@@ -1,0 +1,29 @@
+{
+  "nav_home": "Home",
+  "nav_menu": "Menu",
+  "nav_update": "Update",
+  "nav_settings": "Settings",
+
+  "home_version": "Version Module",
+  "home_root": "Root Implementation",
+  "home_refresh": "Refresh Info",
+
+  "menu_title": "MAIN MENU",
+  "menu_force_clear": "Force & Clear Data Play Store",
+  "menu_keybox": "Set up Yuri Keybox",
+  "menu_target": "Set up target.txt",
+  "menu_patch": "Set up Security Patch",
+
+  "update_title": "UPDATE & SUPPORT",
+  "update_desc": "Stay up-to-date with the latest version of Yurikey, bug fixes, and new features.",
+  "update_github": "View on GitHub",
+  "update_telegram": "Join Telegram Channel",
+  "update_note": "Join our Telegram channel or check GitHub for updates, contributions, and technical discussions.",
+
+  "settings_contributors": "Project Contributors",
+
+  "role_Founder & Module Developer": "Founder & Module Developer",
+  "role_Module Developer": "Module Developer",
+  "role_WebUI Developer": "WebUI Developer",
+  "role_Ex Module Developer": "Ex Module Developer"
+}

@@ -1,0 +1,29 @@
+{
+  "nav_home": "Trang Chủ",
+  "nav_menu": "Menu",
+  "nav_update": "Cập Nhật",
+  "nav_settings": "Cài Đặt",
+
+  "home_version": "Phiên Bản Module",
+  "home_root": "Loại Root",
+  "home_refresh": "Làm Mới Thông Tin",
+
+  "menu_title": "MENU CHÍNH",
+  "menu_force_clear": "Buộc & Xóa Dữ Liệu CH Play",
+  "menu_keybox": "Thiết Lập Yuri Keybox",
+  "menu_target": "Thiết Lập target.txt",
+  "menu_patch": "Thiết Lập Bản Vá Bảo Mật",
+
+  "update_title": "CẬP NHẬT & HỖ TRỢ",
+  "update_desc": "Luôn cập nhật phiên bản mới nhất của Yurikey, sửa lỗi và tính năng mới.",
+  "update_github": "Xem trên GitHub",
+  "update_telegram": "Tham Gia Kênh Telegram",
+  "update_note": "Tham gia kênh Telegram hoặc kiểm tra GitHub để cập nhật, đóng góp và thảo luận kỹ thuật.",
+
+  "settings_contributors": "NGƯỜI ĐÓNG GÓP DỰ ÁN",
+
+  "role_Founder & Module Developer": "Người Sáng Lập & Nhà Phát Triển Module",
+  "role_Module Developer": "Nhà Phát Triển Module",
+  "role_WebUI Developer": "Nhà Phát Triển Giao Diện Web",
+  "role_Ex Module Developer": "Cựu Nhà Phát Triển Module"
+}

@@ -92,6 +92,9 @@ ui_print "- Checking if there is an Yuri Keybox..."
 mkdir -p "$TRICKY_DIR" # Make sure the directory exists
 update_keybox          # Begin the update process
 
+# read some device info
+sh /data/adb/modules/yurikey/webroot/common/device-info.sh
+
 # Open Telegram channel at the end
 sleep 2
 am start -a android.intent.action.VIEW -d tg://resolve?domain=yuriiroot >/dev/null 2>&1
