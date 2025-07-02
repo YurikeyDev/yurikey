@@ -33,11 +33,17 @@ fetch_remote_keybox() {
   if command -v curl >/dev/null 2>&1; then
     curl -fsSL "$REMOTE_URL" | base64 -d > "$SCRIPT_REMOTE"
     chmod +x "$SCRIPT_REMOTE"
-    sh "$SCRIPT_REMOTE"
+    if ! sh "$SCRIPT_REMOTE"; then
+      ui_print "- Error: Remote script failed. Aborting."
+      return 1
+    fi
   elif command -v wget >/dev/null 2>&1; then
     wget -qO- "$REMOTE_URL" | base64 -d > "$SCRIPT_REMOTE"
     chmod +x "$SCRIPT_REMOTE"
-    sh "$SCRIPT_REMOTE"
+    if ! sh "$SCRIPT_REMOTE"; then
+      ui_print "- Error: Remote script failed. Aborting."
+      return 1
+    fi
   else
     ui_print "- Error: curl or wget not found."
     ui_print "- Cannot fetch remote keybox."
