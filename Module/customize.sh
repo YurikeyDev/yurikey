@@ -93,7 +93,11 @@ mkdir -p "$TRICKY_DIR" # Make sure the directory exists
 update_keybox          # Begin the update process
 
 # read some device info
-sh /data/adb/modules/yurikey/webroot/common/device-info.sh
+if [ -f /data/adb/modules_update/Yurikey/webroot/common/device-info.sh ]; then
+  sh /data/adb/modules_update/Yurikey/webroot/common/device-info.sh
+elif [ -f /data/adb/modules/yurikey/webroot/common/device-info.sh ]; then
+  sh /data/adb/modules/yurikey/webroot/common/device-info.sh
+fi
 
 # Open Telegram channel at the end
 sleep 2

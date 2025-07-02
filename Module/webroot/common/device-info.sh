@@ -1,7 +1,14 @@
 #!/system/bin/sh
 
-INFO_PATH="/data/adb/modules/Yurikey/webroot/json/device-info.json"
-CHECK_SCRIPT="/data/adb/modules/Yurikey/webroot/common/dev-check.sh"
+# Specify the current root directory for both normal and update path
+if [ -d "/data/adb/modules_update/Yurikey" ]; then
+  BASE_PATH="/data/adb/modules_update/Yurikey"
+else
+  BASE_PATH="/data/adb/modules/Yurikey"
+fi
+
+INFO_PATH="$BASE_PATH/webroot/json/device-info.json"
+CHECK_SCRIPT="$BASE_PATH/webroot/common/dev-check.sh"
 
 android_ver=$(getprop ro.build.version.release)
 kernel_ver=$(uname -r)
