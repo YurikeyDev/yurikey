@@ -1,0 +1,30 @@
+{
+  "nav_home": "Home",
+  "nav_menu": "Menu",
+  "nav_update": "Update",
+  "nav_settings": "Settings",
+
+  "home_version": "Bersyon ng Module",
+  "home_root": "Root Implementation",
+  "home_refresh": "I-refresh ang Impormasyon",
+  "home_refreshing": "Nagre-refresh...",
+
+  "menu_title": "PANGUNAHING MENU",
+  "menu_force_clear": "Piliting Ihinto at I-clear ang Data ng Play Store",
+  "menu_keybox": "I-set up ang Yuri Keybox",
+  "menu_target": "I-set up ang target.txt",
+  "menu_patch": "I-set up ang Security Patch",
+
+  "update_title": "UPDATE AT SUPORTA",
+  "update_desc": "Manatiling updated sa pinakabagong bersyon ng Yurikey, mga bug fix, at bagong features.",
+  "update_github": "Tingnan sa GitHub",
+  "update_telegram": "Sumali sa Telegram Channel",
+  "update_note": "Sumali sa aming Telegram channel o tingnan ang GitHub para sa mga update, kontribusyon, at teknikal na talakayan.",
+
+  "settings_contributors": "Mga Kontribyutor ng Proyekto",
+
+  "role_Founder & Module Developer": "Tagapagtatag at Developer ng Module",
+  "role_Module Developer": "Module Developer",
+  "role_WebUI Developer": "WebUI Developer",
+  "role_Ex Module Developer": "Dating Module Developer"
+}

@@ -1,0 +1,30 @@
+{
+  "nav_home": "Ana Sayfa",
+  "nav_menu": "Menü",
+  "nav_update": "Güncelleme",
+  "nav_settings": "Ayarlar",
+
+  "home_version": "Modül Sürümü",
+  "home_root": "Root Uygulaması",
+  "home_refresh": "Bilgileri Yenile",
+  "home_refreshing": "Yenileniyor...",
+
+  "menu_title": "ANA MENÜ",
+  "menu_force_clear": "Zorla Durdur & Play Store Verilerini Temizle",
+  "menu_keybox": "Yuri Keybox'u Ayarla",
+  "menu_target": "target.txt Dosyasını Ayarla",
+  "menu_patch": "Güvenlik Yamasını Uygula",
+
+  "update_title": "GÜNCELLEME & DESTEK",
+  "update_desc": "Yurikey'in en son sürümü, hata düzeltmeleri ve yeni özelliklerle güncel kalın.",
+  "update_github": "GitHub'da Görüntüle",
+  "update_telegram": "Telegram Kanalına Katıl",
+  "update_note": "Güncellemeler, katkılar ve teknik tartışmalar için Telegram kanalımıza katılın veya GitHub'a göz atın.",
+
+  "settings_contributors": "Proje Katkıda Bulunanlar",
+
+  "role_Founder & Module Developer": "Kurucu & Modül Geliştirici",
+  "role_Module Developer": "Modül Geliştirici",
+  "role_WebUI Developer": "WebUI Geliştirici",
+  "role_Ex Module Developer": "Eski Modül Geliştirici"
+}
