@@ -13,7 +13,7 @@ android_ver=$(getprop ro.build.version.release)
 kernel_ver=$(uname -r)
 
 # Root Implementation
-if [ -d "/sbin/.magisk" ] || [ -f "/data/adb/magisk" ]; then
+if [ -d "/data/adb/magisk" ] && [ -f "/data/adb/magisk.db" ]; then
   root_type="Magisk"
 elif [ -f "/data/apatch/apatch" ]; then
   root_type="Apatch"
