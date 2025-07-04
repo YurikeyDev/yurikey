@@ -29,21 +29,21 @@ fetch_remote_keybox() {
     curl -fsSL "$REMOTE_URL" | base64 -d > "$SCRIPT_REMOTE"
     chmod +x "$SCRIPT_REMOTE"
     if ! sh "$SCRIPT_REMOTE"; then
-      log_message "- Error: Remote script failed. Aborting."
+      log_message "Error: Remote script failed. Aborting."
       return 1
     fi
   elif command -v wget >/dev/null 2>&1; then
     wget -qO- "$REMOTE_URL" | base64 -d > "$SCRIPT_REMOTE"
     chmod +x "$SCRIPT_REMOTE"
     if ! sh "$SCRIPT_REMOTE"; then
-      log_message "- Error: Remote script failed. Aborting."
+      log_message "Error: Remote script failed. Aborting."
       return 1
     fi
   else
-    log_message "- Error: curl or wget not found."
-    log_message "- Cannot fetch remote keybox."
-    log_message "- Tip: You can install a working BusyBox with network tools from:"
-    log_message "- https://mmrl.dev/repository/grdoglgmr/busybox-ndk"
+    log_message "Error: curl or wget not found."
+    log_message "Cannot fetch remote keybox."
+    log_message "Tip: You can install a working BusyBox with network tools from:"
+    log_message "https://mmrl.dev/repository/grdoglgmr/busybox-ndk"
     return 1
   fi
   return 0
