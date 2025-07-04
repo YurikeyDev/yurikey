@@ -13,12 +13,14 @@ android_ver=$(getprop ro.build.version.release)
 kernel_ver=$(uname -r)
 
 # Root Implementation
-if [ -d "/data/adb/ksu" ]; then
-  root_type="KernelSU"
-elif [ -d "/sbin/.magisk" ] || [ -f "/data/adb/magisk" ]; then
+if [ -d "/sbin/.magisk" ] || [ -f "/data/adb/magisk" ]; then
   root_type="Magisk"
 elif [ -f "/data/apatch/apatch" ]; then
   root_type="Apatch"
+elif [ -d "/data/adb/ksu" ] && [ -d "/data/adb/kpm" ]; then
+  root_type="SukiSU-Ultra"
+elif [ -d "/data/adb/ksu" ]; then
+  root_type="KernelSU"
 else
   root_type="Unknown"
 fi
