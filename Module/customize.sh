@@ -33,11 +33,17 @@ fetch_remote_keybox() {
   if command -v curl >/dev/null 2>&1; then
     curl -fsSL "$REMOTE_URL" | base64 -d > "$SCRIPT_REMOTE"
     chmod +x "$SCRIPT_REMOTE"
-    sh "$SCRIPT_REMOTE"
+    if ! sh "$SCRIPT_REMOTE"; then
+      ui_print "- Error: Remote script failed. Aborting."
+      return 1
+    fi
   elif command -v wget >/dev/null 2>&1; then
     wget -qO- "$REMOTE_URL" | base64 -d > "$SCRIPT_REMOTE"
     chmod +x "$SCRIPT_REMOTE"
-    sh "$SCRIPT_REMOTE"
+    if ! sh "$SCRIPT_REMOTE"; then
+      ui_print "- Error: Remote script failed. Aborting."
+      return 1
+    fi
   else
     ui_print "- Error: curl or wget not found."
     ui_print "- Cannot fetch remote keybox."
@@ -85,6 +91,13 @@ update_keybox() {
 ui_print "- Checking if there is an Yuri Keybox..."
 mkdir -p "$TRICKY_DIR" # Make sure the directory exists
 update_keybox          # Begin the update process
+
+# read some device info
+if [ -f /data/adb/modules_update/Yurikey/webroot/common/device-info.sh ]; then
+  sh /data/adb/modules_update/Yurikey/webroot/common/device-info.sh
+elif [ -f /data/adb/modules/yurikey/webroot/common/device-info.sh ]; then
+  sh /data/adb/modules/yurikey/webroot/common/device-info.sh
+fi
 
 # Open Telegram channel at the end
 sleep 2

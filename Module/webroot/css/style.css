@@ -1,0 +1,633 @@
+/* ============================================
+   🔹 BASE LAYOUT AND GLOBAL DEFAULTS
+============================================ */
+
+/* Global box sizing and font setup */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #121212;
+  color: #ffffff;
+  scroll-behavior: smooth;
+}
+
+/* Page content container */
+#page-content {
+  min-height: 100vh;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 1rem 64px 1rem;
+}
+
+
+/* ============================================
+   🔹 PAGE VISIBILITY AND TRANSITION HANDLING
+============================================ */
+
+/* Page hidden state and animation */
+.page {
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  min-height: calc(100vh - 64px);
+  padding-top: 1.5rem;
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+  overflow-y: auto;
+}
+
+/* Page active/visible state */
+.page.active {
+  display: flex;
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+  z-index: 10;
+}
+
+/* Specific page top padding */
+#settings-page {
+  padding-top: 2.5rem;
+}
+
+
+/* ============================================
+   🔹 BOTTOM NAVIGATION BAR
+============================================ */
+
+/* Bottom bar container */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 64px;
+  background-color: #1e1e1e;
+  border-top: 1px solid #2c2c2c;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Individual nav buttons */
+.nav-btn {
+  flex: 1;
+  padding: 0.75rem 0;
+  font-size: 13px;
+  color: #888;
+  background: none;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease;
+}
+
+.nav-btn.active {
+  color: #fff;
+}
+
+/* Icon inside nav */
+.nav-icon {
+  width: 22px;
+  height: 22px;
+  margin-bottom: 4px;
+  object-fit: contain;
+  filter: brightness(0.6);
+  transition: filter 0.3s ease;
+}
+
+.nav-btn.active .nav-icon {
+  filter: brightness(1);
+}
+
+
+/* ============================================
+   🔹 EXTERNAL FONTS IMPORT
+============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+
+
+/* ============================================
+   🔹 STATUS BOX COMPONENT
+============================================ */
+
+/* Main status container */
+.status-box {
+  position: relative;
+  padding: 1.2rem 1rem;
+  border-radius: 14px;
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  background-color: #1e1e1e;
+  color: #ffffff;
+  transition: background-color 0.4s ease;
+  overflow: hidden;
+}
+
+/* Left strip on status */
+.status-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 100%;
+  border-radius: 14px 0 0 14px;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+  z-index: 0;
+}
+
+/* Online/offline color indicators */
+.status-box.online::before {
+  background-color: #66bb6a;
+}
+
+.status-box.offline::before {
+  background-color: #ef5350;
+}
+
+/* Inner content positioning */
+.status-box > * {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* ============================================
+   🔹 CLOCK DISPLAY STYLING
+============================================ */
+
+#clock {
+  background-color: #1c1c1c;
+  border: 1px solid #2d3a3e;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  font-size: 13.5px;
+  color: #b0cdd6;
+  transition: all 0.2s ease;
+}
+
+#clock:hover {
+  background-color: #262626;
+  transform: scale(1.02);
+  border-color: #4fc3f7;
+  color: #d2e6ee;
+}
+
+
+/* ============================================
+   🔹 INFO TABLES AND STRUCTURE
+============================================ */
+
+.info-box {
+  position: relative;
+  margin-top: 1.5rem;
+  background-color: #1e1e1e;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 0 0 1px #2c2c2c;
+  font-size: 14px;
+  line-height: 1.6;
+  overflow-x: auto;
+}
+
+.info-content {
+  margin-top: 2rem;
+}
+
+.info-box .info-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.info-table th,
+.info-table td {
+  text-align: left;
+  padding: 0.6rem;
+  border-bottom: 1px solid #2c2c2c;
+}
+
+.info-table th {
+  color: #aaa;
+  font-weight: 500;
+  width: 45%;
+}
+
+.info-table td {
+  color: #fff;
+}
+
+.version-row td {
+  padding: 0.6rem;
+  border-bottom: 1px solid #2c2c2c;
+}
+
+.version-inline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.version-value {
+  flex: 1;
+  min-width: 100px;
+  color: #fff;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Float refresh button */
+.refresh-btn-float {
+  position: absolute;
+  top: 0.1rem;
+  right: 0.2rem;
+  z-index: 10;
+  padding: 0.4rem 0.8rem;
+  font-size: 12px;
+  font-weight: 500;
+  background-color: #2c2c2c;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.2s ease;
+}
+
+.refresh-btn-float:hover {
+  background-color: #3a3a3a;
+}
+
+/* Version refresh button */
+.version-refresh-btn {
+  flex-shrink: 0;
+  padding: 0.4rem 0.75rem;
+  font-size: 12px;
+  font-weight: 500;
+  background-color: #2c2c2c;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: center;
+  white-space: nowrap;
+  transition: background-color 0.2s ease;
+}
+
+.version-refresh-btn:hover {
+  background-color: #3a3a3a;
+}
+
+
+/* ============================================
+   🔹 ACTION BUTTONS / FEATURE BUTTONS
+============================================ */
+
+.action-box {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.3s ease;
+}
+
+.action-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #2c2c2c;
+  padding-bottom: 0.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.action-buttons button {
+  width: 100%;
+  max-width: 360px;
+  padding: 1rem 1.5rem;
+  font-size: 15px;
+  font-weight: 500;
+  color: #f5f5f5;
+  background-color: #2a2a2a;
+  border: 1px solid #3a3a3a;
+  border-radius: 14px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.2s ease, transform 0.1s ease, border 0.2s ease;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.action-buttons button:hover {
+  background-color: #3a3a3a;
+  border-color: #4a4a4a;
+  transform: translateY(-2px);
+}
+
+.action-buttons button:active {
+  background-color: #444;
+  transform: scale(0.97);
+}
+
+
+/* ============================================
+   🔹 SETTINGS BUTTONS
+============================================ */
+
+.setting-btn {
+  width: 100%;
+  margin: 0.5rem 0;
+  padding: 0.75rem;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 10px;
+  background-color: #2c2c2c;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.setting-btn:hover {
+  background-color: #3a3a3a;
+}
+
+.note {
+  font-size: 12px;
+  color: #aaa;
+  margin-bottom: 1rem;
+}
+
+
+/* ============================================
+   🔹 DROPDOWN COMPONENT
+============================================ */
+
+.custom-dropdown {
+  position: relative;
+  width: 100%;
+}
+
+.dropdown-list {
+  display: none;
+  list-style: none;
+  margin-top: 0.25rem;
+  padding: 0;
+  background-color: #1e1e1e;
+  border: 1px solid #2c2c2c;
+  border-radius: 10px;
+  max-height: 240px;
+  overflow-y: auto;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  scrollbar-width: thin;
+  scrollbar-color: #444 #1e1e1e;
+}
+
+.dropdown-list.show {
+  display: block;
+}
+
+.dropdown-list li {
+  padding: 0.75rem;
+  font-size: 14px;
+  cursor: pointer;
+  border-bottom: 1px solid #2c2c2c;
+  transition: background 0.2s ease;
+}
+
+.dropdown-list li:hover {
+  background-color: #333;
+}
+
+.dropdown-list li.selected {
+  background-color: #4fc3f7;
+  color: #fff;
+  font-weight: bold;
+}
+
+
+/* ============================================
+   🔹 DEVELOPER INFO SECTION
+============================================ */
+
+#dev-info {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  box-shadow: 0 0 0 1px #2c2c2c;
+}
+
+#dev-info h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #4fc3f7;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #2c2c2c;
+  padding-bottom: 0.5rem;
+  text-align: center;
+}
+
+
+/* ============================================
+   🔹 CONTRIBUTORS GRID
+============================================ */
+
+.contrib-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.contrib-card {
+  display: block;
+  background: linear-gradient(to bottom right, #1f1f1f, #262626);
+  border: 1px solid #2c2c2c;
+  border-radius: 14px;
+  padding: 1.2rem;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(3px);
+}
+
+.contrib-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 14px rgba(79, 195, 247, 0.15);
+  border-color: #4fc3f7;
+}
+
+.contrib-card img {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 0.75rem;
+  border: 2px solid #4fc3f7;
+  transition: border 0.3s ease;
+}
+
+.contrib-card:hover img {
+  border-color: #82d7ff;
+}
+
+.contrib-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0.3rem;
+}
+
+.contrib-role {
+  font-size: 13px;
+  color: #aaaaaa;
+  line-height: 1.4;
+}
+
+
+/* ============================================
+   🔹 UPDATE BOX
+============================================ */
+
+.update-box {
+  margin-top: 2rem;
+  padding: 2rem;
+  background-color: #1e1e1e;
+  border-radius: 16px;
+  border: 1px solid #2c2c2c;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  animation: fadeIn 0.3s ease;
+}
+
+.update-box .action-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 1px solid #2c2c2c;
+  padding-bottom: 0.5rem;
+}
+
+.update-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.update-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.8rem 1.2rem;
+  background-color: #2a2a2a;
+  border: 1px solid #3a3a3a;
+  border-radius: 12px;
+  color: #eee;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.update-link:hover {
+  background-color: #3a3a3a;
+  transform: scale(1.03);
+}
+
+.update-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+
+/* ============================================
+   🔹 FADE-IN ANIMATION
+============================================ */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ============================================
+   🔹 RESPONSIVE MEDIA QUERIES
+============================================ */
+
+@media (max-width: 768px) {
+  .nav-btn {
+    font-size: 12px;
+    padding: 0.5rem 0;
+  }
+
+  .nav-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .action-buttons button,
+  .setting-btn {
+    font-size: 13px;
+    padding: 0.75rem 1rem;
+  }
+
+  .info-box,
+  .action-box,
+  .update-box,
+  #dev-info {
+    padding: 1rem;
+  }
+
+  .contrib-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  }
+
+  .update-icon {
+    width: 32px;
+    height: 32px;
+  }
+}
