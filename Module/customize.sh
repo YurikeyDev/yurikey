@@ -25,7 +25,7 @@ fi
 if [ ! -d "$DEPENDENCY_MODULE" ]; then
   ui_print "- Error: Tricky Store module not found!"
   ui_print "- Please install Tricky Store before using Yuri Keybox."
-  exit 1
+  abort
 fi
 
 # Function to download the remote keybox
@@ -100,5 +100,4 @@ elif [ -f /data/adb/modules/yurikey/webroot/common/device-info.sh ]; then
 fi
 
 # Open Telegram channel at the end
-sleep 2
 am start -a android.intent.action.VIEW -d tg://resolve?domain=yuriiroot >/dev/null 2>&1
