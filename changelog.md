@@ -1,19 +1,18 @@
-**_✨ v1.4 version changes:_**
+**_**✨ v1.5.version changes:**_**
 
-**🌐 Add WebUI function with individual function buttons:**
-→ Force stop & Clear Data Play Store
-→ Set Yuri Keybox
-→ Set Target.txt
-→ Set Security patch
+_🌐 **Change Style WebUI & Add Multi-function:**_
+→ Set Up Verified Boothash
+→ Fix Detect HMA
+→ Fix Detect Lsposed 
+→ Fix Detect PIF
+→ Fix Detect Recovery File
 
-**🖱️ One click Action = Strong Integrity with All automatic script:**
-→ [KILL GOOGLE].sh
+**_🖱️One click Action = Strong Integrity with All automatic script:_**
+→ [KILL_GOOGLE].sh
 → [YURI_KEYBOX].sh
 → [TARGET_TXT].sh
-→ [SECURITY_PATCH]
+→ [SECURITY_PATCH].sh
+→ [BOOT_HASH].SH
 
-**🔒 Anti-Theft Protection:**
-→ Implemented detection & warning for forked/modified versions (e.g. MagiskLabs, Ak )
-
-**🔧 Other Changes:**
+**_🔧 Other Changes:_**
 → Various performance improvement.
