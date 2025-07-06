@@ -3,5 +3,5 @@ name=Yuri Keybox Manager
 version=v1.5
 versionCode=150
 author=Dpejoh & Yurii0307
-description=Getting latest Yuri keybox
+description=A systemless module to get strong integrity easily
 updateJson=https://raw.githubusercontent.com/dpejoh/yurikey/main/update.json

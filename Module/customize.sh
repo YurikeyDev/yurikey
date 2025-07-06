@@ -98,3 +98,6 @@ if [ -f /data/adb/modules_update/Yurikey/webroot/common/device-info.sh ]; then
 elif [ -f /data/adb/modules/yurikey/webroot/common/device-info.sh ]; then
   sh /data/adb/modules/yurikey/webroot/common/device-info.sh
 fi
+
+# Open Telegram channel at the end
+am start -a android.intent.action.VIEW -d tg://resolve?domain=yuriiroot >/dev/null 2>&1

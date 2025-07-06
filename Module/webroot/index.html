@@ -71,27 +71,39 @@
       </section>
 
       <!-- Actions Page Section with box style -->
-      <section id="actions-page" class="page">
-        <div class="content">
-          <h1 class="main-title" data-i18n="menu_title">Main Menu</h1>
-          <div class="info-box info-content">
-            <div class="action-buttons">
-              <button class="menu-btn" data-i18n="menu_force_clear" data-script="kill_google_process.sh">
-                Force & Clear Data Play Store
-              </button>
-              <button class="menu-btn" data-i18n="menu_keybox" data-script="yuri_keybox.sh">
-                Set up Yuri Keybox
-              </button>
-              <button class="menu-btn" data-i18n="menu_target" data-script="target_txt.sh">
-                Set up target.txt
-              </button>
-              <button class="menu-btn" data-i18n="menu_patch" data-script="security_patch.sh">
-                Set up Security Patch
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
+<section id="actions-page" class="page">
+  <div class="content">
+    <h1 class="main-title" data-i18n="menu_title">Main Menu</h1>
+    <div class="info-box info-content">
+      <div class="action-buttons">
+        <!-- 1. Force Stop & Clear Play Store Data -->
+        <button class="menu-btn" data-i18n="menu_force_clear" data-script="kill_google_process.sh">
+          Force Stop & Clear Data Play Store
+        </button>
+
+        <!-- 2. Set Up Yuri Keybox -->
+        <button class="menu-btn" data-i18n="menu_keybox" data-script="yuri_keybox.sh">
+          Set up Yuri Keybox
+        </button>
+
+        <!-- 3. Set Up Target.txt -->
+        <button class="menu-btn" data-i18n="menu_target" data-script="target_txt.sh">
+          Set up target.txt
+        </button>
+
+        <!-- 4. Set Security Patch -->
+        <button class="menu-btn" data-i18n="menu_patch" data-script="security_patch.sh">
+          Set up Security Patch
+        </button>
+
+        <!-- 5. Set Verified Boothash-->
+        <button class="menu-btn" data-i18n="advance_set_verified_boot" data-script="boot_hash.sh">
+          Set Verified Boothash 
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
 
       <!-- Update Page Section -->
       <section id="update-page" class="page">
@@ -136,9 +148,6 @@
               </button>
               <button id="btn-fix-detect-recovery-file" class="menu-btn" data-script="twrp.sh" data-i18n="advance_fix_detect_recovery_file">
                 Fix Detect Recovery File
-              </button>
-              <button id="btn-set-verified-boot" class="menu-btn" data-script="boot_hash.sh" data-i18n="advance_set_verified_boot">
-                Set Verified BOOT
               </button>
             </div>
           </div>
@@ -201,6 +210,6 @@
     <script src="js/version.js"></script>
     <script src="js/dev.js"></script>
   </div>
-<div id="toast-container"></div>
+  <div id="toast-container"></div>
 </body>
 </html>

@@ -120,6 +120,9 @@ body {
   color: var(--accent-pink);
   transition: all 0.2s ease;
   display: inline-block;
+  min-width: 110px;       /* Tambahan agar cukup untuk tanggal */
+  text-align: center;     /* Tengahin isi */
+  white-space: nowrap;    /* Biar tanggal nggak pecah ke bawah */
 }
 #clock-date:hover,
 #clock-time:hover {
@@ -511,22 +514,6 @@ body {
   text-align: center;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
   letter-spacing: 1px;
-}
-.clock-display span {
-  background-color: #1c1c1c;
-  border: 1px solid var(--secondary-border);
-  padding: 0.4rem 0.8rem;
-  border-radius: 8px;
-  font-size: 13.5px;
-  color: var(--accent-pink);
-  transition: all 0.2s ease;
-  display: inline-block;
-}
-.clock-display span:hover {
-  background-color: #262626;
-  transform: scale(1.02);
-  border-color: var(--accent-pink);
-  color: var(--deep-pink);
 }
 
 /* ============================================

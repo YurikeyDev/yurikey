@@ -16,17 +16,17 @@
   "home_clock_time": "Clock Time",
 
   "menu_title": "MAIN MENU",
-  "menu_force_clear": "Force Stop & Clear Play Store Data",
+  "menu_force_clear": "Force Stop & Clear Data Play Store",
   "menu_keybox": "Set Up Yuri Keybox",
-  "menu_target": "Set Up target.txt",
-  "menu_patch": "Apply Security Patch",
+  "menu_target": "Set Up Target.txt",
+  "menu_patch": "Set Up Security Patch",
 
   "advance_menu_title": "Advanced Menu",
   "advance_fix_detect_hma": "Fix Detect HMA",
   "advance_fix_detect_lsposed": "Fix Detect lsposed (2)",
   "advance_fix_detect_pif": "Fix Detect PIF (2)",
   "advance_fix_detect_recovery_file": "Fix Detect Recovery File",
-  "advance_set_verified_boot": "Set Verified Boothash",
+  "advance_set_verified_boot": "Set Up Verified Boothash",
 
   "update_title": "UPDATE & SUPPORT",
   "update_desc": "Stay up to date with the latest version of Yurikey, bug fixes, and new features.",
