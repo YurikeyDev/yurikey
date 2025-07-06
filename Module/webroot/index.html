@@ -14,83 +14,86 @@
   <div id="app">
     <main id="page-content">
 
-      <!-- =========================
-           Home Page Section
-      ========================== -->
+      <!-- Home Page Section -->
       <section id="home-page" class="page active">
         <div class="content">
+          <h1 class="main-title">Yurikey Manager</h1>
 
-          <!-- Title -->
-          <h1>Yurikey Manager</h1>
-
-          <!-- Network Status Indicator -->
-          <div class="status-box">
-            <div id="clock"></div>
-          </div>
-
-          <!-- Device Info Table -->
           <div class="info-box info-content">
-            <!-- Top-right Refresh Button -->
-            <button
-              id="refresh-info-btn"
-              class="refresh-btn-float"
-              data-i18n="home_refresh"
-              data-refreshing="home_refreshing"
-              data-script="device-info.sh"
-            >
-              Refresh Info
-            </button>
+            <div class="refresh-container">
+              <button
+                id="refresh-info-btn"
+                class="refresh-btn-float"
+                data-i18n="home_refresh"
+                data-refreshing="home_refreshing"
+                data-script="device-info.sh"
+              >
+                Refresh Info
+              </button>
+            </div>
 
-            <table class="info-table">
-              <tbody>
-                <tr>
-                  <th data-i18n="home_version"> Error </th>
-                  <td id="version-text"> Error </td>
-                </tr>
-                <tr>
-                  <th>Android</th>
-                  <td id="android-version"> Error </td>
-                </tr>
-                <tr>
-                  <th>Kernel</th>
-                  <td id="kernel-version"> Error </td>
-                </tr>
-                <tr>
-                  <th data-i18n="home_root">Root Implementation</th>
-                  <td id="root-type"> Error </td>
-                </tr>
-              </tbody>
-            </table>
+            <div class="table-container">
+              <table class="info-table">
+                <tbody>
+                  <tr>
+                    <th data-i18n="home_clock_date">Clock Date</th>
+                    <td class="clock-display"><span id="clock-date">--/--/--</span></td>
+                  </tr>
+                  <tr>
+                    <th data-i18n="home_clock_time">Clock Time</th>
+                    <td class="clock-display"><span id="clock-time">--:--:--</span></td>
+                  </tr>
+                  <tr id="status-row" class="status-box offline">
+                    <th data-i18n="home_status">Status</th>
+                    <td id="status-bar-text" data-i18n="home_status_offline">Error</td>
+                  </tr>
+                  <tr>
+                    <th data-i18n="home_version">Module Version</th>
+                    <td id="version-text">Error</td>
+                  </tr>
+                  <tr>
+                    <th>Android</th>
+                    <td id="android-version">Error</td>
+                  </tr>
+                  <tr>
+                    <th>Kernel</th>
+                    <td id="kernel-version">Error</td>
+                  </tr>
+                  <tr>
+                    <th data-i18n="home_root">Root Implementation</th>
+                    <td id="root-type">Error</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- =========================
-           Actions Page Section
-      ========================== -->
+      <!-- Actions Page Section with box style -->
       <section id="actions-page" class="page">
-        <div class="action-box">
-          <h3 class="action-title" data-i18n="menu_title">Main Menu</h3>
-          <div class="action-buttons">
-            <button data-i18n="menu_force_clear" data-script="kill_google_process.sh">
-              Force & Clear Data Play Store
-            </button>
-            <button data-i18n="menu_keybox" data-script="yuri_keybox.sh">
-              Set up Yuri Keybox
-            </button>
-            <button data-i18n="menu_target" data-script="target_txt.sh">
-              Set up target.txt
-            </button>
-            <button data-i18n="menu_patch" data-script="security_patch.sh">
-              Set up Security Patch
-            </button>
+        <div class="content">
+          <h1 class="main-title" data-i18n="menu_title">Main Menu</h1>
+          <div class="info-box info-content">
+            <div class="action-buttons">
+              <button class="menu-btn" data-i18n="menu_force_clear" data-script="kill_google_process.sh">
+                Force & Clear Data Play Store
+              </button>
+              <button class="menu-btn" data-i18n="menu_keybox" data-script="yuri_keybox.sh">
+                Set up Yuri Keybox
+              </button>
+              <button class="menu-btn" data-i18n="menu_target" data-script="target_txt.sh">
+                Set up target.txt
+              </button>
+              <button class="menu-btn" data-i18n="menu_patch" data-script="security_patch.sh">
+                Set up Security Patch
+              </button>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- =========================
-           Update Page Section
-      ========================== -->
+      <!-- Update Page Section -->
       <section id="update-page" class="page">
         <div class="update-box">
           <h3 class="action-title" data-i18n="update_title">Update & Support</h3>
@@ -99,31 +102,51 @@
             bug fixes, and new features.
           </p>
 
-          <!-- External Resources / Links -->
           <div class="update-links">
             <button class="update-link" data-url="https://github.com/dpejoh/yurikey">
               <img src="/common/assets/icon/github.gif" class="update-icon" alt="GitHub" />
               <span data-i18n="update_github">View on GitHub</span>
             </button>
-
             <button class="update-link" data-url="https://t.me/yuriiroot">
               <img src="/common/assets/icon/telegram.gif" class="update-icon" alt="Telegram" />
               <span data-i18n="update_telegram">Join Telegram Channel</span>
             </button>
           </div>
 
-          <!-- Update Note -->
           <p class="note" data-i18n="update_note">
             Join our Telegram channel or check GitHub for updates, contributions, and technical discussions.
           </p>
         </div>
       </section>
 
-      <!-- =========================
-           Settings Page Section
-      ========================== -->
+      <!-- Advance Menu Section -->
+      <section id="advance-menu" class="page">
+        <div class="content">
+          <h1 class="main-title" data-i18n="advance_menu_title">Advance Menu</h1>
+          <div class="info-box info-content" style="position: relative;">
+            <div class="action-buttons">
+              <button id="btn-fix-detect-hma" class="menu-btn" data-script="hma.sh" data-i18n="advance_fix_detect_hma">
+                Fix Detect HMA
+              </button>
+              <button id="btn-fix-detect-lsposed" class="menu-btn" data-script="lsposed2.sh" data-i18n="advance_fix_detect_lsposed">
+                Fix Detect lsposed (2)
+              </button>
+              <button id="btn-fix-detect-pif" class="menu-btn" data-script="pif2.sh" data-i18n="advance_fix_detect_pif">
+                Fix Detect PIF (2)
+              </button>
+              <button id="btn-fix-detect-recovery-file" class="menu-btn" data-script="twrp.sh" data-i18n="advance_fix_detect_recovery_file">
+                Fix Detect Recovery File
+              </button>
+              <button id="btn-set-verified-boot" class="menu-btn" data-script="boot_hash.sh" data-i18n="advance_set_verified_boot">
+                Set Verified BOOT
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Settings Page Section -->
       <section id="settings-page" class="page">
-        <!-- Language Selector Dropdown -->
         <div class="custom-dropdown">
           <button id="lang-btn" class="setting-btn">🇬🇧 English</button>
           <ul id="lang-options" class="dropdown-list">
@@ -138,7 +161,6 @@
           </ul>
         </div>
 
-        <!-- Contributor Section -->
         <div class="update-box" id="dev-info">
           <h3 class="action-title" data-i18n="settings_contributors">Project Contributors</h3>
           <div id="contrib-list" class="contrib-grid"></div>
@@ -147,9 +169,7 @@
 
     </main>
 
-    <!-- =========================
-         Bottom Navigation Bar
-    ========================== -->
+    <!-- Bottom Navigation Bar -->
     <nav class="bottom-nav">
       <button class="nav-btn active" data-target="home-page">
         <img src="/common/assets/navbar/home.svg" alt="Home" class="nav-icon" />
@@ -163,15 +183,17 @@
         <img src="/common/assets/navbar/community.png" alt="Update" class="nav-icon" />
         <span data-i18n="nav_update">Update</span>
       </button>
+      <button class="nav-btn" data-target="advance-menu">
+        <img src="/common/assets/navbar/android.png" alt="Advance Menu" class="nav-icon" />
+        <span data-i18n="nav_advancemenu">Menu +</span>
+      </button>
       <button class="nav-btn" data-target="settings-page">
         <img src="/common/assets/navbar/settings.svg" alt="Settings" class="nav-icon" />
         <span data-i18n="nav_settings">Settings</span>
       </button>
     </nav>
 
-    <!-- =========================
-         JavaScript Files
-    ========================== -->
+    <!-- JavaScript Files -->
     <script src="js/language.js"></script>
     <script src="js/redirect.js"></script>
     <script src="js/device.js"></script>
@@ -179,5 +201,6 @@
     <script src="js/version.js"></script>
     <script src="js/dev.js"></script>
   </div>
+<div id="toast-container"></div>
 </body>
 </html>

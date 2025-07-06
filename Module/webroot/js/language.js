@@ -1,4 +1,3 @@
-// Language setup and global exposure
 const LANG_PATH = "lang/";
 const DEFAULT_LANG = "en";
 let translations = {};
@@ -7,6 +6,15 @@ window.translations = translations; // Make translations globally accessible
 // Translation helper function
 function t(key) {
   return window.translations?.[key] || key;
+}
+
+// Interpolation formatter for translation strings
+function tFormat(key, vars = {}) {
+  let str = t(key);
+  Object.keys(vars).forEach(k => {
+    str = str.replace(`{${k}}`, vars[k]);
+  });
+  return str;
 }
 
 // Load and apply translations to all elements
@@ -34,6 +42,11 @@ async function applyLanguage(langCode) {
     // Save the selected language in localStorage
     document.documentElement.lang = langCode;
     localStorage.setItem("selectedLanguage", langCode);
+
+    // Call updateNetworkStatus to refresh network status text in new language with a slight delay
+    if (typeof window.updateNetworkStatus === "function") {
+      setTimeout(() => window.updateNetworkStatus(), 100);
+    }
   } catch (err) {
     console.error("Failed to load language:", err);
   }

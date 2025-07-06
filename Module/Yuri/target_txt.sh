@@ -31,7 +31,11 @@ echo "luna.safe.luna!" >> "$t"
 echo "com.zhenxi.hunter!" >> "$t"
 echo "gr.nikolasspyr.integritycheck!" >> "$t"
 echo "com.youhu.laifu!" >> "$t"
-
+echo "com.google.android.contactkeys!" >> "$t"
+echo "om.google.android.ims!" >> "$t"
+echo "com.google.android.safetycore!"  >> "$t"
+echo "com.whatsapp!"  >> "$t"
+echo "com.whatsapp.w4b!"  >> "$t"
 
 
 # add list
