@@ -1,5 +1,5 @@
 # YuriKey
-A Systemless Module to get Yuri keybox.
+A Systemless Module to get Strong Integrity Easily 
 
 [Download](https://github.com/dpejoh/yurikey/releases/latest) 
 
