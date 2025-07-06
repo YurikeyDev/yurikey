@@ -29,12 +29,43 @@ async function applyLanguage(langCode) {
     // Apply to elements using [data-i18n] attribute
     document.querySelectorAll("[data-i18n]").forEach(el => {
       const key = el.getAttribute("data-i18n");
-      if (translations[key]) el.innerText = translations[key];
+      if (translations[key]) {
+        if (el.children.length > 0) {
+          const hasHTMLContent = el.innerHTML.includes('<');
+          if (hasHTMLContent) {
+            el.innerHTML = translations[key];
+          } else {
+            const walker = document.createTreeWalker(
+              el,
+              NodeFilter.SHOW_TEXT,
+              null,
+              false
+            );
+            let textNodes = [];
+            let textNode;
+            while (textNode = walker.nextNode()) {
+              if (textNode.nodeValue.trim()) {
+                textNodes.push(textNode);
+              }
+            }
+            if (textNodes.length > 0) {
+              textNodes[0].nodeValue = translations[key];
+              for (let i = 1; i < textNodes.length; i++) {
+                textNodes[i].remove();
+              }
+            } else {
+              el.appendChild(document.createTextNode(translations[key]));
+            }
+          }
+        } else {
+          el.innerText = translations[key];
+        }
+      }
     });
 
     // Update refresh button text if available
     const refreshBtn = document.getElementById("refresh-info-btn");
-    if (refreshBtn) {
+    if (refreshBtn && refreshBtn.getAttribute("data-i18n")) {
       const defaultKey = refreshBtn.getAttribute("data-i18n");
       refreshBtn.innerText = t(defaultKey);
     }
@@ -47,6 +78,10 @@ async function applyLanguage(langCode) {
     if (typeof window.updateNetworkStatus === "function") {
       setTimeout(() => window.updateNetworkStatus(), 100);
     }
+
+    document.dispatchEvent(new CustomEvent("languageChanged", {
+      detail: { language: langCode, translations: translations }
+    }));
   } catch (err) {
     console.error("Failed to load language:", err);
   }

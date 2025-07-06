@@ -73,38 +73,25 @@ function setupRefreshButton() {
   if (!refreshBtn) return;
 
   const scriptName = refreshBtn.dataset.script;
-  const refreshingKey = refreshBtn.dataset.refreshing || "home_refreshing";
-  const originalKey = refreshBtn.dataset.i18n || "home_refresh";
-
-  refreshBtn.classList.add("fade-text");
 
   refreshBtn.addEventListener("click", () => {
+    if (refreshBtn.disabled) return;
     refreshBtn.disabled = true;
-    refreshBtn.classList.add("hidden");
+    refreshBtn.classList.add("rotating");
 
-    setTimeout(() => {
-      refreshBtn.innerText = t(refreshingKey);
-      refreshBtn.classList.remove("hidden");
+    runScript(scriptName, async () => {
+      try {
+        const data = await waitForValidDeviceInfo();
+        document.getElementById("android-version").innerText = data.android || "-";
+        document.getElementById("kernel-version").innerText = data.kernel || "-";
+        document.getElementById("root-type").innerText = data.root || "-";
+      } catch (err) {
+        console.warn("Could not update device info:", err);
+      }
 
-      runScript(scriptName, async () => {
-        try {
-          const data = await waitForValidDeviceInfo();
-          document.getElementById("android-version").innerText = data.android || "-";
-          document.getElementById("kernel-version").innerText = data.kernel || "-";
-          document.getElementById("root-type").innerText = data.root || "-";
-        } catch (err) {
-          console.warn("Could not update device info:", err);
-        }
-
-        refreshBtn.classList.add("hidden");
-        setTimeout(() => {
-          refreshBtn.innerText = t(originalKey);
-          refreshBtn.classList.remove("hidden");
-          refreshBtn.disabled = false;
-        }, 250); // Smooth fade-in delay
-      });
-
-    }, 250); // Smooth fade-out delay
+      refreshBtn.classList.remove("rotating");
+      refreshBtn.disabled = false;
+    });
   });
 }
 
@@ -115,10 +102,12 @@ window.addEventListener("DOMContentLoaded", async () => {
   setupRefreshButton();           // Setup refresh button
 
   // Bind all action buttons to their scripts
-  document.querySelectorAll(".action-buttons button").forEach(button => {
+  document.querySelectorAll(".action-buttons .menu-btn").forEach(button => {
     const scriptName = button.dataset.script;
     if (scriptName) {
       button.addEventListener("click", () => runScript(scriptName));
     }
   });
 });
+
+window.loadDeviceInfo = loadDeviceInfo;

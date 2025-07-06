@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Make sure language.js is already loaded so that t and tFormat are available
 
-  function showToast(message, duration = 3000) {
+  function showToast(message, type = "info", duration = 3000) {
     const container = document.getElementById("toast-container");
     if (!container) return;
 
@@ -17,10 +17,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     setTimeout(() => {
       const toast = document.createElement("div");
-      toast.className = "toast";
+      toast.className = `toast ${type}`;
       toast.textContent = message;
+      toast.addEventListener("click", () => {
+        toast.style.animation = "toast-slideout 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards";
+        setTimeout(() => toast.remove(), 300);
+      });
       container.appendChild(toast);
-      setTimeout(() => toast.remove(), duration);
+      setTimeout(() => {
+        if (toast.parentNode) {
+          toast.style.animation = "toast-slideout 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards";
+          setTimeout(() => toast.remove(), 300);
+        }
+      }, duration);
     }, delay);
   }
 
@@ -28,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const scriptPath = `${basePath}${scriptName}`;
 
     if (typeof ksu !== "object" || typeof ksu.exec !== "function") {
-      showToast(t("ksu_not_available"));
+      showToast(t("ksu_not_available"), "error");
       return;
     }
 
@@ -46,55 +55,47 @@ document.addEventListener("DOMContentLoaded", () => {
       const raw = typeof output === "string" ? output.trim() : "";
 
       if (!raw) {
-        showToast(tFormat("success", { script: scriptName }));
+        showToast(tFormat("success", { script: scriptName }), "success");
         return;
       }
 
       try {
         const json = JSON.parse(raw);
         if (json.success) {
-          showToast(tFormat("success", { script: scriptName }));
+          showToast(tFormat("success", { script: scriptName }), "success");
         } else if (json.error) {
-          showToast(tFormat("failed", { script: scriptName }) + ` (${json.error})`, 4000);
+          showToast(tFormat("failed", { script: scriptName }) + ` (${json.error})`, "error", 4000);
         } else {
-          showToast(tFormat("failed", { script: scriptName }) + " (Unknown response)", 4000);
+          showToast(tFormat("failed", { script: scriptName }) + " (Unknown response)", "error", 4000);
         }
       } catch {
         // If output is not JSON, treat as success but inform user
-        showToast(tFormat("success", { script: scriptName }) + " (Non-JSON output)");
+        showToast(tFormat("success", { script: scriptName }) + " (Non-JSON output)", "warning");
       }
     };
 
     try {
-      showToast(tFormat("executing", { script: scriptName }));
+      showToast(tFormat("executing", { script: scriptName }), "info");
       ksu.exec(`sh "${scriptPath}"`, "{}", cb);
     } catch (e) {
       clearTimeout(timeoutId);
       delete window[cb];
       button.className = originalClass;
-      showToast(tFormat("failed", { script: scriptName }));
+      showToast(tFormat("failed", { script: scriptName }), "error");
     }
 
     timeoutId = setTimeout(() => {
       delete window[cb];
       button.className = originalClass;
-      showToast(tFormat("timeout", { script: scriptName }));
+      showToast(tFormat("timeout", { script: scriptName }), "error");
     }, 7000);
   }
 
   // Register click events for buttons in Actions Page
-  document.querySelectorAll("#actions-page .action-buttons button").forEach(button => {
+  document.querySelectorAll("#actions-page .action-buttons .menu-btn").forEach(button => {
     const scriptName = button.dataset.script;
     if (scriptName) {
       button.addEventListener("click", () => runScript(scriptName, BASE_SCRIPT, button));
-    }
-  });
-
-  // Register click events for buttons in Advance Menu
-  document.querySelectorAll("#advance-menu .menu-btn").forEach(button => {
-    const scriptName = button.dataset.script;
-    if (scriptName) {
-      button.addEventListener("click", () => runScript(scriptName, BASE_SCRIPT_ADV, button));
     }
   });
 
@@ -105,6 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
       btn.classList.add("active");
       document.querySelectorAll(".page")[idx].classList.add("active");
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   });
 
@@ -133,9 +135,6 @@ document.addEventListener("DOMContentLoaded", () => {
   updateClock();
   setInterval(updateClock, 1000);
 
-  // Network status elements
-  const statusRow = document.getElementById("status-row");
-  const statusText = document.getElementById("status-bar-text");
   let lastStatus = null;
 
   async function verifyRealInternet() {
@@ -172,7 +171,13 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   async function updateNetworkStatus() {
-    if (!statusRow || !statusText) return;
+    const statusRow = document.getElementById("status-row");
+    const statusText = document.getElementById("status-bar-text");
+
+    if (!statusRow || !statusText) {
+      console.warn("Status elements not found");
+      return;
+    }
 
     // Show temporary status while checking
     statusText.textContent = t("home_refreshing");
@@ -185,13 +190,12 @@ document.addEventListener("DOMContentLoaded", () => {
       statusRow.classList.replace("offline", "online");
       statusText.textContent = t("home_status_online");
       statusRow.title = t("status_online");
-      showToast(t("status_online"));
       lastStatus = "online";
     } else if (!isActuallyOnline && lastStatus !== "offline") {
       statusRow.classList.replace("online", "offline");
       statusText.textContent = t("home_status_offline");
       statusRow.title = t("status_offline");
-      showToast(t("status_offline"));
+      showToast(t("status_offline"), "error");
       lastStatus = "offline";
     } else {
       // Update text only to sync language
@@ -205,21 +209,30 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Register updateNetworkStatus globally to be called from outside (e.g. language.js)
   window.updateNetworkStatus = updateNetworkStatus;
+  window.showToast = showToast;
+  window.showSuccessToast = (message, duration = 3000) => showToast(message, "success", duration);
+  window.showErrorToast = (message, duration = 4000) => showToast(message, "error", duration);
+  window.showWarningToast = (message, duration = 3500) => showToast(message, "warning", duration);
+  window.showInfoToast = (message, duration = 3000) => showToast(message, "info", duration);
 
   // Refresh info button event
   const refreshBtn = document.getElementById("refresh-info-btn");
   if (refreshBtn) {
     refreshBtn.addEventListener("click", () => {
-      showToast(t("home_refreshing"));
+      showToast(t("home_refreshing"), "info");
       updateNetworkStatus();
+      if (window.loadDeviceInfo) {
+        window.loadDeviceInfo();
+      }
     });
   }
 
   // Initialize network status
-  updateNetworkStatus();
-  setInterval(updateNetworkStatus, 3000);
-  window.addEventListener("online", updateNetworkStatus);
-  window.addEventListener("offline", updateNetworkStatus);
+  setTimeout(() => {
+    updateNetworkStatus();
+    setInterval(updateNetworkStatus, 3000);
+    window.addEventListener("online", updateNetworkStatus);
+    window.addEventListener("offline", updateNetworkStatus);
+  }, 500);
 });

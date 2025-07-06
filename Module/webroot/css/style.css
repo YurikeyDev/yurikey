@@ -1,3 +1,5 @@
+@import url('https://mui.kernelsu.org/internal/colors.css');
+
 /* ============================================
    🔹 COLOR PALETTE VARIABLES
    Define all main colors here for easy theme management
@@ -14,6 +16,42 @@
   --secondary-bg: #1e1e1e;
   --secondary-border: #2c2c2c;
   --nav-inactive: #888;
+}
+
+/* =================================================
+   🔹 MONET
+   Credits to bindhosts for being a great reference
+==================================================== */
+:root {
+  --monet-bg-primary: var(--background, #F5F5F5);
+  --monet-bg-secondary: var(--tonalSurface, #fff);
+  --monet-bg-input: var(--surfaceBright, #F5F5F5);
+  --monet-text-primary: var(--onSurface, #000);
+  --monet-text-muted: #757575;
+  --monet-border-color: var(--outlineVariant, #ccc);
+  --monet-border-alt: var(--filledTonalButtonContainerColor, #ddd);
+  --monet-border-alt-text: var(--filledTonalButtonContentColor, #333);
+  --monet-btn-primary: var(--primary, #007bff);
+  --monet-btn-primary-text: var(--onPrimary, #fff);
+  --monet-shadow-light: rgba(0, 0, 0, 0.2);
+  --monet-shadow-medium: rgba(0, 0, 0, 0.5);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --monet-bg-primary: var(--background, #151515);
+    --monet-bg-secondary: var(--tonalSurface, #292929);
+    --monet-bg-input: var(--surfaceBright, #1b1b1b);
+    --monet-text-primary: var(--onSurface, #eee);
+    --monet-text-muted: #C2C2C2;
+    --monet-border-color: var(--outlineVariant, #636363);
+    --monet-border-alt: var(--filledTonalButtonContainerColor, #666);
+    --monet-border-alt-text: var(--filledTonalButtonContentColor, #eee);
+  }
+}
+
+.theme-transition * {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease !important;
 }
 
 /* ============================================
@@ -35,17 +73,16 @@ body {
    🔹 PAGE LAYOUT AND VISIBILITY
 ============================================ */
 #page-content {
-  min-height: 100vh;
+  min-height: calc(100vh - 64px);
   max-width: 1024px;
   margin: 0 auto;
   padding: 0.5rem 10px 0.5rem;
+  overflow: hidden;
 }
 .page {
   display: none;
   flex-direction: column;
   width: 100%;
-  min-height: calc(100vh - 64px);
-  padding-top: 1.5rem;
   opacity: 0;
   transform: translateX(20px);
   transition: opacity 0.3s ease, transform 0.3s ease;
@@ -58,9 +95,7 @@ body {
   transform: translateX(0);
   pointer-events: auto;
   z-index: 10;
-}
-#settings-page {
-  padding-top: 2.5rem;
+  margin-bottom: 64px;
 }
 
 /* ============================================
@@ -93,7 +128,7 @@ body {
   cursor: pointer;
 }
 .nav-btn.active {
-  color: var(--soft-white);
+  color: var(--accent-pink);
 }
 .nav-icon {
   width: 22px;
@@ -104,102 +139,197 @@ body {
   transition: filter 0.3s ease;
 }
 .nav-btn.active .nav-icon {
+  filter: brightness(1.2);
+}
+
+/* ============================================
+   🔹 REFRESH SECTION
+============================================ */
+.refresh-section {
+  display: flex;
+  justify-content: end;
+  margin-bottom: 1rem;
+}
+
+.refresh-btn-main {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--secondary-border);
+  color: var(--soft-white);
+  border: 1px solid #3a3a3a;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.refresh-btn-main:hover {
+  background-color: #3a3a3a;
+  border-color: var(--accent-pink);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(79, 195, 247, 0.3);
+}
+
+.refresh-btn-main img {
+  width: 18px;
+  height: 18px;
+  filter: brightness(0.8);
+  transition: filter 0.2s ease;
+}
+
+.refresh-btn-main:hover img {
   filter: brightness(1);
 }
 
-/* ============================================
-   🔹 CLOCK DISPLAY STYLING
-============================================ */
-#clock-date,
-#clock-time {
-  background-color: #1c1c1c;
-  border: 1px solid var(--secondary-border);
-  padding: 0.4rem 0.8rem;
-  border-radius: 8px;
-  font-size: 13.5px;
+.version-text {
+  font-size: 22px;
+  font-weight: 800;
   color: var(--accent-pink);
-  transition: all 0.2s ease;
-  display: inline-block;
-  min-width: 110px;       /* Tambahan agar cukup untuk tanggal */
-  text-align: center;     /* Tengahin isi */
-  white-space: nowrap;    /* Biar tanggal nggak pecah ke bawah */
-}
-#clock-date:hover,
-#clock-time:hover {
-  background-color: #262626;
-  transform: scale(1.02);
-  border-color: var(--accent-pink);
-  color: var(--deep-pink);
-}
-.clock-row td {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding-top: 1.2rem;
 }
 
 /* ============================================
-   🔹 INFO BOX AND TABLES
+   🔹 INFO CARDS GRID
+============================================ */
+.info-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.info-card {
+  background: linear-gradient(145deg, var(--gothic-purple), #1a1a1a);
+  border: 1px solid var(--secondary-border);
+  border-radius: 16px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.info-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-pink), var(--deep-pink));
+  opacity: 0.6;
+}
+
+.info-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(79, 195, 247, 0.2);
+  border-color: var(--accent-pink);
+}
+
+.info-card:hover::before {
+  opacity: 1;
+}
+
+.card-header {
+  margin-bottom: 1rem;
+}
+
+.card-header h3 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--nav-inactive);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.card-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+}
+
+.card-value {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--soft-white);
+  padding: 0.5rem 1rem;
+  background-color: rgba(79, 195, 247, 0.1);
+  border: 1px solid rgba(79, 195, 247, 0.3);
+  border-radius: 10px;
+  text-align: center;
+  min-width: 120px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.card-value:hover {
+  background-color: rgba(79, 195, 247, 0.2);
+  border-color: var(--accent-pink);
+  transform: scale(1.05);
+}
+
+.status-card {
+  border-color: #ef5350;
+}
+
+.status-card::before {
+  background: linear-gradient(90deg, #ef5350, #e57373);
+}
+
+.status-card .card-value {
+  background-color: rgba(239, 83, 80, 0.1);
+  border-color: rgba(239, 83, 80, 0.3);
+  color: #ef5350;
+}
+
+.status-card.offline {
+  border-color: #ef5350;
+}
+
+.status-card.offline::before {
+  background: linear-gradient(90deg, #ef5350, #e57373);
+}
+
+.status-card.offline .card-value {
+  background-color: rgba(239, 83, 80, 0.1);
+  border-color: rgba(239, 83, 80, 0.3);
+  color: #ef5350;
+}
+
+.status-card.online {
+  border-color: var(--green);
+}
+
+.status-card.online::before {
+  background: linear-gradient(90deg, var(--green), #81c784);
+}
+
+.status-card.online .card-value {
+  background-color: rgba(102, 187, 106, 0.1);
+  border-color: rgba(102, 187, 106, 0.3);
+  color: var(--green);
+}
+
+/* ============================================
+   🔹 INFO BOX (for other sections)
 ============================================ */
 .info-box {
   position: relative;
-  margin-top: 1.5rem;
   background-color: var(--gothic-purple);
   padding: 1rem;
   border-radius: 10px;
-  box-shadow: 0 0 0 1px var(--secondary-border);
+  border: 1px solid var(--secondary-border);
   font-size: 14px;
   line-height: 1.6;
   overflow-x: auto;
 }
 .info-content {
   margin-top: 2rem;
-}
-.info-box .info-table {
-  padding-top: 2rem;
-  width: 100%;
-  border-collapse: collapse;
-}
-.info-table th,
-.info-table td {
-  text-align: left;
-  padding: 1.3rem;
-  border-bottom: 1px solid var(--secondary-border);
-}
-.info-table th {
-  color: var(--nav-inactive);
-  font-weight: 500;
-  width: 45%;
-}
-.info-table td {
-  color: var(--soft-white);
-}
-
-/* ============================================
-   🔹 BUTTONS
-============================================ */
-.refresh-btn-float,
-.version-refresh-btn {
-  background-color: var(--secondary-border);
-  color: var(--soft-white);
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 12px;
-  font-weight: 500;
-  padding: 0.4rem 0.8rem;
-  transition: background-color 0.2s ease;
-  text-align: center;
-}
-.refresh-btn-float {
-  position: absolute;
-  top: 0.1rem;
-  right: 0.2rem;
-  z-index: 10;
-}
-.refresh-btn-float:hover,
-.version-refresh-btn:hover {
-  background-color: #3a3a3a;
 }
 
 /* ============================================
@@ -231,7 +361,8 @@ body {
   gap: 1rem;
   margin-top: 1rem;
 }
-.action-buttons button {
+.action-buttons button,
+.action-buttons .menu-btn {
   width: 100%;
   max-width: 360px;
   padding: 1rem 1.5rem;
@@ -246,12 +377,14 @@ body {
   transition: background-color 0.2s ease, transform 0.1s ease, border 0.2s ease;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
 }
-.action-buttons button:hover {
+.action-buttons button:hover,
+.action-buttons .menu-btn:hover {
   background-color: #3a3a3a;
   border-color: #4a4a4a;
   color: var(--soft-white);
 }
-.action-buttons button:active {
+.action-buttons button:active,
+.action-buttons .menu-btn:active {
   background-color: #444;
   transform: scale(0.97);
 }
@@ -329,7 +462,7 @@ body {
   padding: 1rem;
   background-color: var(--gothic-purple);
   border-radius: 12px;
-  box-shadow: 0 0 0 1px var(--secondary-border);
+  border: 1px solid var(--secondary-border);
 }
 #dev-info h3 {
   font-size: 16px;
@@ -404,7 +537,6 @@ body {
    🔹 UPDATE BOX
 ============================================ */
 .update-box {
-  margin-top: 2rem;
   padding: 2rem;
   background-color: var(--gothic-purple);
   border-radius: 16px;
@@ -501,6 +633,56 @@ body {
     width: 32px;
     height: 32px;
   }
+
+  .info-cards-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+  }
+
+  .info-card {
+    padding: 1.2rem;
+  }
+
+  .card-header h3 {
+    font-size: 13px;
+  }
+
+  .card-value {
+    font-size: 14px;
+    padding: 0.4rem 0.8rem;
+    min-width: 100px;
+  }
+
+  .refresh-btn-main {
+    padding: 0.6rem 1.2rem;
+    font-size: 13px;
+  }
+
+  .refresh-btn-main img {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .info-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .info-card {
+    padding: 1rem;
+  }
+
+  .card-header h3 {
+    font-size: 12px;
+  }
+
+  .card-value {
+    font-size: 13px;
+    padding: 0.4rem 0.6rem;
+    min-width: 80px;
+  }
 }
 
 /* ============================================
@@ -510,14 +692,23 @@ body {
   font-size: 24px;
   font-weight: 700;
   color: var(--accent-pink);
-  margin-bottom: 5rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
   text-align: center;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
   letter-spacing: 1px;
 }
+.big-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--accent-pink);
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
 
 /* ============================================
-   🔹 ADVANCE MENU BUTTONS
+   🔹 MENU BUTTONS
 ============================================ */
 .menu-btn {
   background-color: #444;
@@ -528,12 +719,34 @@ body {
   border-radius: 4px;
   cursor: pointer;
   margin-right: 10px;
+  margin-left: 10px;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 .menu-btn:hover {
   background-color: #666;
   box-shadow: 0 0 8px var(--accent-pink);
   border: 1px solid var(--accent-pink);
+}
+.split-items {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+}
+.gap-2 {
+  gap: 2rem;
+}
+
+.menu-btn img {
+  width: 16px;
+  height: 16px;
+  filter: brightness(0.8);
+  transition: filter 0.2s ease;
+}
+
+.menu-btn:hover img {
+  filter: brightness(1);
 }
 .button-group {
   display: flex;
@@ -546,62 +759,92 @@ body {
 ============================================ */
 #toast-container {
   position: fixed;
-  top: 83%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 20px;
+  right: 20px;
   z-index: 9999;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  max-width: 90%;
-  pointer-events: none;
-  max-height: 30vh;
-  overflow-y: auto;
-}
-.toast {
-  background-color: rgba(24, 20, 28, 0.9);
-  color: var(--accent-pink);
-  padding: 12px 30px;
-  border-radius: 20px;
-  font-size: 14px;
-  font-weight: 600;
-  box-shadow: 0 4px 12px rgba(79, 195, 247, 0.7);
-  user-select: none;
-  pointer-events: auto;
-  opacity: 0;
-  animation: toast-fadein 0.3s forwards, toast-fadeout 0.3s 2.7s forwards;
-  filter: drop-shadow(0 0 8px var(--accent-pink));
+  gap: 12px;
   max-width: 400px;
-  width: fit-content;
-  min-width: 200px;
-  text-align: center;
+  pointer-events: none;
 }
-@keyframes toast-fadein {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
+
+.toast {
+  background: var(--secondary-bg);
+  color: var(--soft-white);
+  padding: 16px 20px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--secondary-border);
+  opacity: 0;
+  transform: translateX(100%);
+  animation: toast-slidein 0.3s ease forwards,
+             toast-slideout 0.3s ease 3s forwards;
+  pointer-events: auto;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.toast:hover {
+  transform: translateX(0) scale(1.02);
+}
+
+.toast.success {
+  border-left: 4px solid var(--green);
+}
+
+.toast.error {
+  border-left: 4px solid var(--primary-red);
+}
+
+.toast.warning {
+  border-left: 4px solid #ffc107;
+}
+
+.toast.info {
+  border-left: 4px solid var(--accent-pink);
+}
+
+@keyframes toast-slidein {
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
   }
 }
-@keyframes toast-fadeout {
-  from {
-    opacity: 1;
-    transform: translateY(0);
-  }
+
+@keyframes toast-slideout {
   to {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateX(100%);
   }
+}
+
+/* ============================================
+   🔹 SECTIONS
+============================================ */
+.sec-title {
+  font-size: 25px;
+  font-weight: 600;
+  color: var(--accent-pink);
+  margin-top: 0;
+  margin-bottom: 1rem;
 }
 
 /* Responsive penyesuaian */
 @media (max-width: 480px) {
+  #toast-container {
+    top: 10px;
+    right: 10px;
+    left: 10px;
+    max-width: none;
+  }
+
   .toast {
     font-size: 13px;
-    padding: 10px 16px;
-    max-width: 90vw;
+    padding: 12px 16px;
+    border-radius: 8px;
   }
 }

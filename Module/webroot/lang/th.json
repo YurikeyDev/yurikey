@@ -2,7 +2,6 @@
   "nav_home": "หน้าหลัก",
   "nav_menu": "เมนู",
   "nav_update": "อัปเดต",
-  "nav_advancemenu": "เมนู +",
   "nav_settings": "การตั้งค่า",
 
   "home_version": "เวอร์ชันโมดูล",
@@ -20,8 +19,9 @@
   "menu_keybox": "ตั้งค่า Yuri Keybox",
   "menu_target": "ตั้งค่า target.txt",
   "menu_patch": "ใช้แพตช์ความปลอดภัย",
+  "menu_keybox_title": "Keybox",
 
-  "advance_menu_title": "เมนูล่วงหน้า",
+  "advance_section_title": "ขั้นสูง",
   "advance_fix_detect_hma": "แก้ไขการตรวจจับ HMA",
   "advance_fix_detect_lsposed": "แก้ไขการตรวจจับ lsposed (2)",
   "advance_fix_detect_pif": "แก้ไขการตรวจจับ PIF (2)",
@@ -34,7 +34,20 @@
   "update_telegram": "เข้าร่วมช่อง Telegram",
   "update_note": "เข้าร่วมช่อง Telegram ของเราหรือดูที่ GitHub สำหรับการอัปเดต การมีส่วนร่วม และการสนทนาทางเทคนิค",
 
+  "settings_title": "การตั้งค่า",
+  "settings_language": "ภาษา",
+  "settings_theme": "ธีม",
   "settings_contributors": "ผู้ร่วมพัฒนาโครงการ",
+
+  "theme_dark_blue": "น้ำเงินเข้ม",
+  "theme_dark_purple": "ม่วงเข้ม",
+  "theme_dark_green": "เขียวเข้ม",
+  "theme_dark_orange": "ส้มเข้ม",
+  "theme_dark_red": "แดงเข้ม",
+  "theme_cyberpunk": "ไซเบอร์พังก์",
+  "theme_midnight": "เที่ยงคืน",
+  "theme_forest": "ป่าไผ่",
+  "theme_monet": "โมเนต์",
 
   "role_Founder & Module Developer": "ผู้ก่อตั้งและนักพัฒนาโมดูล",
   "role_Module Developer": "นักพัฒนาโมดูล",

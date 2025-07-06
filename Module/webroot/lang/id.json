@@ -2,7 +2,6 @@
   "nav_home": "Beranda",
   "nav_menu": "Menu",
   "nav_update": "Perbarui",
-  "nav_advancemenu": "Menu +",
   "nav_settings": "Pengaturan",
 
   "home_version": "Versi Modul",
@@ -20,8 +19,9 @@
   "menu_keybox": "Atur Yuri Keybox",
   "menu_target": "Atur target.txt",
   "menu_patch": "Terapkan Patch Keamanan",
+  "menu_keybox_title": "Keybox",
 
-  "advance_menu_title": "Menu Lanjutan",
+  "advance_section_title": "Lanjutan",
   "advance_fix_detect_hma": "Perbaiki Deteksi HMA",
   "advance_fix_detect_lsposed": "Perbaiki Deteksi lsposed (2)",
   "advance_fix_detect_pif": "Perbaiki Deteksi PIF (2)",
@@ -34,7 +34,20 @@
   "update_telegram": "Bergabung dengan Channel Telegram",
   "update_note": "Bergabunglah dengan channel Telegram kami atau cek GitHub untuk pembaruan, kontribusi, dan diskusi teknis.",
 
+  "settings_title": "Pengaturan",
+  "settings_language": "Bahasa",
+  "settings_theme": "Tema",
   "settings_contributors": "Kontributor Proyek",
+
+  "theme_dark_blue": "Biru Gelap",
+  "theme_dark_purple": "Ungu Gelap",
+  "theme_dark_green": "Hijau Gelap",
+  "theme_dark_orange": "Oranye Gelap",
+  "theme_dark_red": "Merah Gelap",
+  "theme_cyberpunk": "Cyberpunk",
+  "theme_midnight": "Tengah Malam",
+  "theme_forest": "Hutan",
+  "theme_monet": "Monet",
 
   "role_Founder & Module Developer": "Pendiri & Pengembang Modul",
   "role_Module Developer": "Pengembang Modul",
