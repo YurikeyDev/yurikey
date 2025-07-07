@@ -2,7 +2,6 @@
   "nav_home": "Ana Sayfa",
   "nav_menu": "Menü",
   "nav_update": "Güncelle",
-  "nav_advancemenu": "Gelişmiş Menü",
   "nav_settings": "Ayarlar",
 
   "home_version": "Modül Sürümü",
@@ -20,8 +19,9 @@
   "menu_keybox": "Yuri Keybox Kur",
   "menu_target": "target.txt Ayarla",
   "menu_patch": "Güvenlik Yamasını Uygula",
+  "menu_keybox_title": "Keybox",
 
-  "advance_menu_title": "Gelişmiş Menü",
+  "advance_section_title": "Gelişmiş",
   "advance_fix_detect_hma": "HMA Tespitini Düzelt",
   "advance_fix_detect_lsposed": "lsposed Tespitini Düzelt (2)",
   "advance_fix_detect_pif": "PIF Tespitini Düzelt (2)",
@@ -34,7 +34,20 @@
   "update_telegram": "Telegram Kanalına Katıl",
   "update_note": "Güncellemeler, katkılar ve teknik tartışmalar için Telegram kanalımıza katılabilir veya GitHub'ı kontrol edebilirsin.",
 
+  "settings_title": "Ayarlar",
+  "settings_language": "Dil",
+  "settings_theme": "Tema",
   "settings_contributors": "Proje Katkıcıları",
+
+  "theme_dark_blue": "Koyu Mavi",
+  "theme_dark_purple": "Koyu Mor",
+  "theme_dark_green": "Koyu Yeşil",
+  "theme_dark_orange": "Koyu Turuncu",
+  "theme_dark_red": "Koyu Kırmızı",
+  "theme_cyberpunk": "Cyberpunk",
+  "theme_midnight": "Gece Yarısı",
+  "theme_forest": "Orman",
+  "theme_monet": "Monet",
 
   "role_Founder & Module Developer": "Kurucu & Modül Geliştirici",
   "role_Module Developer": "Modül Geliştirici",

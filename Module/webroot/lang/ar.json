@@ -2,7 +2,6 @@
   "nav_home": "الرئيسية",
   "nav_menu": "القائمة",
   "nav_update": "تحديث",
-  "nav_advancemenu": "القائمة +",
   "nav_settings": "الإعدادات",
 
   "home_version": "إصدار الوحدة",
@@ -20,8 +19,9 @@
   "menu_keybox": "إعداد Yuri Keybox",
   "menu_target": "إعداد target.txt",
   "menu_patch": "تطبيق تصحيح الأمان",
+  "menu_keybox_title": "Keybox",
 
-  "advance_menu_title": "القائمة المتقدمة",
+  "advance_section_title": "المتقدمة",
   "advance_fix_detect_hma": "إصلاح اكتشاف HMA",
   "advance_fix_detect_lsposed": "إصلاح اكتشاف lsposed (2)",
   "advance_fix_detect_pif": "إصلاح اكتشاف PIF (2)",
@@ -34,7 +34,20 @@
   "update_telegram": "انضم إلى قناة Telegram",
   "update_note": "انضم إلى قناتنا على Telegram أو تحقق من GitHub للحصول على التحديثات والمساهمات والنقاشات التقنية.",
 
+  "settings_title": "الإعدادات",
+  "settings_language": "اللغة",
+  "settings_theme": "المظهر",
   "settings_contributors": "المساهمون",
+
+  "theme_dark_blue": "الأزرق الداكن",
+  "theme_dark_purple": "البنفسجي الداكن",
+  "theme_dark_green": "الأخضر الداكن",
+  "theme_dark_orange": "البرتقالي الداكن",
+  "theme_dark_red": "الأحمر الداكن",
+  "theme_cyberpunk": "سايبر بانك",
+  "theme_midnight": "منتصف الليل",
+  "theme_forest": "الغابة",
+  "theme_monet": "موني",
 
   "role_Founder & Module Developer": "المؤسس ومطور الإضافة",
   "role_Module Developer": "مطور الإضافة",
