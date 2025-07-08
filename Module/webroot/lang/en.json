@@ -1,5 +1,15 @@
 {
   "home_status_online": "Online",
   "home_status_offline": "Offline",
-  "home_refreshing": "Refreshing..."
+  "home_refreshing": "Refreshing...",
+
+  "theme_dark_blue": "Dark Blue",
+  "theme_dark_purple": "Dark Purple",
+  "theme_dark_green": "Dark Green",
+  "theme_dark_orange": "Dark Orange",
+  "theme_dark_red": "Dark Red",
+  "theme_cyberpunk": "Cyberpunk",
+  "theme_midnight": "Midnight",
+  "theme_forest": "Forest",
+  "theme_monet": "Monet"
 }
