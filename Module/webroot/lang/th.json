@@ -1,6 +1,7 @@
 {
   "nav_home": "หน้าหลัก",
   "nav_menu": "เมนู",
+  "nav_advancemenu": "เมนู +",
   "nav_update": "อัปเดต",
   "nav_settings": "การตั้งค่า",
 
@@ -20,8 +21,9 @@
   "menu_target": "ตั้งค่า target.txt",
   "menu_patch": "ใช้แพตช์ความปลอดภัย",
   "menu_keybox_title": "Keybox",
+  "menu_keybox_restore": "กู้คืนข้อมูลสำรอง Keybox",
 
-  "advance_section_title": "ขั้นสูง",
+  "advance_menu_title": "เมนูล่วงหน้า",
   "advance_fix_detect_hma": "แก้ไขการตรวจจับ HMA",
   "advance_fix_detect_lsposed": "แก้ไขการตรวจจับ lsposed (2)",
   "advance_fix_detect_pif": "แก้ไขการตรวจจับ PIF (2)",

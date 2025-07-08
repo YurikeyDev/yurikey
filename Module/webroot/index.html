@@ -80,50 +80,54 @@
         </div>
       </section>
 
-      <!-- Actions Page Section with box style -->
       <section id="actions-page" class="page">
         <div class="content">
           <h1 class="main-title" data-i18n="menu_title">Main Menu</h1>
           <div class="info-box info-content" style="margin-top: 3.5rem;">
             <h3 class="sec-title" data-i18n="menu_keybox_title">Keybox</h3>
             <div class="action-buttons">
-              <!-- 1. Set Up Yuri Keybox -->
               <button class="menu-btn split-items" data-script="yuri_keybox.sh">
                 <img src="/common/assets/icon/play.svg" alt="Run" />
                 <span data-i18n="menu_keybox">Set up Yuri Keybox</span>
+              </button>
+
+              <button class="menu-btn split-items" data-script="restore_backup_kbx.sh">
+                <img src="/common/assets/icon/play.svg" alt="Run" />
+                <span data-i18n="menu_keybox_restore">Restore Backup Keybox</span>
               </button>
             </div>
           </div>
           <div class="info-box info-content">
             <h3 class="sec-title">GMS</h3>
             <div class="action-buttons">
-              <!-- 2. Force Stop & Clear Play Store Data -->
               <button class="menu-btn split-items" data-script="kill_google_process.sh">
                 <img src="/common/assets/icon/play.svg" alt="Run" />
                 <span data-i18n="menu_force_clear">Force Stop & Clear Data Play Store</span>
               </button>
 
-              <!-- 3. Set Up Target.txt -->
               <button class="menu-btn split-items" data-script="target_txt.sh">
                 <img src="/common/assets/icon/play.svg" alt="Run" />
                 <span data-i18n="menu_target">Set up target.txt</span>
               </button>
 
-              <!-- 4. Set Security Patch -->
               <button class="menu-btn split-items" data-script="security_patch.sh">
                 <img src="/common/assets/icon/play.svg" alt="Run" />
                 <span data-i18n="menu_patch">Set up Security Patch</span>
               </button>
 
-              <!-- 5. Set Verified Boothash-->
               <button class="menu-btn split-items" data-script="boot_hash.sh">
                 <img src="/common/assets/icon/play.svg" alt="Run" />
                 <span data-i18n="advance_set_verified_boot">Set Verified Boothash</span>
               </button>
             </div>
           </div>
-          <div class="info-box info-content">
-            <h3 class="sec-title" data-i18n="advance_section_title">Advanced</h3>
+        </div>
+      </section>
+
+      <section id="advance-menu" class="page">
+        <div class="content">
+          <h1 class="main-title" data-i18n="advance_menu_title">Advanced Menu</h1>
+          <div class="info-box info-content" style="padding-top: 0rem;">
             <div class="action-buttons">
               <!-- 6. Fix HMA Detection -->
               <button id="btn-fix-detect-hma" class="menu-btn split-items" data-script="hma.sh">
@@ -238,6 +242,10 @@
       <button class="nav-btn" data-target="actions-page">
         <img src="/common/assets/navbar/menu.svg" alt="Menu" class="nav-icon" />
         <span data-i18n="nav_menu">Menu</span>
+      </button>
+      <button class="nav-btn" data-target="advance-menu">
+        <img src="/common/assets/navbar/android.png" alt="Advance Menu" class="nav-icon" />
+        <span data-i18n="nav_advancemenu">Menu +</span>
       </button>
       <button class="nav-btn" data-target="update-page">
         <img src="/common/assets/navbar/community.png" alt="Update" class="nav-icon" />

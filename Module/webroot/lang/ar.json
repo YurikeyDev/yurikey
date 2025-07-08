@@ -1,6 +1,7 @@
 {
   "nav_home": "الرئيسية",
   "nav_menu": "القائمة",
+  "nav_advancemenu": "القائمة +",
   "nav_update": "تحديث",
   "nav_settings": "الإعدادات",
 
@@ -20,8 +21,9 @@
   "menu_target": "إعداد target.txt",
   "menu_patch": "تطبيق تصحيح الأمان",
   "menu_keybox_title": "Keybox",
+  "menu_keybox_restore": "استعادة النسخ الاحتياطي Keybox",
 
-  "advance_section_title": "المتقدمة",
+  "advance_menu_title": "القائمة المتقدمة",
   "advance_fix_detect_hma": "إصلاح اكتشاف HMA",
   "advance_fix_detect_lsposed": "إصلاح اكتشاف lsposed (2)",
   "advance_fix_detect_pif": "إصلاح اكتشاف PIF (2)",

@@ -20,8 +20,9 @@
   "menu_target": "Configurar Target.txt",
   "menu_patch": "Configurar Patch de Segurança",
   "menu_keybox_title": "Keybox",
+  "menu_keybox_restore": "Restaurar Backup Keybox",
 
-  "advance_section_title": "Avançado",
+  "advance_menu_title": "Menu Avançado",
   "advance_fix_detect_hma": "Consertar Detectado HMA",
   "advance_fix_detect_lsposed": "Consertar LSPosed Detectado (2)",
   "advance_fix_detect_pif": "Consertar Detectado PIF (2)",
