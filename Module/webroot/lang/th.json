@@ -21,6 +21,7 @@
   "menu_target": "ตั้งค่า target.txt",
   "menu_patch": "ใช้แพตช์ความปลอดภัย",
   "menu_keybox_title": "Keybox",
+  "menu_keybox_restore": "กู้คืนข้อมูลสำรอง Keybox",
 
   "advance_menu_title": "เมนูล่วงหน้า",
   "advance_fix_detect_hma": "แก้ไขการตรวจจับ HMA",

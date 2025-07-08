@@ -21,6 +21,7 @@
   "menu_target": "Thiết Lập Target.txt",
   "menu_patch": "Thiết lập Security Patch",
   "menu_keybox_title": "Keybox",
+  "menu_keybox_restore": "Khôi Phục Keybox",
 
   "advance_menu_title": "Menu Nâng Cao",
   "advance_fix_detect_hma": "Sửa Phát Hiện HMA",

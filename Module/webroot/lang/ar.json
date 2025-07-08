@@ -21,6 +21,7 @@
   "menu_target": "إعداد target.txt",
   "menu_patch": "تطبيق تصحيح الأمان",
   "menu_keybox_title": "Keybox",
+  "menu_keybox_restore": "استعادة النسخ الاحتياطي Keybox",
 
   "advance_menu_title": "القائمة المتقدمة",
   "advance_fix_detect_hma": "إصلاح اكتشاف HMA",

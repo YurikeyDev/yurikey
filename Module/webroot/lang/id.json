@@ -21,6 +21,7 @@
   "menu_target": "Atur target.txt",
   "menu_patch": "Terapkan Patch Keamanan",
   "menu_keybox_title": "Keybox",
+  "menu_keybox_restore": "Pulihkan Cadangan Keybox",
 
   "advance_menu_title": "Menu Lanjutan",
   "advance_fix_detect_hma": "Perbaiki Deteksi HMA",

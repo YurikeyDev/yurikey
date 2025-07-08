@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", () => {
   console.log("main.js active");
 
   const BASE_SCRIPT = "/data/adb/modules/Yurikey/Yuri/";
-  const BASE_SCRIPT_ADV = "/data/adb/modules/Yurikey/webroot/common/";
   let nextToastTime = 0;
 
   // Make sure language.js is already loaded so that t and tFormat are available
