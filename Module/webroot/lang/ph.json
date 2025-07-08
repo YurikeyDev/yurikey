@@ -1,6 +1,7 @@
 {
   "nav_home": "Bahay",
   "nav_menu": "Menu",
+  "nav_advancemenu": "Menu +",
   "nav_update": "I-update",
   "nav_settings": "Mga Setting",
 
@@ -21,7 +22,7 @@
   "menu_patch": "I-apply ang Security Patch",
   "menu_keybox_title": "Keybox",
 
-  "advance_section_title": "Advanced",
+  "advance_menu_title": "Advanced Menu",
   "advance_fix_detect_hma": "Ayusin ang Pag-detect ng HMA",
   "advance_fix_detect_lsposed": "Ayusin ang Pag-detect ng lsposed (2)",
   "advance_fix_detect_pif": "Ayusin ang Pag-detect ng PIF (2)",

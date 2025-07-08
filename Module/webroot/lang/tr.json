@@ -1,6 +1,7 @@
 {
   "nav_home": "Ana Sayfa",
   "nav_menu": "Menü",
+  "nav_advancemenu": "Gelişmiş Menü",
   "nav_update": "Güncelle",
   "nav_settings": "Ayarlar",
 
@@ -21,7 +22,7 @@
   "menu_patch": "Güvenlik Yamasını Uygula",
   "menu_keybox_title": "Keybox",
 
-  "advance_section_title": "Gelişmiş",
+  "advance_menu_title": "Gelişmiş Menü",
   "advance_fix_detect_hma": "HMA Tespitini Düzelt",
   "advance_fix_detect_lsposed": "lsposed Tespitini Düzelt (2)",
   "advance_fix_detect_pif": "PIF Tespitini Düzelt (2)",
