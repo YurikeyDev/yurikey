@@ -21,7 +21,6 @@
   "menu_target": "I-set Up ang target.txt",
   "menu_patch": "I-apply ang Security Patch",
   "menu_keybox_title": "Keybox",
-  "menu_keybox_restore": "Ibalik ang Backup Keybox",
 
   "advance_menu_title": "Advanced Menu",
   "advance_fix_detect_hma": "Ayusin ang Pag-detect ng HMA",

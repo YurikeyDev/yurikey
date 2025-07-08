@@ -21,7 +21,6 @@
   "menu_target": "target.txt Ayarla",
   "menu_patch": "Güvenlik Yamasını Uygula",
   "menu_keybox_title": "Keybox",
-  "menu_keybox_restore": "Keybox Yedekini Geri Yükle",
 
   "advance_menu_title": "Gelişmiş Menü",
   "advance_fix_detect_hma": "HMA Tespitini Düzelt",
