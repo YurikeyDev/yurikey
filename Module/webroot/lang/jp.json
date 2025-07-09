@@ -1,0 +1,57 @@
+ 
+{
+  "nav_home": "ホーム",
+  "nav_menu": "メニュー",
+  "nav_update": "アップデート",
+  "nav_advancemenu": "詳細メニュー",
+  "nav_settings": "設定",
+
+  "home_version": "モジュールバージョン",
+  "home_root": "Root実装",
+  "home_refresh": "情報を更新",
+  "home_refreshing": "更新中...",
+  "home_status": "ステータス",
+  "home_status_online": "オンライン",
+  "home_status_offline": "オフライン",
+  "home_clock_date": "日付",
+  "home_clock_time": "時刻",
+
+  "menu_title": "メインメニュー",
+  "menu_force_clear": "Playストアの強制停止とデータ消去",
+  "menu_keybox": "Yuri Keyboxの設定",
+  "menu_target": "Target.txtの設定",
+  "menu_patch": "Security Patchの設定",
+
+  "advance_menu_title": "詳細メニュー",
+  "advance_fix_detect_hma": "HMA検出の修正",
+  "advance_fix_detect_lsposed": "LSPosed検出の修正 (2)",
+  "advance_fix_detect_pif": "PIF検出の修正 (2)",
+  "advance_fix_detect_recovery_file": "リカバリーファイル検出の修正",
+  "advance_set_verified_boot": "Verified Boothashの設定",
+
+  "update_title": "アップデートとサポート",
+  "update_desc": "Yuri Keyの最新バージョン、バグ修正、新機能についての最新情報",
+  "update_github": "GitHubで見る",
+  "update_telegram": "Telegramチャンネルに参加する",
+  "update_note": "Telegramチャンネルに参加するか、GitHubでアップデート、貢献、技術的な議論を確認してください",
+
+  "settings_contributors": "プロジェクト貢献者",
+
+  "role_Founder & Module Developer": "創設者とモジュール開発者",
+  "role_Module Developer": "モジュール開発者",
+  "role_WebUI Developer": "WebUI 開発者",
+  "role_Ex Module Developer": "元モジュール開発者",
+
+  "executing": " \"{script}\" を実行しています……",
+  "success": "スクリプト \"{script}\" が正常に実行されました",
+  "failed": " \"{script}\"スクリプトの実行が失敗しました",
+  "timeout": "スクリプト \"{script}\" がタイムアウトしました",
+  "ksu_not_available": "KernelSU exec APIが利用できません",
+
+  "status_online": "ステータス : オンライン",
+  "status_offline": "ステータス : オフライン",
+  "home_refresh_failed": "情報の更新に失敗しました",
+  "home_no_internet": "インターネットに接続されていません",
+  "home_connected": "接続済み",
+  "home_disconnected": "切断済み"
+}

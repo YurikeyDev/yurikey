@@ -1,8 +1,8 @@
 {
   "nav_home": "Laman Utama",
   "nav_menu": "Menu",
-  "nav_advancemenu": "Menu +",
   "nav_update": "Kemas Kini",
+  "nav_advancemenu": "Menu +",
   "nav_settings": "Tetapan",
 
   "home_version": "Versi Modul",
@@ -20,8 +20,6 @@
   "menu_keybox": "Sediakan Yuri Keybox",
   "menu_target": "Sediakan target.txt",
   "menu_patch": "Terapkan Tampalan Keselamatan",
-  "menu_keybox_title": "Keybox",
-  "menu_keybox_restore": "Pulihkan Sandaran Keybox",
 
   "advance_menu_title": "Menu Lanjutan",
   "advance_fix_detect_hma": "Betulkan Pengesanan HMA",
@@ -36,20 +34,7 @@
   "update_telegram": "Sertai Saluran Telegram",
   "update_note": "Sertai saluran Telegram kami atau semak GitHub untuk kemas kini, sumbangan, dan perbincangan teknikal.",
 
-  "settings_title": "Tetapan",
-  "settings_language": "Bahasa",
-  "settings_theme": "Tema",
   "settings_contributors": "Penyumbang Projek",
-
-  "theme_dark_blue": "Biru Gelap",
-  "theme_dark_purple": "Ungu Gelap",
-  "theme_dark_green": "Hijau Gelap",
-  "theme_dark_orange": "Oren Gelap",
-  "theme_dark_red": "Merah Gelap",
-  "theme_cyberpunk": "Cyberpunk",
-  "theme_midnight": "Tengah Malam",
-  "theme_forest": "Hutan",
-  "theme_monet": "Monet",
 
   "role_Founder & Module Developer": "Pengasas & Pembangun Modul",
   "role_Module Developer": "Pembangun Modul",

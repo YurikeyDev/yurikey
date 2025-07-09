@@ -1,8 +1,8 @@
 {
   "nav_home": "Trang Chủ",
   "nav_menu": "Menu",
-  "nav_advancemenu": "Menu +",
   "nav_update": "Cập Nhật",
+  "nav_advancemenu": "Menu +",
   "nav_settings": "Cài Đặt",
 
   "home_version": "Phiên Bản Module",
@@ -20,8 +20,6 @@
   "menu_keybox": "Thiết Lập Yuri Keybox",
   "menu_target": "Thiết Lập Target.txt",
   "menu_patch": "Thiết lập Security Patch",
-  "menu_keybox_title": "Keybox",
-  "menu_keybox_restore": "Khôi Phục Keybox",
 
   "advance_menu_title": "Menu Nâng Cao",
   "advance_fix_detect_hma": "Sửa Phát Hiện HMA",
@@ -36,20 +34,7 @@
   "update_telegram": "Tham gia Kênh Telegram",
   "update_note": "Tham gia kênh Telegram của chúng tôi hoặc kiểm tra GitHub để cập nhật, đóng góp và thảo luận kỹ thuật.",
 
-  "settings_title": "Cài Đặt",
-  "settings_language": "Ngôn Ngữ",
-  "settings_theme": "Chủ Đề",
   "settings_contributors": "Những Người Đóng Góp Dự Án",
-
-  "theme_dark_blue": "Xanh Dương Đậm",
-  "theme_dark_purple": "Tím Đậm",
-  "theme_dark_green": "Xanh Lá Đậm",
-  "theme_dark_orange": "Cam Đậm",
-  "theme_dark_red": "Đỏ Đậm",
-  "theme_cyberpunk": "Cyberpunk",
-  "theme_midnight": "Nửa Đêm",
-  "theme_forest": "Rừng Cây",
-  "theme_monet": "Monet",
 
   "role_Founder & Module Developer": "Người Sáng Lập & Nhà Phát Triển Module",
   "role_Module Developer": "Nhà Phát Triển Module",

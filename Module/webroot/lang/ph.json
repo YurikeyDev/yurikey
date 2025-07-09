@@ -1,8 +1,8 @@
 {
   "nav_home": "Bahay",
   "nav_menu": "Menu",
-  "nav_advancemenu": "Menu +",
   "nav_update": "I-update",
+  "nav_advancemenu": "Menu +",
   "nav_settings": "Mga Setting",
 
   "home_version": "Bersyon ng Module",
@@ -20,8 +20,6 @@
   "menu_keybox": "I-set Up ang Yuri Keybox",
   "menu_target": "I-set Up ang target.txt",
   "menu_patch": "I-apply ang Security Patch",
-  "menu_keybox_title": "Keybox",
-  "menu_keybox_restore": "Ibalik ang Backup Keybox",
 
   "advance_menu_title": "Advanced Menu",
   "advance_fix_detect_hma": "Ayusin ang Pag-detect ng HMA",
@@ -36,20 +34,7 @@
   "update_telegram": "Sumali sa Telegram Channel",
   "update_note": "Sumali sa aming Telegram channel o tingnan ang GitHub para sa mga update, kontribusyon, at teknikal na talakayan.",
 
-  "settings_title": "Mga Setting",
-  "settings_language": "Wika",
-  "settings_theme": "Tema",
   "settings_contributors": "Mga Kontribyutor ng Proyekto",
-
-  "theme_dark_blue": "Maitim na Asul",
-  "theme_dark_purple": "Maitim na Lila",
-  "theme_dark_green": "Maitim na Berde",
-  "theme_dark_orange": "Maitim na Dalandan",
-  "theme_dark_red": "Maitim na Pula",
-  "theme_cyberpunk": "Cyberpunk",
-  "theme_midnight": "Hatinggabi",
-  "theme_forest": "Gubat",
-  "theme_monet": "Monet",
 
   "role_Founder & Module Developer": "Tagapagtatag at Developer ng Module",
   "role_Module Developer": "Developer ng Module",

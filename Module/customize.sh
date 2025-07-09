@@ -11,9 +11,9 @@ DEPENDENCY_MODULE="/data/adb/modules/tricky_store"
 
 # Show UI banner
 ui_print ""
-ui_print "***************************"
-ui_print "***** Yurikey Manager *****"
-ui_print "***************************"
+ui_print "*********************************"
+ui_print "*****Yuri Keybox Installer*******"
+ui_print "*********************************"
 ui_print ""
 
 # Remove old module if legacy path exists (lowercase 'yurikey')
@@ -99,5 +99,3 @@ elif [ -f /data/adb/modules/yurikey/webroot/common/device-info.sh ]; then
   sh /data/adb/modules/yurikey/webroot/common/device-info.sh
 fi
 
-# Open Telegram channel at the end
-am start -a android.intent.action.VIEW -d tg://resolve?domain=yuriiroot >/dev/null 2>&1
