@@ -10,9 +10,19 @@ log_message "Start"
 # Writing
 log_message "Writing"
 PKGS="com.android.vending"
+
 for pkg in $PKGS; do
-    am force-stop "$pkg"     >/dev/null 2>&1
-    pm clear "$pkg"          >/dev/null 2>&1
+    log_message "Stopping package: $pkg"
+    if ! am force-stop "$pkg" >/dev/null 2>&1; then
+        log_message "ERROR: Failed to force-stop $pkg"
+        exit 1
+    fi
+
+    log_message "Clearing data for package: $pkg"
+    if ! pm clear "$pkg" >/dev/null 2>&1; then
+        log_message "ERROR: Failed to clear data for $pkg"
+        exit 1
+    fi
 done
 
 # Finish

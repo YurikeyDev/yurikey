@@ -3,7 +3,9 @@
 log_message() {
     echo "$(date +%Y-%m-%d\ %H:%M:%S) [SET_TARGET] $1"
 }
+
 log_message "Start"
+
 t='/data/adb/tricky_store/target.txt'
 tees='/data/adb/tricky_store/tee_status'
 
@@ -11,42 +13,66 @@ tees='/data/adb/tricky_store/tee_status'
 teeBroken="false"
 if [ -f "$tees" ]; then
     teeBroken=$(grep -E '^teeBroken=' "$tees" | cut -d '=' -f2 2>/dev/null || echo "false")
+    if [ -z "$teeBroken" ]; then
+        log_message "ERROR: Failed to parse teeBroken status"
+        exit 1
+    fi
 fi
 
 # add list special
-echo "android" >> "$t"
-echo "com.android.vending!" >> "$t"
-echo "com.google.android.gsf!" >> "$t"
-echo "com.google.android.gms!" >> "$t"
-echo "com.google.android.apps.walletnfcrel" >> "$t"
-echo "com.openai.chatgpt!" >> "$t"
-echo "com.reveny.nativecheck!" >> "$t"
-echo "io.github.vvb2060.keyattestation!" >> "$t"
-echo "io.github.vvb2060.mahoshojo!" >> "$t"
-echo "icu.nullptr.nativetest!" >> "$t"
-echo "com.android.nativetest!" >> "$t"
-echo "io.liankong.riskdetector!" >> "$t"
-echo "me.garfieldhan.holmes!" >> "$t"
-echo "luna.safe.luna!" >> "$t"
-echo "com.zhenxi.hunter!" >> "$t"
-echo "gr.nikolasspyr.integritycheck!" >> "$t"
-echo "com.youhu.laifu!" >> "$t"
-echo "com.google.android.contactkeys!" >> "$t"
-echo "com.google.android.ims!" >> "$t"
-echo "com.google.android.safetycore!"  >> "$t"
-echo "com.whatsapp!"  >> "$t"
-echo "com.whatsapp.w4b!"  >> "$t"
-
+log_message "Adding fixed target entries"
+fixed_targets="\
+android
+com.android.vending!
+com.google.android.gsf!
+com.google.android.gms!
+com.google.android.apps.walletnfcrel
+com.openai.chatgpt!
+com.reveny.nativecheck!
+io.github.vvb2060.keyattestation!
+io.github.vvb2060.mahoshojo!
+icu.nullptr.nativetest!
+com.android.nativetest!
+io.liankong.riskdetector!
+me.garfieldhan.holmes!
+luna.safe.luna!
+com.zhenxi.hunter!
+gr.nikolasspyr.integritycheck!
+com.youhu.laifu!
+com.google.android.contactkeys!
+com.google.android.ims!
+com.google.android.safetycore!
+com.whatsapp!
+com.whatsapp.w4b!"
+for entry in $fixed_targets; do
+    if ! echo "$entry" >> "$t"; then
+        log_message "ERROR: Failed to write $entry to $t"
+        exit 1
+    fi
+done
 
 # add list
-log_message "Writing"
+log_message "Writing dynamic package list"
+
 add_packages() {
-    pm list packages "$1" | cut -d ":" -f 2 | while read -r pkg; do
+    pkgs=$(pm list packages "$1" 2>/dev/null)
+    if [ $? -ne 0 ] || [ -z "$pkgs" ]; then
+        log_message "ERROR: Failed to list packages with flag $1"
+        exit 1
+    fi
+
+    echo "$pkgs" | cut -d ":" -f 2 | while read -r pkg; do
         if [ -n "$pkg" ] && ! grep -q "^$pkg" "$t"; then
             if [ "$teeBroken" = "true" ]; then
-                echo "$pkg!" >> "$t"
+                if ! echo "$pkg!" >> "$t"; then
+                    log_message "ERROR: Failed to write $pkg! to $t"
+                    exit 1
+                fi
             else
-                echo "$pkg" >> "$t"
+                if ! echo "$pkg" >> "$t"; then
+                    log_message "ERROR: Failed to write $pkg to $t"
+                    exit 1
+                fi
             fi
         fi
     done
@@ -57,4 +83,5 @@ add_packages "-3"
 
 # add system apps
 add_packages "-s"
+
 log_message "Finish"
