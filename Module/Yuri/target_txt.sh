@@ -20,7 +20,6 @@ if [ -f "$tees" ]; then
 fi
 
 # add list special
-log_message "Adding fixed target entries"
 fixed_targets="\
 android
 com.android.vending!
@@ -52,7 +51,7 @@ for entry in $fixed_targets; do
 done
 
 # add list
-log_message "Writing dynamic package list"
+log_message "Writing"
 
 add_packages() {
     pkgs=$(pm list packages "$1" 2>/dev/null)

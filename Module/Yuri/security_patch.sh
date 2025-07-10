@@ -8,8 +8,6 @@ log_message "Start"
 
 sp="/data/adb/tricky_store/security_patch.txt"
 
-log_message "Counting"
-
 current_year=$(date +%Y)
 if [ $? -ne 0 ]; then
     log_message "ERROR: Failed to get current year"
