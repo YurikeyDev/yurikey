@@ -41,6 +41,20 @@ A Systemless Module to get Strong Integrity Easily
 
 [Changelog](https://raw.githubusercontent.com/dpejoh/yurikey/main/changelog.md)
 
+Join group/channel telegram:
+
+https://t.me/dpejoh
+
+https://t.me/yuriiroot
+
+t.me/yurichattt
+
+t.me/yuriiarchives
+
+t.me/yuriifeedback
+
+t.me/yuridonationandbill
+
 ## How to get Strong Integrity ?
 - Install module [Play Integrity Inject](https://github.com/KOWX712/PlayIntegrityFix/releases/latest) or [Play integrity Fork](https://github.com/osm0sis/PlayIntegrityFork/releases/latest)
 - Install module [Tricky Store](https://github.com/5ec1cff/TrickyStore/releases/latest)
