@@ -47,13 +47,13 @@ https://t.me/dpejoh
 
 https://t.me/yuriiroot
 
-t.me/yurichattt
+https://t.me/yurichattt
 
-t.me/yuriiarchives
+https://t.me/yuriiarchives
 
-t.me/yuriifeedback
+https://t.me/yuriifeedback
 
-t.me/yuridonationandbill
+https://t.me/yuridonationandbill
 
 ## How to get Strong Integrity ?
 - Install module [Play Integrity Inject](https://github.com/KOWX712/PlayIntegrityFix/releases/latest) or [Play integrity Fork](https://github.com/osm0sis/PlayIntegrityFork/releases/latest)
