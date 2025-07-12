@@ -1,5 +1,5 @@
 
-<div align="right">
+<div align="left">
   <details>
     <summary >🌐 Language</summary>
     <div>
@@ -32,7 +32,7 @@
 # YuriKey
 [![Telegram](https://img.shields.io/badge/Follow-Telegram-blue.svg?logo=telegram)](https://t.me/yuriiroot)
 [![latest release](https://img.shields.io/github/v/release/dpejoh/yurikey?label=Release&logo=github)](https://github.com/dpejoh/yurikey/releases/latest)
-[![CI](https://github.com/dpejoh/yurikey/actions/workflows/ci.yml/badge.svg)](https://github.com/dpejoh/yurikey/actions/workflows/ci.yml)
+[![CI](https://github.com/dpejoh/yurikey/actions/workflows/build.yml/badge.svg)](https://github.com/dpejoh/yurikey/actions/workflows/build.yml)
 
 A Systemless Module to get Strong Integrity Easily 
 
@@ -66,10 +66,10 @@ For the error on the side "Error: Failed to get vbmeta digest or digest is empty
 > [VBMeta-Fixer](https://github.com/reveny/Android-VBMeta-Fixer/releases/latest)
 
 ## Contributors
-[Yuri](https://github.com/Yurii0307)
-[yourbestregard](https://github.com/yourbestregard)
-[cvnertnc](https://github.com/cvnertnc)
-[ZG089](https://github.com/ZG089)
-[Munch](https://github.com/SudoNothing404)
-[Wes](https://github.com/ihatenodejs)
-[Khx](https://github.com/dpejoh)
+[Yuri](https://github.com/Yurii0307)  
+[yourbestregard](https://github.com/yourbestregard)  
+[cvnertnc](https://github.com/cvnertnc)  
+[ZG089](https://github.com/ZG089)  
+[Munch](https://github.com/SudoNothing404)  
+[Wes](https://github.com/ihatenodejs)  
+[Khx](https://github.com/dpejoh)  
