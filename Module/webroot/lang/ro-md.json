@@ -19,6 +19,7 @@
   "menu_force_clear": "Forțare Stopare & Curățare Date pentru Play Store",
   "menu_keybox": "Setare Yuri Keybox",
   "menu_target": "Setare Target.txt",
+  "menu_necessary": "Setați aplicația necesară",
   "menu_patch": "Setare Security Patch",
 
   "advance_menu_title": "Meniu avansat",
@@ -26,6 +27,7 @@
   "advance_fix_detect_lsposed": "Fixare Detect lsposed (2)",
   "advance_fix_detect_pif": "Fixare Detect PIF (2)",
   "advance_fix_detect_recovery_file": "Fixare Detect Recovery File",
+  "advance_kill_all": "Opriți toate procesele",
   "advance_set_verified_boot": "Setare Verified Boothash",
 
   "update_title": "ACTUALIZARE & SUPORT",

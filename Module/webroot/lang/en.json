@@ -19,6 +19,7 @@
   "menu_force_clear": "Force Stop & Clear Data Play Store",
   "menu_keybox": "Set Up Yuri Keybox",
   "menu_target": "Set Up Target.txt",
+  "menu_necessary": "Set necessary app",
   "menu_patch": "Set Up Security Patch",
 
   "advance_menu_title": "Advanced Menu",
@@ -26,6 +27,7 @@
   "advance_fix_detect_lsposed": "Fix Detect lsposed (2)",
   "advance_fix_detect_pif": "Fix Detect PIF (2)",
   "advance_fix_detect_recovery_file": "Fix Detect Recovery File",
+  "advance_kill_all": "Kill All Proces",
   "advance_set_verified_boot": "Set Up Verified Boothash",
 
   "update_title": "UPDATE & SUPPORT",

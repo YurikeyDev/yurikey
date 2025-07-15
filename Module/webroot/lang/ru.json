@@ -19,6 +19,7 @@
   "menu_force_clear": "Принудительная остановка и очистка данных Play Store",
   "menu_keybox": "Настроить Yuri Keybox",
   "menu_target": "Настроить Target.txt",
+  "menu_necessary": "Установить необходимое приложение",
   "menu_patch": "Настроить патч безопасности",
 
   "advance_menu_title": "Расширенное меню",
@@ -26,6 +27,7 @@
   "advance_fix_detect_lsposed": "Исправить обнаружение LSposed (2)",
   "advance_fix_detect_pif": "Исправить обнаружение PIF (2)",
   "advance_fix_detect_recovery_file": "Исправить обнаружение файла Recovery",
+  "advance_kill_all": "Убить все процессы",
   "advance_set_verified_boot": "Настроить проверенный Boothash",
 
   "update_title": "ОБНОВЛЕНИЯ И ПОДДЕРЖКА",

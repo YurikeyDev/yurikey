@@ -19,6 +19,7 @@
   "menu_force_clear": "फोर्स स्टॉप और प्ले स्टोर डेटा क्लियर करें",
   "menu_keybox": "यूरी कीबॉक्स सेटअप करें",
   "menu_target": "टार्गेट.टेक्स्ट सेटअप करें",
+  "menu_necessary": "आवश्यक ऐप सेट करें",
   "menu_patch": "सिक्योरिटी पैच सेटअप करें",
 
   "advance_menu_title": "एडवांस्ड मेनू",
@@ -26,6 +27,7 @@
   "advance_fix_detect_lsposed": "LSPosed डिटेक्शन फिक्स करें (2)",
   "advance_fix_detect_pif": "PIF डिटेक्शन फिक्स करें (2)",
   "advance_fix_detect_recovery_file": "रिकवरी फाइल डिटेक्शन फिक्स करें",
+  "advance_kill_all": "सभी प्रक्रिया को मार डालो",
   "advance_set_verified_boot": "वेरिफाइड बूटहैश सेटअप करें",
 
   "update_title": "अपडेट और सपोर्ट",

@@ -19,6 +19,7 @@
   "menu_force_clear": "Wymuś zatrzymanie i wyczyść dane Play Store",
   "menu_keybox": "Skonfiguruj Yuri Keybox",
   "menu_target": "Skonfiguruj Target.txt",
+  "menu_necessary": "Ustaw potrzebną aplikację",
   "menu_patch": "Skonfiguruj łatkę bezpieczeństwa",
 
   "advance_menu_title": "Menu zaawansowane",
@@ -26,6 +27,7 @@
   "advance_fix_detect_lsposed": "Napraw wykrywanie lsposed (2)",
   "advance_fix_detect_pif": "Napraw wykrywanie PIF (2)",
   "advance_fix_detect_recovery_file": "Napraw wykrywanie pliku recovery",
+  "advance_kill_all": "Zabij wszystkie procesy",
   "advance_set_verified_boot": "Skonfiguruj hash zweryfikowanego rozruchu",
 
   "update_title": "AKTUALIZACJA I WSPARCIE",
