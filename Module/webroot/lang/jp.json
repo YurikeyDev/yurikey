@@ -20,6 +20,7 @@
   "menu_force_clear": "Playストアの強制停止とデータ消去",
   "menu_keybox": "Yuri Keyboxの設定",
   "menu_target": "Target.txtの設定",
+  "menu_necessary": "必要なアプリを設定する",
   "menu_patch": "Security Patchの設定",
 
   "advance_menu_title": "詳細メニュー",
@@ -27,6 +28,7 @@
   "advance_fix_detect_lsposed": "LSPosed検出の修正 (2)",
   "advance_fix_detect_pif": "PIF検出の修正 (2)",
   "advance_fix_detect_recovery_file": "リカバリーファイル検出の修正",
+  "advance_kill_all": "すべてのプロセスを強制終了",
   "advance_set_verified_boot": "Verified Boothashの設定",
 
   "update_title": "アップデートとサポート",

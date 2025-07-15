@@ -19,6 +19,7 @@
   "menu_force_clear": "Fechar & Limpar os Dados da PlayStore",
   "menu_keybox": "Configurar Yuri Keybox",
   "menu_target": "Configurar Target.txt",
+  "menu_necessary": "Configura l'aplicació necessària",
   "menu_patch": "Configurar o Patch de Segurança",
 
   "advance_menu_title": "Menu Avançado",
@@ -26,6 +27,7 @@
   "advance_fix_detect_lsposed": "Reparar Detecção lsposed (2)",
   "advance_fix_detect_pif": "Reparar Detecção PIF (2)",
   "advance_fix_detect_recovery_file": "Reparar Detecção Recovery File",
+  "advance_kill_all": "Mata tots els processos",
   "advance_set_verified_boot": "Configurar a Verificação do Boothash",
 
   "update_title": "ATUALIZAÇÃO & SUPORTE",

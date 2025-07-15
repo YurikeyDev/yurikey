@@ -19,6 +19,7 @@
   "menu_force_clear": "Play Store'u Durdur & Verilerini Temizle",
   "menu_keybox": "Yuri Keybox Kur",
   "menu_target": "target.txt Ayarla",
+  "menu_necessary": "Sadece önerilen uygulamaları ayarlayın",
   "menu_patch": "Güvenlik Yamasını Uygula",
 
   "advance_menu_title": "Gelişmiş Menü",
@@ -26,6 +27,7 @@
   "advance_fix_detect_lsposed": "lsposed Tespitini Düzelt (2)",
   "advance_fix_detect_pif": "PIF Tespitini Düzelt (2)",
   "advance_fix_detect_recovery_file": "Recovery Dosyası Tespitini Düzelt",
+  "advance_kill_all": "Tüm İşlemleri Sonlandır",
   "advance_set_verified_boot": "Verified Boothash Ayarla",
 
   "update_title": "GÜNCELLEME & DESTEK",

@@ -1,16 +1,38 @@
 #!/system/bin/sh
 
-boot_hash=$(su -c "getprop ro.boot.vbmeta.digest")
+log_message() {
+    echo "$(date +%Y-%m-%d\ %H:%M:%S) [SET_BOOT_HASH] $1"
+}
+
+log_message "Start"
+
+# Get vbmeta hash
+boot_hash=$(su -c "getprop ro.boot.vbmeta.digest" 2>/dev/null)
+
 file_path="/data/adb/boot_hash"
 
-mkdir -p "$(dirname "$file_path")"
-
-if [ -n "$boot_hash" ]; then
-  echo "$boot_hash" > "$file_path"
-  chmod 644 "$file_path"
-  echo "Boot hash saved: $boot_hash"
-  su -c "resetprop -n ro.boot.vbmeta.digest $boot_hash"
-  echo "Boot hash updated successfully: $boot_hash"
-else
-  echo "Boot hash not found (vbmeta digest is empty)"
+# Create the folder
+if ! mkdir -p "$(dirname "$file_path")"; then
+    log_message "ERROR: Failed to create directory: $(dirname "$file_path")"
+    exit 1
 fi
+
+# Write to file
+if ! echo "$boot_hash" > "$file_path"; then
+    log_message "ERROR: Failed to write boot hash to $file_path"
+    exit 1
+fi
+
+# Set permissions
+if ! chmod 644 "$file_path"; then
+    log_message "ERROR: Failed to set permissions on $file_path"
+    exit 1
+fi
+
+# Update system with resetprop
+if ! su -c "resetprop -n ro.boot.vbmeta.digest $boot_hash" >/dev/null 2>&1; then
+    log_message "ERROR: Failed to set ro.boot.vbmeta.digest with resetprop"
+    exit 1
+fi
+
+log_message "Finish"

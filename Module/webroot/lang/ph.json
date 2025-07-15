@@ -19,6 +19,7 @@
   "menu_force_clear": "Piliting Itigil & Linisin ang Data ng Play Store",
   "menu_keybox": "I-set Up ang Yuri Keybox",
   "menu_target": "I-set Up ang target.txt",
+  "menu_necessary": "Itakda ang kinakailangang app",
   "menu_patch": "I-apply ang Security Patch",
 
   "advance_menu_title": "Advanced Menu",
@@ -26,6 +27,7 @@
   "advance_fix_detect_lsposed": "Ayusin ang Pag-detect ng lsposed (2)",
   "advance_fix_detect_pif": "Ayusin ang Pag-detect ng PIF (2)",
   "advance_fix_detect_recovery_file": "Ayusin ang Pag-detect ng Recovery File",
+  "advance_kill_all": "Patayin ang Lahat ng Proseso",
   "advance_set_verified_boot": "Itakda ang Verified Boothash",
 
   "update_title": "UPDATE AT SUPORTA",

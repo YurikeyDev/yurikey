@@ -19,6 +19,7 @@
     "menu_force_clear": "强制停止并清除 Play Store 数据",
     "menu_keybox": "设置 Yuri Keybox",
     "menu_target": "设置 target.txt",
+    "menu_necessary": "设置必要的应用程序",
     "menu_patch": "应用安全补丁",
     "menu_keybox_title": "Keybox",
     "menu_keybox_restore": "恢复 Keybox 备份",
@@ -28,6 +29,7 @@
     "advance_fix_detect_lsposed": "修复 lsposed 检测 (2)",
     "advance_fix_detect_pif": "修复 PIF 检测 (2)",
     "advance_fix_detect_recovery_file": "修复恢复文件检测",
+    "advance_kill_all": "终止所有进程",
     "advance_set_verified_boot": "设置 Verified Boothash",
  
     "update_title": "更新和支持",

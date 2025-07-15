@@ -19,6 +19,7 @@
   "menu_force_clear": "প্লে স্টোরের ডেটা জোরপূর্বক বন্ধ ও পরিষ্কার করুন",
   "menu_keybox": "ইউরি কিবক্স সেট আপ করুন",
   "menu_target": "টার্গেট.টেক্সট সেট আপ করুন",
+  "menu_necessary": "প্রয়োজনীয় অ্যাপ সেট করুন",
   "menu_patch": "নিরাপত্তা প্যাচ প্রয়োগ করুন",
 
   "advance_menu_title": "উন্নত মেনু",
@@ -26,6 +27,7 @@
   "advance_fix_detect_lsposed": "এলএসপোজড সনাক্তকরণ ঠিক করুন (২)",
   "advance_fix_detect_pif": "পিআইএফ সনাক্তকরণ ঠিক করুন (২)",
   "advance_fix_detect_recovery_file": "রিকভারি ফাইল সনাক্তকরণ ঠিক করুন",
+  "advance_kill_all": "সমস্ত প্রক্রিয়া হত্যা করুন",
   "advance_set_verified_boot": "যাচাইকৃত বুটহ্যাশ সেট আপ করুন",
 
   "update_title": "আপডেট ও সমর্থন",

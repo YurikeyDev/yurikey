@@ -19,6 +19,7 @@
   "menu_force_clear": "Buộc Dừng & Xóa Dữ Liệu Cửa Hàng Play",
   "menu_keybox": "Thiết Lập Yuri Keybox",
   "menu_target": "Thiết Lập Target.txt",
+  "menu_necessary": "Thiết lập ứng dụng cần thiết",
   "menu_patch": "Thiết lập Security Patch",
 
   "advance_menu_title": "Menu Nâng Cao",
@@ -26,6 +27,7 @@
   "advance_fix_detect_lsposed": "Sửa Phát Hiện lsposed (2)",
   "advance_fix_detect_pif": "Sửa Phát Hiện PIF (2)",
   "advance_fix_detect_recovery_file": "Sửa Phát Hiện File Recovery (TWRP)",
+  "advance_kill_all": "Giết tất cả các tiến trình",
   "advance_set_verified_boot": "Đặt Verified Boothash",
 
   "update_title": "CẬP NHẬT & HỖ TRỢ",

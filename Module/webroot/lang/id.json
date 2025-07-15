@@ -19,6 +19,7 @@
   "menu_force_clear": "Paksa Berhenti & Bersihkan Data Play Store",
   "menu_keybox": "Atur Yuri Keybox",
   "menu_target": "Atur target.txt",
+  "menu_necessary": "Atur aplikasi yang diperlukan",
   "menu_patch": "Terapkan Patch Keamanan",
 
   "advance_menu_title": "Menu Lanjutan",
@@ -26,6 +27,7 @@
   "advance_fix_detect_lsposed": "Perbaiki Deteksi lsposed (2)",
   "advance_fix_detect_pif": "Perbaiki Deteksi PIF (2)",
   "advance_fix_detect_recovery_file": "Perbaiki Deteksi File Recovery",
+  "advance_kill_all": "Matikan Semua Proses",
   "advance_set_verified_boot": "Setel Verified Boothash",
 
   "update_title": "PEMBARUAN & DUKUNGAN",

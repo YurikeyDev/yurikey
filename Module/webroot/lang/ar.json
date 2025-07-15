@@ -19,6 +19,7 @@
   "menu_force_clear": "إيقاف إجباري ومسح بيانات تطبيق متجر بلاي",
   "menu_keybox": "إعداد Yuri Keybox",
   "menu_target": "إعداد target.txt",
+  "menu_necessary": "تعيين التطبيق الضروري",
   "menu_patch": "تطبيق تصحيح الأمان",
 
   "advance_menu_title": "القائمة المتقدمة",
@@ -26,6 +27,7 @@
   "advance_fix_detect_lsposed": "إصلاح اكتشاف lsposed (2)",
   "advance_fix_detect_pif": "إصلاح اكتشاف PIF (2)",
   "advance_fix_detect_recovery_file": "إصلاح اكتشاف ملف recovery",
+  "advance_kill_all": "قتل كل العملية",
   "advance_set_verified_boot": "تعيين تمهيد موثوق",
 
   "update_title": "التحديث والدعم",
