@@ -18,24 +18,25 @@ android
 com.android.vending!
 com.google.android.gsf!
 com.google.android.gms!
-com.google.android.apps.walletnfcrel
-com.openai.chatgpt!
-com.reveny.nativecheck!
 io.github.vvb2060.keyattestation!
 io.github.vvb2060.mahoshojo!
+com.google.android.contactkeys!
+com.google.android.ims!
+com.google.android.safetycore!
+com.google.android.apps.walletnfcrel!
+com.google.android.apps.nbu.paisa.user!
+gr.nikolasspyr.integritycheck!
+com.youhu.laifu!
+com.whatsapp!
+com.whatsapp.w4b!
+com.openai.chatgpt!
+com.reveny.nativecheck!
 icu.nullptr.nativetest!
 com.android.nativetest!
 io.liankong.riskdetector!
 me.garfieldhan.holmes!
 luna.safe.luna!
-com.zhenxi.hunter!
-gr.nikolasspyr.integritycheck!
-com.youhu.laifu!
-com.google.android.contactkeys!
-com.google.android.ims!
-com.google.android.safetycore!
-com.whatsapp!
-com.whatsapp.w4b!"
+com.zhenxi.hunter!"
 for entry in $fixed_targets; do
     if ! echo "$entry" >> "$t"; then
         log_message "ERROR: Failed to write $entry to $t"

@@ -1,27 +1,11 @@
-**_**✨ v1.6 version changes:**_**
+**_**✨ v1.7 version changes:**_**
 
-**_🌐 Change Style WebUI ➕ Theme 
-🧩 Add more Language:_**
-**→ 🇬🇧 English
-→ 🇨🇳 China
-→ 🇮🇳 India
-→ 🇷🇺 Russia
-→ 🇯🇵 Japan
-→ 🇧🇩 Bangladesh
-→ 🇮🇩 Indonesia
-→ 🇻🇳 Vietnam
-→ 🇹🇷 Turkey (Turkish)
-→ 🇪🇸 Spain (Spanish)
-→ 🇸🇦 Saudi Arabia (Arabic)
-→ 🇲🇾 Malaysia
-→ 🇵🇭 Philippines
-→ 🇹🇭 Thailand
-→ 🇺🇦 Ukraine
-→ 🇧🇷 Brazil
-→ 🇲🇩 Moldova
-→ 🇷🇴 Romania
-→  🇵🇱 Polish
-→  🇭🇺 Hungary**
+**_🌐 Add new function on webUI:_**
 
-**_🔧 Other Other Changes:_**
-→ Various performance improvement ( Fix error target.txt )
+→ [ONLY SET NECESSARY APP].SH 
+→ [KILL ALL PROCESS].SH 
+
+**_🔧 Other Changes:_**
+→ Fix error Set Verified Boothash not found ( vbmeta diggest is empty )
+→ Optimize display when get error
+→ Various performance improvement.
