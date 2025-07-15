@@ -42,9 +42,6 @@ For the error on the side "ERROR: Tricky Store module not found!"
 For the error on the side "ERROR: curl or wget not found!"
 > [BusyBox](https://mmrl.dev/repository/grdoglgmr/busybox-ndk)
 
-For the error on the side "ERROR: Failed to get vbmeta digest or digest is empty"
-> [VBMeta-Fixer](https://github.com/reveny/Android-VBMeta-Fixer/releases/latest)
-
 ## Contributors
 [Yuri](https://github.com/Yurii0307)  
 [yourbestregard](https://github.com/yourbestregard)  

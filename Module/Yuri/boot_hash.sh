@@ -8,12 +8,6 @@ log_message "Start"
 
 # Get vbmeta hash
 boot_hash=$(su -c "getprop ro.boot.vbmeta.digest" 2>/dev/null)
-if [ $? -ne 0 ] || [ -z "$boot_hash" ]; then
-    log_message "ERROR: Failed to get vbmeta digest or digest is empty"
-    log_message "Tip: To fix this, please install the VBMeta Fixer module:"
-    log_message "https://github.com/reveny/Android-VBMeta-Fixer/releases/latest"
-    exit 1
-fi
 
 file_path="/data/adb/boot_hash"
 
