@@ -8,6 +8,9 @@ log_message "Start"
 
 # Get vbmeta hash
 boot_hash=$(su -c "getprop ro.boot.vbmeta.digest" 2>/dev/null)
+if [ $? -ne 0 ] || [ -z "$boot_hash" ]; then
+    boot_hash="0000000000000000000000000000000000000000000000000000000000000000"
+fi
 
 file_path="/data/adb/boot_hash"
 
