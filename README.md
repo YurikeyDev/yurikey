@@ -4,7 +4,7 @@
 [![latest release](https://img.shields.io/github/v/release/dpejoh/yurikey?label=Release&logo=github)](https://github.com/dpejoh/yurikey/releases/latest)
 [![CI](https://github.com/dpejoh/yurikey/actions/workflows/build.yml/badge.svg)](https://github.com/dpejoh/yurikey/actions/workflows/build.yml)
 
-A Systemless Module to get Strong Integrity Easily
+A Systemless Module to get Strong Integrity so Easily
 
 [Download](https://github.com/dpejoh/yurikey/releases/latest)
 
