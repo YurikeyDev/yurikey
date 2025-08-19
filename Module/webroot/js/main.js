@@ -98,6 +98,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  // Register click events for buttons in Advanced Menu Page
+  document.querySelectorAll("#advance-menu .action-buttons .menu-btn").forEach(button => {
+      const scriptName = button.dataset.script;
+      if (scriptName) {
+          button.addEventListener("click", () => runScript(scriptName, BASE_SCRIPT, button));
+      }
+  });
+
   // Navigation buttons
   document.querySelectorAll(".nav-btn").forEach((btn, idx) => {
     btn.addEventListener("click", () => {
