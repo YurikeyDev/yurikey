@@ -28,6 +28,7 @@
   "advance_fix_detect_pif": "Fix Detect PIF (2)",
   "advance_fix_detect_recovery_file": "Fix Detect Recovery File",
   "advance_kill_all": "Kill All Process",
+  "advance_wdevinel1": "Fix Widevine L1",
   "advance_set_verified_boot": "Set Up Verified Boothash",
 
   "update_title": "UPDATE & SUPPORT",

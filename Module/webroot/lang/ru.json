@@ -28,6 +28,7 @@
   "advance_fix_detect_pif": "Исправить обнаружение PIF (2)",
   "advance_fix_detect_recovery_file": "Исправить обнаружение файла Recovery",
   "advance_kill_all": "Убить все процессы",
+  "advance_wdevinel1": "Исправить Widevine L1",
   "advance_set_verified_boot": "Настроить проверенный Boothash",
 
   "update_title": "ОБНОВЛЕНИЯ И ПОДДЕРЖКА",

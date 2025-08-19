@@ -27,7 +27,8 @@
   "advance_fix_detect_pif": "Arreglar detección PIF (2)",
   "advance_fix_detect_recovery_file": "Arreglar detección del archivo de Recovery",
   "advance_kill_all": "Matar todo el proceso",
-  "advance_set_verified_boot": "Establecer  Boothash verificado",
+  "advance_wdevinel1": "Arreglar Widevine L1",
+  "advance_set_verified_boot": "Establecer Boothash verificado",
 
   "update_title": "Actualización y Soporte",
   "update_desc": "Mantente actualizado con la ultima versión de Yurikey, corrección de bugs y nuevas funciones!",

@@ -28,6 +28,7 @@
   "advance_fix_detect_pif": "แก้ไขการตรวจจับ PIF (2)",
   "advance_fix_detect_recovery_file": "แก้ไขการตรวจจับไฟล์กู้คืน",
   "advance_kill_all": "ฆ่ากระบวนการทั้งหมด",
+  "advance_wdevinel1": "แก้ไข Widevine L1",
   "advance_set_verified_boot": "ตั้งค่า Verified Boothash",
 
   "update_title": "อัปเดตและสนับสนุน",
