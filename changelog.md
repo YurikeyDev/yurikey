@@ -1,12 +1,9 @@
-**_**✨ v1.71 version changes:**_**
+**_✨ v1.8 – Version Changes:_**
 
-**_🔓Add Valid Keybox_**
-**_🌐 Add new function on webUI:_**
+**_⚙️ Fixed animation not working on Menu+._**
 
-→ [ONLY SET NECESSARY APP].SH 
-→ [KILL ALL PROCESS].SH 
+**_🌐 Add new function in WebUI:_** 
+→ Fix Widevine L1 issue on BBK devices ( OnePlus, Oppo, Realme, ...).
 
-**_🔧 Other Changes:_**
-→ Fix error Set Verified Boothash not found ( vbmeta diggest is empty )
-→ Optimize display when get error
-→ Various performance improvement.
+**_📌 Other Changes:_**
+→ Various performance improvements.
