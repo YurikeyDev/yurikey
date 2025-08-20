@@ -29,6 +29,7 @@
   "advance_fix_detect_pif": "PIF検出の修正 (2)",
   "advance_fix_detect_recovery_file": "リカバリーファイル検出の修正",
   "advance_kill_all": "すべてのプロセスを強制終了",
+  "advance_wdevinel1": "Widevine L1 の修正",
   "advance_set_verified_boot": "Verified Boothashの設定",
 
   "update_title": "アップデートとサポート",

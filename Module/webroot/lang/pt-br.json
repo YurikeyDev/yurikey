@@ -27,7 +27,8 @@
   "advance_fix_detect_lsposed": "Reparar Detecção lsposed (2)",
   "advance_fix_detect_pif": "Reparar Detecção PIF (2)",
   "advance_fix_detect_recovery_file": "Reparar Detecção Recovery File",
-  "advance_kill_all": "Mata tots els processos",
+  "advance_kill_all": "Matar todos os processos",
+  "advance_wdevinel1": "Reparar Widevine L1",
   "advance_set_verified_boot": "Configurar a Verificação do Boothash",
 
   "update_title": "ATUALIZAÇÃO & SUPORTE",

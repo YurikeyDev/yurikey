@@ -28,6 +28,7 @@
   "advance_fix_detect_pif": "PIF डिटेक्शन फिक्स करें (2)",
   "advance_fix_detect_recovery_file": "रिकवरी फाइल डिटेक्शन फिक्स करें",
   "advance_kill_all": "सभी प्रक्रिया को मार डालो",
+  "advance_wdevinel1": "Widevine L1 फिक्स करें",
   "advance_set_verified_boot": "वेरिफाइड बूटहैश सेटअप करें",
 
   "update_title": "अपडेट और सपोर्ट",
