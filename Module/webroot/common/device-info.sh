@@ -17,9 +17,9 @@ if [ -d "/data/adb/magisk" ] && [ -f "/data/adb/magisk.db" ]; then
   root_type="Magisk"
 elif [ -f "/data/apatch/apatch" ]; then
   root_type="Apatch"
-elif [ -d "/data/adb/ksu" ] && [ -d "/data/adb/kpm" ]; then
+elif [ -d "/data/adb/ksu" ] && ( [ -d "/data/adb/kpm" ] || [ -f "/data/adb/ksu/.dynamic_sign" ] ); then
   root_type="SukiSU-Ultra"
-elif [ -d "/data/adb/ksu" ] && [ -f "/data/adb/ksud" ]; then
+elif [ -d "/data/adb/ksu" ] && ( [ -f "/data/adb/ksud" ] || [ -f "/sys/module/kernelsu/parameters/expected_manager_size" ] ); then
   root_type="KernelSU-Next"
 elif [ -d "/data/adb/ksu" ]; then
   root_type="KernelSU"
