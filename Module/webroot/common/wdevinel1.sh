@@ -1,14 +1,14 @@
 #!/system/bin/sh
-# Copy FixWdevineL1 directory to /data/local/tmp
-cp -r "$(pwd)/FixWdevineL1" /data/local/tmp/
+# Copy FixWdevineL1/* directory to /data/local/tmp
+cp -r ./FixWdevineL1/* /data/local/tmp/
 
 # Set correct permissions
-chmod 777 /data/local/tmp/FixWdevineL1/FixWdevineL1.sh
-chmod 777 /data/local/tmp/FixWdevineL1/attestation
+chmod 777 /data/local/tmp/FixWdevineL1.sh
+chmod 777 /data/local/tmp/attestation
 
 # Set owner and group to root:root
-chown root:root /data/local/tmp/FixWdevineL1/FixWdevineL1.sh
-chown root:root /data/local/tmp/FixWdevineL1/attestation
+chown root:root /data/local/tmp/FixWdevineL1.sh
+chown root:root /data/local/tmp/attestation
 
 # Execute the script
-sh /data/local/tmp/FixWdevineL1/FixWdevineL1.sh
+sh /data/local/tmp/FixWdevineL1.sh
