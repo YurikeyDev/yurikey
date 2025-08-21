@@ -100,7 +100,9 @@ jobs:
           ./zakosign verify "$SIGNED" || true
 
       - name: Upload release artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-release-asset@v1
         with:
-          # name: YuriKey_${{ env.BUILD_ID }}
-          path: YuriKey_${{ env.BUILD_ID }}.signed.zip
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: ./YuriKey_${{ env.BUILD_ID }}.signed.zip
+          asset_name: YuriKey_${{ env.BUILD_ID }}.signed.zip
+          asset_content_type: application/zip
