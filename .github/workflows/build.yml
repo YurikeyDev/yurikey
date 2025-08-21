@@ -114,11 +114,12 @@ jobs:
           # Verify
           ./zakosign verify "$SIGNED" || true
 
-      - name: Create Beta Release and Upload ZIP
+      - name: Create Beta Pre-Release and Upload ZIP
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ steps.beta_tag.outputs.beta_tag }}
           name: ${{ steps.beta_tag.outputs.beta_tag }}
           files: ./YuriKey_${{ env.BUILD_ID }}.signed.zip
+          prerelease: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
