@@ -1,5 +1,16 @@
 #!/system/bin/sh
 
+# Extract and source verify.sh first
+ui_print "- Extracting verify.sh"
+unzip -o "$ZIPFILE" "verify.sh" -d "$TMPDIR" >&2
+if [ ! -f "$TMPDIR/verify.sh" ]; then
+  ui_print "*********************************************************"
+  ui_print "! Unable to extract verify.sh!"
+  ui_print "! This zip may be corrupted, please try downloading again"
+  abort    "*********************************************************"
+fi
+. "$TMPDIR/verify.sh"
+
 # Define important paths and file names
 TRICKY_DIR="/data/adb/tricky_store"
 REMOTE_URL="https://raw.githubusercontent.com/dpejoh/yurikey/main/conf"
@@ -92,10 +103,15 @@ ui_print "- Checking if there is an Yuri Keybox..."
 mkdir -p "$TRICKY_DIR" # Make sure the directory exists
 update_keybox          # Begin the update process
 
-# read some device info
-if [ -f /data/adb/modules_update/Yurikey/webroot/common/device-info.sh ]; then
-  sh /data/adb/modules_update/Yurikey/webroot/common/device-info.sh
-elif [ -f /data/adb/modules/yurikey/webroot/common/device-info.sh ]; then
-  sh /data/adb/modules/yurikey/webroot/common/device-info.sh
+# Extract and verify bundled device-info.sh (if present in zip)
+if unzip -l "$ZIPFILE" | grep -q "webroot/common/device-info.sh"; then
+  extract "$ZIPFILE" "webroot/common/device-info.sh" "$TMPDIR"
+  sh "$TMPDIR/webroot/common/device-info.sh"
+else
+  # fallback: run already-installed one
+  if [ -f /data/adb/modules_update/Yurikey/webroot/common/device-info.sh ]; then
+    sh /data/adb/modules_update/Yurikey/webroot/common/device-info.sh
+  elif [ -f /data/adb/modules/yurikey/webroot/common/device-info.sh ]; then
+    sh /data/adb/modules/yurikey/webroot/common/device-info.sh
+  fi
 fi
-

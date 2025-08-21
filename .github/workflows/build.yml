@@ -28,6 +28,14 @@ jobs:
           echo "BUILD_ID=${RANDOM_STRING}" >> $GITHUB_ENV
           sed -i "s/^version=.*/version=${RANDOM_STRING}/" Module/module.prop
 
+      - name: Generate SHA256 checksums for all files
+        run: |
+          cd Module
+          find . -type f ! -name "*.sha256" | while read -r file; do
+            sha256sum "$file" | awk '{print $1}' > "$file.sha256"
+          done
+          cd ..
+
       - name: Create module zip
         run: |
           ZIP_FILE="YuriKey_${{ env.BUILD_ID }}.zip"
