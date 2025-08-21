@@ -36,7 +36,8 @@ jobs:
 
       - name: Install Zakosign
         run: |
-          sudo apt update -y && sudo apt upgrade -y && sudo apt install -y curl wget
+          sudo apt update -y
+          sudo apt install -y curl wget
           # Fetch the latest stable release tag of KPM patch
           TAG=$(curl -s https://api.github.com/repos/Lama3L9R/zakosign/releases/latest | jq -r '.tag_name')
           echo "🔖 Latest stable zakosign-amd64 patch tag: $TAG"
