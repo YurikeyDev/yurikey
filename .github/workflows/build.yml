@@ -31,7 +31,8 @@ jobs:
       - name: Create module zip
         run: |
           ZIP_FILE="YuriKey_${{ env.BUILD_ID }}.zip"
-          zip -r "$ZIP_FILE" Module/*
+          cd Module
+          zip -r "../$ZIP_FILE" ./*
 
       - name: Install Zakosign
         run: |
@@ -41,7 +42,7 @@ jobs:
           echo "🔖 Latest stable zakosign-amd64 patch tag: $TAG"
 
           # Download the patch binary
-          curl -Ls -o zakosign-amd64 "https://github.com/Lama3L9R/zakosign/releases/download/$TAG/patch_linux"
+          curl -Ls -o zakosign-amd64 "https://github.com/Lama3L9R/zakosign/releases/download/$TAG/zakosign-amd64"
           mv zakosign-amd64 zakosign
           chmod +x zakosign
 
@@ -97,9 +98,8 @@ jobs:
           # Verify
           ./zakosign verify "$SIGNED" || true
 
-      - name: Upload release artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: YuriKey_${{ env.BUILD_ID }}
-          path: |
-            YuriKey_${{ env.BUILD_ID }}.signed.zip
+      - name: Upload release artifact  
+        uses: actions/upload-artifact@v4  
+        with:  
+          name: YuriKey_${{ env.BUILD_ID }}  
+          path: YuriKey_${{ env.BUILD_ID }}.signed.zip
