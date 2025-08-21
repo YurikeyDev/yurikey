@@ -8,56 +8,25 @@ abort_verify() {
   abort    "*********************************************************"
 }
 
-# extract <zip> <file> <target dir> <junk paths>
-extract() {
-  zip=$1
-  file=$2
-  dir=$3
-  junk_paths=$4
-  [ -z "$junk_paths" ] && junk_paths=false
-  opts="-o"
-  [ $junk_paths = true ] && opts="-oj"
-
-  file_path=""
-  hash_path=""
-  if [ $junk_paths = true ]; then
-    file_path="$dir/$(basename "$file")"
-    hash_path="$TMPDIR_FOR_VERIFY/$(basename "$file").sha256"
-  else
-    file_path="$dir/$file"
-    hash_path="$TMPDIR_FOR_VERIFY/$file.sha256"
-  fi
-
-  unzip $opts "$zip" "$file" -d "$dir" >&2
-  [ -f "$file_path" ] || abort_verify "$file not exists"
-
-  unzip $opts "$zip" "$file.sha256" -d "$TMPDIR_FOR_VERIFY" >&2
-  [ -f "$hash_path" ] || abort_verify "$file.sha256 not exists"
-
-  (echo "$(cat "$hash_path")  $file_path" | sha256sum -c -s -) || abort_verify "Failed to verify $file"
-  ui_print "- Verified $file" >&1
-}
-
 verify_all() {
   ui_print "- Verifying all files in the zip..."
-  for file in $(unzip -l "$ZIPFILE" | awk '{print $4}' | grep -v '/$'); do
-    case "$file" in
-      *.sha256) continue ;; # checksum dosyalarının kendisini atla
-    esac
 
-    file_path="$TMPDIR_FOR_VERIFY/$file"
-    hash_path="$file_path.sha256"
+  for hash_file in $(unzip -l "$ZIPFILE" | awk '{print $4}' | grep '\.sha256$'); do
+    # Orijinal dosya adı = sha256 dosyasından ".sha256" silinmiş hali
+    orig_file="${hash_file%.sha256}"
 
-    unzip -o "$ZIPFILE" "$file" -d "$TMPDIR_FOR_VERIFY" >&2
-    [ -f "$file_path" ] || abort_verify "$file not exists"
+    unzip -o "$ZIPFILE" "$orig_file" -d "$TMPDIR_FOR_VERIFY" >&2 || abort_verify "File $orig_file not exists"
+    unzip -o "$ZIPFILE" "$hash_file" -d "$TMPDIR_FOR_VERIFY" >&2 || abort_verify "Hash $hash_file not exists"
 
-    unzip -o "$ZIPFILE" "$file.sha256" -d "$TMPDIR_FOR_VERIFY" >&2
-    if [ -f "$hash_path" ]; then
-      (echo "$(cat "$hash_path")  $file_path" | sha256sum -c -s -) || abort_verify "Failed to verify $file"
-      ui_print "- Verified $file"
-    else
-      abort_verify "$file.sha256 not exists"
-    fi
+    file_path="$TMPDIR_FOR_VERIFY/$orig_file"
+    hash_path="$TMPDIR_FOR_VERIFY/$hash_file"
+
+    [ -f "$file_path" ] || abort_verify "$orig_file not exists after unzip"
+    [ -f "$hash_path" ] || abort_verify "$hash_file not exists after unzip"
+
+    (echo "$(cat "$hash_path")  $file_path" | sha256sum -c -s -) || abort_verify "Failed to verify $orig_file"
+
+    ui_print "- Verified $orig_file"
   done
 }
 
@@ -68,7 +37,7 @@ unzip -o "$ZIPFILE" "META-INF/com/google/android/*" -d "$TMPDIR_FOR_VERIFY" >&2
 [ -f "$file_path" ] || abort_verify "$file not exists"
 if [ -f "$hash_path" ]; then
   (echo "$(cat "$hash_path")  $file_path" | sha256sum -c -s -) || abort_verify "Failed to verify $file"
-  ui_print "- Verified $file" >&1
+  ui_print "- Verified $file"
 else
   ui_print "- Download from Magisk app"
 fi
