@@ -34,6 +34,21 @@ jobs:
           cd Module
           zip -r "../$ZIP_FILE" ./*
 
+      - name: Get latest release tag
+        id: get_latest_tag
+        run: |
+          TAG=$(curl -s https://api.github.com/repos/${GITHUB_REPOSITORY}/releases/latest | jq -r '.tag_name')
+          echo "Latest tag: $TAG"
+          echo "tag=$TAG" >> $GITHUB_OUTPUT
+
+      - name: Prepare new beta tag
+        id: beta_tag
+        run: |
+          DATE=$(date +'%Y%m%d')
+          BETA_TAG="${{ steps.get_latest_tag.outputs.tag }}-beta-$DATE"
+          echo "New beta tag: $BETA_TAG"
+          echo "beta_tag=$BETA_TAG" >> $GITHUB_OUTPUT
+
       - name: Install Zakosign
         run: |
           sudo apt update -y
@@ -99,10 +114,11 @@ jobs:
           # Verify
           ./zakosign verify "$SIGNED" || true
 
-      - name: Upload release artifact
-        uses: actions/upload-release-asset@v1
+      - name: Create Beta Release and Upload ZIP
+        uses: softprops/action-gh-release@v2
         with:
-          upload_url: ${{ github.event.release.upload_url }}
-          asset_path: ./YuriKey_${{ env.BUILD_ID }}.signed.zip
-          asset_name: YuriKey_${{ env.BUILD_ID }}.signed.zip
-          asset_content_type: application/zip
+          tag_name: ${{ steps.beta_tag.outputs.beta_tag }}
+          name: ${{ steps.beta_tag.outputs.beta_tag }}
+          files: ./YuriKey_${{ env.BUILD_ID }}.signed.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
