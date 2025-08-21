@@ -99,8 +99,8 @@ jobs:
           # Verify
           ./zakosign verify "$SIGNED" || true
 
-      - name: Upload release artifact  
-        uses: actions/upload-artifact@v4  
-        with:  
-          name: YuriKey_${{ env.BUILD_ID }}  
+      - name: Upload release artifact
+        uses: actions/upload-artifact@v4
+        with:
+          # name: YuriKey_${{ env.BUILD_ID }}
           path: YuriKey_${{ env.BUILD_ID }}.signed.zip
