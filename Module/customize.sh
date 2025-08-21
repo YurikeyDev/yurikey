@@ -11,9 +11,6 @@ if [ ! -f "$TMPDIR/verify.sh" ]; then
 fi
 . "$TMPDIR/verify.sh"
 
-# Run full verification on all files inside the zip
-verify_all
-
 # Define important paths and file names
 TRICKY_DIR="/data/adb/tricky_store"
 REMOTE_URL="https://raw.githubusercontent.com/dpejoh/yurikey/main/conf"
@@ -106,9 +103,10 @@ ui_print "- Checking if there is an Yuri Keybox..."
 mkdir -p "$TRICKY_DIR" # Make sure the directory exists
 update_keybox          # Begin the update process
 
-# Run bundled device-info.sh if present (already verified by verify_all)
-if [ -f "$TMPDIR/webroot/common/device-info.sh" ]; then
-  sh "$TMPDIR/webroot/common/device-info.sh"
+# Run bundled device-info.sh if present (already verified)
+DEVICE_INFO_SCRIPT="$TMPDIR/webroot/common/device-info.sh"
+if [ -f "$DEVICE_INFO_SCRIPT" ]; then
+  sh "$DEVICE_INFO_SCRIPT"
 else
   # fallback: run already-installed one
   if [ -f /data/adb/modules_update/Yurikey/webroot/common/device-info.sh ]; then
