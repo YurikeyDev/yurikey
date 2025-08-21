@@ -37,10 +37,10 @@ jobs:
       - name: Install Zakosign
         run: |
           sudo apt update -y
-          sudo apt install -y curl wget
-          # Fetch the latest stable release tag of KPM patch
-          TAG=$(curl -s https://api.github.com/repos/Lama3L9R/zakosign/releases/latest | jq -r '.tag_name')
-          echo "🔖 Latest stable zakosign-amd64 patch tag: $TAG"
+          sudo apt install -y git curl wget
+          # Fetch all tags, sort them, get the last (latest) one
+          TAG=$(curl -s https://api.github.com/repos/Lama3L9R/zakosign/tags | jq -r '.[].name' | sort -V | tail -n1)
+          echo "🔖 Latest tag of zakosign-amd64 patch: $TAG"
 
           # Download the patch binary
           curl -Ls -o zakosign-amd64 "https://github.com/Lama3L9R/zakosign/releases/download/$TAG/zakosign-amd64"
