@@ -1,5 +1,5 @@
 TMPDIR_FOR_VERIFY="$TMPDIR/.vunzip"
-mkdir "$TMPDIR_FOR_VERIFY"
+mkdir -p "$TMPDIR_FOR_VERIFY"
 
 abort_verify() {
   ui_print "*********************************************************"
@@ -38,6 +38,29 @@ extract() {
   ui_print "- Verified $file" >&1
 }
 
+verify_all() {
+  ui_print "- Verifying all files in the zip..."
+  for file in $(unzip -l "$ZIPFILE" | awk '{print $4}' | grep -v '/$'); do
+    case "$file" in
+      *.sha256) continue ;; # checksum dosyalarının kendisini atla
+    esac
+
+    file_path="$TMPDIR_FOR_VERIFY/$file"
+    hash_path="$file_path.sha256"
+
+    unzip -o "$ZIPFILE" "$file" -d "$TMPDIR_FOR_VERIFY" >&2
+    [ -f "$file_path" ] || abort_verify "$file not exists"
+
+    unzip -o "$ZIPFILE" "$file.sha256" -d "$TMPDIR_FOR_VERIFY" >&2
+    if [ -f "$hash_path" ]; then
+      (echo "$(cat "$hash_path")  $file_path" | sha256sum -c -s -) || abort_verify "Failed to verify $file"
+      ui_print "- Verified $file"
+    else
+      abort_verify "$file.sha256 not exists"
+    fi
+  done
+}
+
 file="META-INF/com/google/android/update-binary"
 file_path="$TMPDIR_FOR_VERIFY/$file"
 hash_path="$file_path.sha256"
@@ -49,3 +72,5 @@ if [ -f "$hash_path" ]; then
 else
   ui_print "- Download from Magisk app"
 fi
+
+verify_all
