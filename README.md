@@ -42,6 +42,15 @@ For the error on the side "ERROR: Tricky Store module not found!"
 For the error on the side "ERROR: curl or wget not found!"
 > [BusyBox](https://mmrl.dev/repository/grdoglgmr/busybox-ndk)
 
+## Module signature with Zakosign
+> [!NOTE]
+>
+> YuriKey versions 1.8 and above will now be signed using the [Zakosign](https://github.com/Lama3L9R/zakosign) tool. This will allow us to detect any modding in the module zip file beforehand.
+> If you have any questions about module reliability, maybe this will answer all your questions.
+>
+> Many thanks to [Lama3L9R](https://github.com/Lama3L9R) for developing this tool.
+>
+
 ## Contributors
 [Yuri](https://github.com/Yurii0307)  
 [yourbestregard](https://github.com/yourbestregard)  
