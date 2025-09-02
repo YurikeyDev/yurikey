@@ -8,6 +8,7 @@ BACKUP_FILE="$TRICKY_DIR/keybox.xml.bak"
 TMP_REMOTE="$TRICKY_DIR/remote_keybox.tmp"
 SCRIPT_REMOTE="$TRICKY_DIR/remote_script.sh"
 DEPENDENCY_MODULE="/data/adb/modules/tricky_store"
+BUSYBOX_MODULE="/data/adb/modules/busybox-ndk"
 BBIN="/data/adb/Yurikey/bin"
 
 # Show UI banner
@@ -27,6 +28,12 @@ if [ ! -d "$DEPENDENCY_MODULE" ]; then
   ui_print "- Error: Tricky Store module not found!"
   ui_print "- Please install Tricky Store before using Yuri Keybox."
   abort
+fi
+
+# Busybox Modules
+if [ ! -d "$BUSYBOX_MODULE" ]; then
+  ui_print "- If you're only using the Busybox for Android NDK module for YuriKey, we recommend removing it."
+  ui_print "- You may no longer need it."
 fi
 
 # Detect device architecture
