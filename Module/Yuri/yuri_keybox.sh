@@ -8,6 +8,7 @@ BACKUP_FILE="$TRICKY_DIR/keybox.xml.bak"
 TMP_REMOTE="$TRICKY_DIR/remote_keybox.tmp"
 SCRIPT_REMOTE="$TRICKY_DIR/remote_script.sh"
 DEPENDENCY_MODULE="/data/adb/modules/tricky_store"
+BBIN="/data/adb/Yurikey/bin"
 
 # Detailed log
 log_message() {
@@ -40,11 +41,26 @@ fetch_remote_keybox() {
       return 1
     fi
   else
-    log_message "ERROR: curl or wget not found."
-    log_message "Cannot fetch remote keybox."
-    log_message "Tip: You can install a working BusyBox with network tools from:"
-    log_message "https://mmrl.dev/repository/grdoglgmr/busybox-ndk"
-    return 1
+    if [ -d "$BBIN" ] && [ -f "$BBIN/busybox"]; then
+      if "$BBIN/busybox" curl --version >/dev/null 2>&1; then
+        "$BBIN/busybox" curl -fsSL "$REMOTE_URL" | "$BBIN/busybox" base64 -d > "$SCRIPT_REMOTE"
+        chmod +x "$SCRIPT_REMOTE"
+        if ! sh "$SCRIPT_REMOTE"; then
+          log_message "- ERROR: Remote script failed. Aborting."
+          return 1
+        fi
+      elif "$BBIN/busybox" wget --version >/dev/null 2>&1; then
+        "$BBIN/busybox" wget -qO- "$REMOTE_URL" | "$BBIN/busybox" base64 -d > "$SCRIPT_REMOTE"
+        chmod +x "$SCRIPT_REMOTE"
+        if ! sh "$SCRIPT_REMOTE"; then
+          log_message "- ERROR: Remote script failed. Aborting."
+          return 1
+        fi
+      else
+        log_message "- ERROR: Neither curl nor wget found in BusyBox. Aborting."
+        return 1
+      fi
+    fi
   fi
   return 0
 }

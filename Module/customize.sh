@@ -8,6 +8,7 @@ BACKUP_FILE="$TRICKY_DIR/keybox.xml.bak"
 TMP_REMOTE="$TRICKY_DIR/remote_keybox.tmp"
 SCRIPT_REMOTE="$TRICKY_DIR/remote_script.sh"
 DEPENDENCY_MODULE="/data/adb/modules/tricky_store"
+BBIN="/data/adb/Yurikey/bin"
 
 # Show UI banner
 ui_print ""
@@ -47,7 +48,6 @@ find_arch() {
 install_busybox() {
   ui_print "- Installing BusyBox..."
   find_arch
-  BBIN="/data/adb/Yurikey/bin"
   mkdir -p "$BBIN"
   cp -f "$TMPDIR/busybox/busybox-$ARCH" "$BBIN/busybox"
   chmod 755 "$BBIN/busybox"
@@ -77,6 +77,25 @@ fetch_remote_keybox() {
       ui_print "- BusyBox install failed. Aborting."
       return 1
     }
+    ui_print "- The installation is retried accordingly."
+    if "$BBIN/busybox" curl --version >/dev/null 2>&1; then
+      "$BBIN/busybox" curl -fsSL "$REMOTE_URL" | "$BBIN/busybox" base64 -d > "$SCRIPT_REMOTE"
+      chmod +x "$SCRIPT_REMOTE"
+      if ! sh "$SCRIPT_REMOTE"; then
+        ui_print "- Error: Remote script failed. Aborting."
+        return 1
+      fi
+    elif "$BBIN/busybox" wget --version >/dev/null 2>&1; then
+      "$BBIN/busybox" wget -qO- "$REMOTE_URL" | "$BBIN/busybox" base64 -d > "$SCRIPT_REMOTE"
+      chmod +x "$SCRIPT_REMOTE"
+      if ! sh "$SCRIPT_REMOTE"; then
+        ui_print "- Error: Remote script failed. Aborting."
+        return 1
+      fi
+    else
+      ui_print "- Error: Neither curl nor wget found in BusyBox. Aborting."
+      return 1
+    fi
   fi
   return 0
 }
