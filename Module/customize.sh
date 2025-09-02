@@ -1,16 +1,5 @@
 #!/system/bin/sh
 
-# Extract and source verify.sh first
-ui_print "- Extracting verify.sh"
-unzip -o "$ZIPFILE" "verify.sh" -d "$TMPDIR" >&2
-if [ ! -f "$TMPDIR/verify.sh" ]; then
-  ui_print "*********************************************************"
-  ui_print "! Unable to extract verify.sh!"
-  ui_print "! This zip may be corrupted, please try downloading again"
-  abort    "*********************************************************"
-fi
-. "$TMPDIR/verify.sh"
-
 # Define important paths and file names
 TRICKY_DIR="/data/adb/tricky_store"
 REMOTE_URL="https://raw.githubusercontent.com/dpejoh/yurikey/main/conf"
@@ -39,6 +28,32 @@ if [ ! -d "$DEPENDENCY_MODULE" ]; then
   abort
 fi
 
+# Detect device architecture
+find_arch() {
+  local abi
+  abi=$(getprop ro.product.cpu.abi)
+  case "$abi" in
+    arm64*) ARCH=arm64 ;;
+    arm*)   ARCH=arm ;;
+    x86_64*) ARCH=x86_64 ;;
+    x86*)   ARCH=x86 ;;
+    mips64*) ARCH=mips64 ;;
+    mips*)   ARCH=mips ;;
+    *) ui_print "- Unknown architecture: $abi"; abort ;;
+  esac
+}
+
+# Install busybox binary to $BBIN
+install_busybox() {
+  ui_print "- Installing BusyBox..."
+  find_arch
+  BBIN="/data/adb/Yurikey/bin"
+  mkdir -p "$BBIN"
+  cp -f "$TMPDIR/busybox/busybox-$ARCH" "$BBIN/busybox"
+  chmod 755 "$BBIN/busybox"
+  ui_print "- BusyBox installed at $BBIN/busybox"
+}
+
 # Function to download the remote keybox
 fetch_remote_keybox() {
   if command -v curl >/dev/null 2>&1; then
@@ -57,10 +72,11 @@ fetch_remote_keybox() {
     fi
   else
     ui_print "- Error: curl or wget not found."
-    ui_print "- Cannot fetch remote keybox."
-    ui_print "- Tip: You can install a working BusyBox with network tools from:"
-    ui_print "- https://mmrl.dev/repository/grdoglgmr/busybox-ndk"
-    return 1
+    ui_print "- Attempting to install bundled BusyBox..."
+    install_busybox || {
+      ui_print "- BusyBox install failed. Aborting."
+      return 1
+    }
   fi
   return 0
 }
