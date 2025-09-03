@@ -31,7 +31,7 @@ if [ ! -d "$DEPENDENCY_MODULE" ]; then
 fi
 
 # Busybox Modules
-if [ ! -d "$BUSYBOX_MODULE" ]; then
+if [ -d "$BUSYBOX_MODULE" ]; then
   ui_print "- If you're only using the Busybox for Android NDK module for YuriKey, we recommend removing it."
   ui_print "- You may no longer need it."
 fi
