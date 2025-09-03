@@ -27,8 +27,9 @@ fi
 
 # Busybox Modules
 if [ -d "$BUSYBOX_MODULE" ]; then
-  log_message "- If you're only using the Busybox for Android NDK module for YuriKey, we recommend removing it."
-  log_message "- You may no longer need it."
+  ui_print "- If you're only using the Busybox for Android NDK module for YuriKey."
+  ui_print "- We recommend removing it."
+  ui_print "- You may no longer need it."
 fi
 
 # Function to download the remote keybox

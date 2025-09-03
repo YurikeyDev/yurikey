@@ -32,8 +32,14 @@ fi
 
 # Busybox Modules
 if [ -d "$BUSYBOX_MODULE" ]; then
-  ui_print "- If you're only using the Busybox for Android NDK module for YuriKey, we recommend removing it."
+  ui_print "- If you're only using the Busybox for Android NDK module for YuriKey."
+  ui_print "- We recommend removing it."
   ui_print "- You may no longer need it."
+fi
+
+# A few wipes
+if [ -d "$BBIN" ]; then
+  rm -rf $BBIN
 fi
 
 # Detect device architecture
