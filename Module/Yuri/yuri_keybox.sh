@@ -8,6 +8,7 @@ BACKUP_FILE="$TRICKY_DIR/keybox.xml.bak"
 TMP_REMOTE="$TRICKY_DIR/remote_keybox.tmp"
 SCRIPT_REMOTE="$TRICKY_DIR/remote_script.sh"
 DEPENDENCY_MODULE="/data/adb/modules/tricky_store"
+DEPENDENCY_MODULE_UPDATE="/data/adb/modules_update/tricky_store"
 BUSYBOX_MODULE="/data/adb/modules/busybox-ndk"
 BBIN="/data/adb/Yurikey/bin"
 
@@ -19,10 +20,10 @@ log_message() {
 log_message "Start"
 
 # Check if Tricky Store module is installed (required dependency)
-if [ ! -d "$DEPENDENCY_MODULE" ]; then
-  log_message "ERROR: Tricky Store module not found!"
-  log_message "Please install Tricky Store before using Yuri Keybox."
-  exit 1
+if [ ! -d "$DEPENDENCY_MODULE" ] || [ ! -d "$DEPENDENCY_MODULE_UPDATE" ]; then
+  ui_print "- Error: Tricky Store module not found!"
+  ui_print "- Please install Tricky Store before using Yuri Keybox."
+  abort
 fi
 
 # Busybox Modules
