@@ -25,10 +25,14 @@ if [ -d "/data/adb/modules/yurikey" ]; then
 fi
 
 # Check if Tricky Store module is installed (required dependency)
-if [ ! -d "$DEPENDENCY_MODULE" ] || [ ! -d "$DEPENDENCY_MODULE_UPDATE" ]; then
-  ui_print "- Error: Tricky Store module not found!"
+if [ -d "$DEPENDENCY_MODULE_UPDATE" ]; then
+  ui_print "- Tricky Store installed"
+elif [ -d "$DEPENDENCY_MODULE" ]; then
+  ui_print "- Tricky Store installed"
+else
+  ui_print "- Error: Tricky Store module file not found!"
   ui_print "- Please install Tricky Store before using Yuri Keybox."
-  abort
+  exit 0
 fi
 
 # Busybox Modules
