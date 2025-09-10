@@ -1,16 +1,5 @@
 #!/system/bin/sh
 
-# Extract and source verify.sh first
-ui_print "- Extracting verify.sh"
-unzip -o "$ZIPFILE" "verify.sh" -d "$TMPDIR" >&2
-if [ ! -f "$TMPDIR/verify.sh" ]; then
-  ui_print "*********************************************************"
-  ui_print "! Unable to extract verify.sh!"
-  ui_print "! This zip may be corrupted, please try downloading again"
-  abort    "*********************************************************"
-fi
-. "$TMPDIR/verify.sh"
-
 # Define important paths and file names
 TRICKY_DIR="/data/adb/tricky_store"
 REMOTE_URL="https://raw.githubusercontent.com/dpejoh/yurikey/main/conf"
@@ -19,6 +8,9 @@ BACKUP_FILE="$TRICKY_DIR/keybox.xml.bak"
 TMP_REMOTE="$TRICKY_DIR/remote_keybox.tmp"
 SCRIPT_REMOTE="$TRICKY_DIR/remote_script.sh"
 DEPENDENCY_MODULE="/data/adb/modules/tricky_store"
+DEPENDENCY_MODULE_UPDATE="/data/adb/modules_update/tricky_store"
+BUSYBOX_MODULE="/data/adb/modules/busybox-ndk"
+BBIN="/data/adb/Yurikey/bin"
 
 # Show UI banner
 ui_print ""
@@ -33,11 +25,52 @@ if [ -d "/data/adb/modules/yurikey" ]; then
 fi
 
 # Check if Tricky Store module is installed (required dependency)
-if [ ! -d "$DEPENDENCY_MODULE" ]; then
-  ui_print "- Error: Tricky Store module not found!"
+if [ -d "$DEPENDENCY_MODULE_UPDATE" ]; then
+  ui_print "- Tricky Store installed"
+elif [ -d "$DEPENDENCY_MODULE" ]; then
+  ui_print "- Tricky Store installed"
+else
+  ui_print "- Error: Tricky Store module file not found!"
   ui_print "- Please install Tricky Store before using Yuri Keybox."
-  abort
+  exit 0
 fi
+
+# Busybox Modules
+if [ -d "$BUSYBOX_MODULE" ]; then
+  ui_print "- If you're only using the Busybox for Android NDK module for YuriKey."
+  ui_print "- We recommend removing it."
+  ui_print "- You may no longer need it."
+fi
+
+# A few wipes
+if [ -d "$BBIN" ]; then
+  rm -rf $BBIN
+fi
+
+# Detect device architecture
+find_arch() {
+  local abi
+  abi=$(getprop ro.product.cpu.abi)
+  case "$abi" in
+    arm64*) ARCH=arm64 ;;
+    arm*)   ARCH=arm ;;
+    x86_64*) ARCH=x86_64 ;;
+    x86*)   ARCH=x86 ;;
+    mips64*) ARCH=mips64 ;;
+    mips*)   ARCH=mips ;;
+    *) ui_print "- Unknown architecture: $abi"; abort ;;
+  esac
+}
+
+# Install busybox binary to $BBIN
+install_busybox() {
+  ui_print "- Installing BusyBox..."
+  find_arch
+  mkdir -p "$BBIN"
+  cp -f "$TMPDIR/busybox/busybox-$ARCH" "$BBIN/busybox"
+  chmod 755 "$BBIN/busybox"
+  ui_print "- BusyBox installed at $BBIN/busybox"
+}
 
 # Function to download the remote keybox
 fetch_remote_keybox() {
@@ -57,10 +90,30 @@ fetch_remote_keybox() {
     fi
   else
     ui_print "- Error: curl or wget not found."
-    ui_print "- Cannot fetch remote keybox."
-    ui_print "- Tip: You can install a working BusyBox with network tools from:"
-    ui_print "- https://mmrl.dev/repository/grdoglgmr/busybox-ndk"
-    return 1
+    ui_print "- Attempting to install bundled BusyBox..."
+    install_busybox || {
+      ui_print "- BusyBox install failed. Aborting."
+      return 1
+    }
+    ui_print "- The installation is retried accordingly."
+    if "$BBIN/busybox" curl --version >/dev/null 2>&1; then
+      "$BBIN/busybox" curl -fsSL "$REMOTE_URL" | "$BBIN/busybox" base64 -d > "$SCRIPT_REMOTE"
+      chmod +x "$SCRIPT_REMOTE"
+      if ! sh "$SCRIPT_REMOTE"; then
+        ui_print "- Error: Remote script failed. Aborting."
+        return 1
+      fi
+    elif "$BBIN/busybox" wget --version >/dev/null 2>&1; then
+      "$BBIN/busybox" wget -qO- "$REMOTE_URL" | "$BBIN/busybox" base64 -d > "$SCRIPT_REMOTE"
+      chmod +x "$SCRIPT_REMOTE"
+      if ! sh "$SCRIPT_REMOTE"; then
+        ui_print "- Error: Remote script failed. Aborting."
+        return 1
+      fi
+    else
+      ui_print "- Error: Neither curl nor wget found in BusyBox. Aborting."
+      return 1
+    fi
   fi
   return 0
 }
