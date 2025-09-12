@@ -16,110 +16,15 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Clear older runs
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          gh run list -L400 --json databaseId -q '.[].databaseId' | tail -n+10 | xargs -IID gh api "repos/$GITHUB_REPOSITORY/actions/runs/ID" -X DELETE || :
-
       - name: Update version with git HEAD
         run: |
           RANDOM_STRING=$(git rev-parse --short HEAD | cut -c1-7)
           echo "BUILD_ID=${RANDOM_STRING}" >> $GITHUB_ENV
           sed -i "s/^version=.*/version=${RANDOM_STRING}/" Module/module.prop
 
-      - name: Create module zip
-        run: |
-          ZIP_FILE="YuriKey_${{ env.BUILD_ID }}.zip"
-          cd Module
-          zip -r "../$ZIP_FILE" ./*
-
-      - name: Get latest release tag
-        id: get_latest_tag
-        run: |
-          TAG=$(curl -s https://api.github.com/repos/${GITHUB_REPOSITORY}/releases/latest | jq -r '.tag_name')
-          echo "Latest tag: $TAG"
-          echo "tag=$TAG" >> $GITHUB_OUTPUT
-
-      - name: Prepare new beta tag
-        id: beta_tag
-        run: |
-          DATE=$(date +'%Y%m%d')
-          BETA_TAG="${{ steps.get_latest_tag.outputs.tag }}-beta-$DATE"
-          echo "New beta tag: $BETA_TAG"
-          echo "beta_tag=$BETA_TAG" >> $GITHUB_OUTPUT
-
-      - name: Install Zakosign
-        run: |
-          sudo apt update -y
-          sudo apt install -y git curl wget
-          # Fetch all tags, sort them, get the last (latest) one
-          TAG=$(curl -s https://api.github.com/repos/Lama3L9R/zakosign/tags | jq -r '.[].name' | sort -V | tail -n1)
-          echo "🔖 Latest tag of zakosign-amd64 patch: $TAG"
-
-          # Download the patch binary
-          curl -Ls -o zakosign-amd64 "https://github.com/Lama3L9R/zakosign/releases/download/$TAG/zakosign-amd64"
-          mv zakosign-amd64 zakosign
-          chmod +x zakosign
-
-      - name: Sign Module zip
-        run: |
-          #!/bin/bash
-          set -e
-          MODFILE="YuriKey_${{ env.BUILD_ID }}.zip"
-          SIGNED="YuriKey_${{ env.BUILD_ID }}.signed.zip"
-
-          # Certificate defaults
-          C="US"
-          ST="California"
-          L="Mountain"
-          O="YuriRoot"
-          OU="YuriDev"
-
-          # Clean old keys
-          rm -f rootCA.* int1.* int2.* dev.* "$SIGNED"
-
-          # Root CA
-          ./zakosign key new rootCA.key
-          ./zakosign cert new rootCA.key rootCA.crt \
-            --cn "Root CA" --country "$C" --state "$ST" --city "$L" --org "$O" --ounit "$OU" --days 30
-
-          # Intermediate CA 2
-          ./zakosign key new int2.key
-          ./zakosign cert issue rootCA.key rootCA.crt int2.key int2.crt \
-            --cn "Intermediate CA 2" --country "$C" --state "$ST" --city "$L" --org "$O" --ounit "$OU" --days 30
-
-          # Intermediate CA 1
-          ./zakosign key new int1.key
-          ./zakosign cert issue int2.key int2.crt int1.key int1.crt \
-            --cn "Intermediate CA 1" --country "$C" --state "$ST" --city "$L" --org "$O" --ounit "$OU" --days 30
-
-          # Developer leaf
-          ./zakosign key new dev.key
-          ./zakosign cert issue int1.key int1.crt dev.key dev.crt \
-            --cn "YuriKey Developer" --country "$C" --state "$ST" --city "$L" --org "$O" --ounit "$OU" --days 30
-
-          # Sign module
-          ./zakosign sign "$MODFILE" \
-            --key dev.key \
-            --certificate dev.crt \
-            --certificate int1.crt \
-            --certificate int2.crt \
-            --certificate rootCA.crt \
-            --output "$SIGNED"
-
-          # Show info
-          ./zakosign info "$SIGNED"
-
-          # Verify
-          ./zakosign verify "$SIGNED" || true
-
-      - name: Create Beta Pre-Release and Upload ZIP
-        uses: softprops/action-gh-release@v2
+      - name: Upload release artifact
+        uses: actions/upload-artifact@v4
         with:
-          tag_name: ${{ steps.beta_tag.outputs.beta_tag }}
-          name: ${{ steps.beta_tag.outputs.beta_tag }}
-          files: ./YuriKey_${{ env.BUILD_ID }}.signed.zip
-          prerelease: true
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          name: YuriKey_${{ env.BUILD_ID }}
+          path: |
+            ${{ github.workspace }}/Module/*
