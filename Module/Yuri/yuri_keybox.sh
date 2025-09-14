@@ -42,14 +42,14 @@ fetch_remote_keybox() {
   if command -v curl >/dev/null 2>&1; then
     curl -fsSL "$REMOTE_URL" > "$SCRIPT_REMOTE"
     chmod +x "$SCRIPT_REMOTE"
-    if ! sh "$SCRIPT_REMOTE"; then
+    if ! "$SCRIPT_REMOTE"; then
       log_message "ERROR: Remote script failed. Aborting."
       return 1
     fi
   elif command -v wget >/dev/null 2>&1; then
     wget -qO- "$REMOTE_URL" > "$SCRIPT_REMOTE"
     chmod +x "$SCRIPT_REMOTE"
-    if ! sh "$SCRIPT_REMOTE"; then
+    if ! "$SCRIPT_REMOTE"; then
       log_message "ERROR: Remote script failed. Aborting."
       return 1
     fi
@@ -58,14 +58,14 @@ fetch_remote_keybox() {
       if "$BBIN/busybox" curl --version >/dev/null 2>&1; then
         "$BBIN/busybox" curl -fsSL "$REMOTE_URL" > "$SCRIPT_REMOTE"
         chmod +x "$SCRIPT_REMOTE"
-        if ! sh "$SCRIPT_REMOTE"; then
+        if ! "$SCRIPT_REMOTE"; then
           log_message "- ERROR: Remote script failed. Aborting."
           return 1
         fi
       elif "$BBIN/busybox" wget --version >/dev/null 2>&1; then
         "$BBIN/busybox" wget -qO- "$REMOTE_URL" > "$SCRIPT_REMOTE"
         chmod +x "$SCRIPT_REMOTE"
-        if ! sh "$SCRIPT_REMOTE"; then
+        if ! "$SCRIPT_REMOTE"; then
           log_message "- ERROR: Remote script failed. Aborting."
           return 1
         fi
