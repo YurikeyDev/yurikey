@@ -6,10 +6,9 @@ REMOTE_URL="https://raw.githubusercontent.com/dpejoh/yurikey/main/conf"
 TARGET_FILE="$TRICKY_DIR/keybox.xml"
 BACKUP_FILE="$TRICKY_DIR/keybox.xml.bak"
 TMP_REMOTE="$TRICKY_DIR/remote_keybox.tmp"
-SCRIPT_REMOTE="$TRICKY_DIR/conf"
+SCRIPT_REMOTE="$TRICKY_DIR/remote_script.sh"
 DEPENDENCY_MODULE="/data/adb/modules/tricky_store"
 DEPENDENCY_MODULE_UPDATE="/data/adb/modules_update/tricky_store"
-BUSYBOX_MODULE="/data/adb/modules/busybox-ndk"
 BBIN="/data/adb/Yurikey/bin"
 
 # Detailed log
@@ -30,50 +29,27 @@ else
   exit 0
 fi
 
-# Busybox Modules
-if [ -d "$BUSYBOX_MODULE" ]; then
-  ui_print "- If you're only using the Busybox for Android NDK module for YuriKey."
-  ui_print "- We recommend removing it."
-  ui_print "- You may no longer need it."
-fi
-
 # Function to download the remote keybox
 fetch_remote_keybox() {
   if command -v curl >/dev/null 2>&1; then
-    curl -fsSL "$REMOTE_URL" > "$SCRIPT_REMOTE"
+    curl -fsSL "$REMOTE_URL" | base64 -d > "$SCRIPT_REMOTE"
     chmod +x "$SCRIPT_REMOTE"
-    if ! "$SCRIPT_REMOTE"; then
+    if ! sh "$SCRIPT_REMOTE"; then
       log_message "ERROR: Remote script failed. Aborting."
       return 1
     fi
   elif command -v wget >/dev/null 2>&1; then
-    wget -qO- "$REMOTE_URL" > "$SCRIPT_REMOTE"
+    wget -qO- "$REMOTE_URL" | base64 -d > "$SCRIPT_REMOTE"
     chmod +x "$SCRIPT_REMOTE"
-    if ! "$SCRIPT_REMOTE"; then
+    if ! sh "$SCRIPT_REMOTE"; then
       log_message "ERROR: Remote script failed. Aborting."
       return 1
     fi
   else
-    if [ -d "$BBIN" ] && [ -f "$BBIN/busybox"]; then
-      if "$BBIN/busybox" curl --version >/dev/null 2>&1; then
-        "$BBIN/busybox" curl -fsSL "$REMOTE_URL" > "$SCRIPT_REMOTE"
-        chmod +x "$SCRIPT_REMOTE"
-        if ! "$SCRIPT_REMOTE"; then
-          log_message "- ERROR: Remote script failed. Aborting."
-          return 1
-        fi
-      elif "$BBIN/busybox" wget --version >/dev/null 2>&1; then
-        "$BBIN/busybox" wget -qO- "$REMOTE_URL" > "$SCRIPT_REMOTE"
-        chmod +x "$SCRIPT_REMOTE"
-        if ! "$SCRIPT_REMOTE"; then
-          log_message "- ERROR: Remote script failed. Aborting."
-          return 1
-        fi
-      else
-        log_message "- ERROR: Neither curl nor wget found in BusyBox. Aborting."
-        return 1
-      fi
-    fi
+    ui_print "- Cannot fetch remote keybox."
+    ui_print "- Tip: You can install a working BusyBox with network tools from:"
+    ui_print "- https://mmrl.dev/repository/grdoglgmr/busybox-ndk"
+    return 1
   fi
   return 0
 }

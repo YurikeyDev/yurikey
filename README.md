@@ -39,6 +39,9 @@ https://t.me/yuridonationandbill
 For the error on the side "ERROR: Tricky Store module not found!"
 > [Tricky Store](https://github.com/5ec1cff/TrickyStore/releases/latest)
 
+For the error on the side "ERROR: curl or wget not found!"
+> [BusyBox](https://mmrl.dev/repository/grdoglgmr/busybox-ndk)
+
 ## Module signature with Zakosign
 > [!NOTE]
 >
@@ -56,4 +59,3 @@ For the error on the side "ERROR: Tricky Store module not found!"
 [Munch](https://github.com/SudoNothing404)  
 [Wes](https://github.com/ihatenodejs)  
 [Khx](https://github.com/dpejoh)  
-[osm0sis](https://github.com/osm0sis)  
