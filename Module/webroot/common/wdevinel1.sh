@@ -11,4 +11,4 @@ chown root:root /data/local/tmp/FixWdevineL1.sh
 chown root:root /data/local/tmp/attestation
 
 # Execute the script
-sh /data/local/tmp/FixWdevineL1.sh
+sh -s /data/local/tmp/FixWdevineL1.sh
