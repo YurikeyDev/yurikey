@@ -22,7 +22,9 @@ https://t.me/yuriiarchives
 
 https://t.me/yuriifeedback
 
-https://t.me/yuridonationandbill
+https://t.me/yuriiservice 
+
+https://t.me/yurikernel
 
 ## How to get Strong Integrity ?
 - Install module [Play Integrity Inject](https://github.com/KOWX712/PlayIntegrityFix/releases/latest) or [Play integrity Fork](https://github.com/osm0sis/PlayIntegrityFork/releases/latest)
@@ -59,3 +61,4 @@ For the error on the side "ERROR: curl or wget not found!"
 [Munch](https://github.com/SudoNothing404)  
 [Wes](https://github.com/ihatenodejs)  
 [Khx](https://github.com/dpejoh)  
+
