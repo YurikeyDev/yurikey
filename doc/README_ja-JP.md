@@ -1,5 +1,7 @@
 # YuriKey
 ![Artifacts](./banner.webp)
+
+
 [![Telegram](https://img.shields.io/badge/Follow-Telegram-blue.svg?logo=telegram)](https://t.me/yuriiroot)
 [![latest release](https://img.shields.io/github/v/release/dpejoh/yurikey?label=Release&logo=github)](https://github.com/dpejoh/yurikey/releases/latest)
 [![CI](https://github.com/dpejoh/yurikey/actions/workflows/build.yml/badge.svg)](https://github.com/dpejoh/yurikey/actions/workflows/build.yml)
@@ -27,7 +29,7 @@ https://t.me/yuriiservice
 https://t.me/yurikernel
 
 ## どうすれば Strong Integrity を取得できますか？
-- [Play Integrity Inject](https://github.com/KOWX712/PlayIntegrityFix/releases/latest) または [Play integrity Fork](https://github.com/osm0sis/PlayIntegrityFork/releases/latest) をインストールしてください
+- [Play Integrity Inject](https://github.com/KOWX712/PlayIntegrityFix/releases/latest) または [Play Integrity Fork](https://github.com/osm0sis/PlayIntegrityFork/releases/latest) をインストールしてください
 - [Tricky Store](https://github.com/5ec1cff/TrickyStore/releases/latest) をインストールしてください
 - [Yurikey Manager](https://github.com/dpejoh/yurikey/releases/latest) を root マネージャーにインストールしてください (Magisk/Apatch/KernelSU/KernelSU のフォーク)
 - アクションボタンを押してください
@@ -47,7 +49,7 @@ https://t.me/yurikernel
 ## Zakosign によるモジュールの署名
 > [!NOTE]
 >
-> YuriKey バージョン 1.90 以降は [Zakosign](https://github.com/Lama3L9R/zakosign) ツールを使用した署名方法になりました。これによりモジュールの zip ファイル内の改変を事前に検出できるようになっています。
+> YuriKey バージョン 1.90 以降から [Zakosign](https://github.com/Lama3L9R/zakosign) ツールを使用した署名に変更しました。これによりモジュールの zip ファイル内の改変を事前に検出できるようになっています。
 > モジュールの信頼性について質問がある場合、これですべての質問に答えることができるかもしれません。
 >
 > このツールを開発してくださった [Lama3L9R](https://github.com/Lama3L9R) に感謝を申し上げます。
