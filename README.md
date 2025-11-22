@@ -6,7 +6,7 @@
 [![latest release](https://img.shields.io/github/v/release/dpejoh/yurikey?label=Release&logo=github)](https://github.com/dpejoh/yurikey/releases/latest)
 [![CI](https://github.com/dpejoh/yurikey/actions/workflows/build.yml/badge.svg)](https://github.com/dpejoh/yurikey/actions/workflows/build.yml)
 
-Language: [日本語](./doc/README_ja-JP.md)
+**Language:** [日本語](./doc/README_ja-JP.md)
 
 A Systemless Module to get Strong Integrity so Easily
 
@@ -65,6 +65,7 @@ For the error on the side "ERROR: curl or wget not found!"
 [Munch](https://github.com/SudoNothing404)  
 [Wes](https://github.com/ihatenodejs)  
 [Khx](https://github.com/dpejoh)  
+
 
 
 
