@@ -1,5 +1,5 @@
 # YuriKey
-![Artifacts](./Module/banner.png)
+![Artifacts](./doc/banner.webp)
 [![Telegram](https://img.shields.io/badge/Follow-Telegram-blue.svg?logo=telegram)](https://t.me/yuriiroot)
 [![latest release](https://img.shields.io/github/v/release/dpejoh/yurikey?label=Release&logo=github)](https://github.com/dpejoh/yurikey/releases/latest)
 [![CI](https://github.com/dpejoh/yurikey/actions/workflows/build.yml/badge.svg)](https://github.com/dpejoh/yurikey/actions/workflows/build.yml)
