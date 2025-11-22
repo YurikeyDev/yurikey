@@ -36,7 +36,7 @@ https://t.me/yurikernel
 - Install module [Yurikey Manager](https://github.com/dpejoh/yurikey/releases/latest) by your root manager (Magisk/Apatch/KernelSu/Fork of KernelSU)
 - Press the action button
 
-## ⚠️ Attention
+## ⚠️Attention
 > [!NOTE]
 >
 > If you get errors similar to the ones below in action.sh or in module installations, you may need to install the modules below them.
@@ -65,5 +65,6 @@ For the error on the side "ERROR: curl or wget not found!"
 [Munch](https://github.com/SudoNothing404)  
 [Wes](https://github.com/ihatenodejs)  
 [Khx](https://github.com/dpejoh)  
+
 
 
