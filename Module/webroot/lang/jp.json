@@ -44,7 +44,7 @@
   "role_WebUI Developer": "WebUI の開発者",
   "role_Ex Module Developer": "モジュールの元開発者",
 
-  "executing": 「{script}」を実行中...",
+  "executing": "「{script}」を実行中...",
   "success": "「{script}」の実行に成功しました。",
   "failed": "「{script}」の実行に失敗しました。",
   "timeout": "「{script}」がタイムアウトしました。",
