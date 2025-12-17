@@ -9,7 +9,8 @@ for SCRIPT in \
   "yuri_keybox.sh" \
   "target_txt.sh" \
   "security_patch.sh" \
-  "boot_hash.sh"
+  "boot_hash.sh" \
+  "clear_trace.sh"
 do
   if ! sh "$MODPATH/Yuri/$SCRIPT"; then
     echo "- Error: $SCRIPT failed. Aborting."
