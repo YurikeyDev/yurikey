@@ -20,6 +20,7 @@ if [ -f "$tees" ]; then
 fi
 
 # add list special
+rm -rf $t
 fixed_targets="\
 android
 com.android.vending!
