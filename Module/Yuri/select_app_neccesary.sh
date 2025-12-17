@@ -11,7 +11,7 @@ t='/data/adb/tricky_store/target.txt'
 
 # Writing
 log_message "Writing"
-
+rm -rf "$t"
 # add list special
 fixed_targets="\
 android
