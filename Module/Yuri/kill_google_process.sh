@@ -17,8 +17,8 @@ for pkg in $PKGS; do
         exit 1
     fi
 
-    if ! pm clear "$pkg" >/dev/null 2>&1; then
-        log_message "ERROR: Failed to clear data for $pkg"
+    if ! cmd package trim-caches 0 "$pkg" >/dev/null 2>&1; then
+        log_message "ERROR: Failed to clear cache for $pkg"
         exit 1
     fi
 done
