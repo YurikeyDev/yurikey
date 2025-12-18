@@ -6,10 +6,10 @@ unset ASH_STANDALONE
 
 for SCRIPT in \
   "kill_google_process.sh" \
+  "yuri_keybox.sh" \
   "target_txt.sh" \
   "security_patch.sh" \
-  "boot_hash.sh" \
-  "yuri_keybox.sh"
+  "boot_hash.sh"
 do
   if ! sh "$MODPATH/Yuri/$SCRIPT"; then
     echo "- Error: $SCRIPT failed. Aborting."
