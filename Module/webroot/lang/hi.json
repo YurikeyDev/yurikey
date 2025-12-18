@@ -1,0 +1,59 @@
+{
+  "nav_home": "होम",
+  "nav_menu": "मेनू",
+  "nav_update": "अपडेट",
+  "nav_advancemenu": "मेनू +",
+  "nav_settings": "सेटिंग्स",
+
+  "home_version": "मॉड्यूल वर्जन",
+  "home_root": "रूट इम्प्लीमेंटेशन",
+  "home_refresh": "रिफ्रेश करें",
+  "home_refreshing": "रिफ्रेश हो रहा है...",
+  "home_status": "स्टेटस",
+  "home_status_online": "ऑनलाइन",
+  "home_status_offline": "ऑफलाइन",
+  "home_clock_date": "डेट",
+  "home_clock_time": "टाइम",
+
+  "menu_title": "मेनू",
+  "menu_force_clear": "फोर्स स्टॉप और प्ले स्टोर डेटा क्लियर करें",
+  "menu_keybox": "यूरी कीबॉक्स सेटअप करें",
+  "menu_target": "टार्गेट.टेक्स्ट सेटअप करें",
+  "menu_necessary": "आवश्यक ऐप सेट करें",
+  "menu_patch": "सिक्योरिटी पैच सेटअप करें",
+
+  "advance_menu_title": "एडवांस्ड मेनू",
+  "advance_fix_detect_hma": "HMA डिटेक्शन फिक्स करें",
+  "advance_fix_detect_lsposed": "LSPosed डिटेक्शन फिक्स करें (2)",
+  "advance_fix_detect_pif": "PIF डिटेक्शन फिक्स करें (1)",
+  "advance_fix_detect_recovery_file": "रिकवरी फाइल डिटेक्शन फिक्स करें",
+  "advance_kill_all": "सभी प्रक्रिया को मार डालो",
+  "advance_wdevinel1": "Widevine L1 फिक्स करें",
+  "advance_set_verified_boot": "वेरिफाइड बूटहैश सेटअप करें",
+
+  "update_title": "अपडेट और सपोर्ट",
+  "update_desc": "यूरीकी का लेटेस्ट वर्जन, बग फिक्स और नए फीचर्स के साथ अपडेट रहें।",
+  "update_github": "गिटहब पर देखें",
+  "update_telegram": "टेलीग्राम चैनल जॉइन करें",
+  "update_note": "अपडेट्स, कॉन्ट्रिब्यूशन और टेक्निकल डिस्कशन के लिए हमारे टेलीग्राम चैनल से जुड़ें या गिटहब चेक करें।",
+
+  "settings_contributors": "प्रोजेक्ट कंट्रीब्यूटर्स",
+
+  "role_Founder & Module Developer": "फाउंडर और मॉड्यूल डेवलपर",
+  "role_Module Developer": "मॉड्यूल डेवलपर",
+  "role_WebUI Developer": "वेबयूआई डेवलपर",
+  "role_Ex Module Developer": "पूर्व मॉड्यूल डेवलपर",
+
+  "executing": "\"{script}\" एक्जीक्यूट हो रहा है...",
+  "success": "\"{script}\" स्क्रिप्ट सक्सेसफुली एक्जीक्यूट हुई।",
+  "failed": "\"{script}\" स्क्रिप्ट फेल हो गई।",
+  "timeout": "\"{script}\" स्क्रिप्ट टाइमआउट हो गई।",
+  "ksu_not_available": "कर्नेलएसयू एक्जीक्यूट एपीआई उपलब्ध नहीं है।",
+
+  "status_online": "स्टेटस: ऑनलाइन",
+  "status_offline": "स्टेटस: ऑफलाइन",
+  "home_refresh_failed": "रिफ्रेश फेल हो गया।",
+  "home_no_internet": "इंटरनेट कनेक्शन नहीं है।",
+  "home_connected": "कनेक्टेड",
+  "home_disconnected": "डिस्कनेक्टेड"
+}

@@ -1,0 +1,30 @@
+name: Build Module
+
+on:
+  #push:
+  #  paths:
+  #    - 'Module/**'
+  #  branches:
+  #    - main
+  #    - dev
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Update version with git HEAD
+        run: |
+          RANDOM_STRING=$(git rev-parse --short HEAD | cut -c1-7)
+          echo "BUILD_ID=${RANDOM_STRING}" >> $GITHUB_ENV
+          sed -i "s/^version=.*/version=${RANDOM_STRING}/" Module/module.prop
+
+      - name: Upload release artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: YuriKey_${{ env.BUILD_ID }}
+          path: |
+            ${{ github.workspace }}/Module/*

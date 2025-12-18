@@ -1,0 +1,59 @@
+{
+  "nav_home": "Trang Chủ",
+  "nav_menu": "Menu",
+  "nav_update": "Cập Nhật",
+  "nav_advancemenu": "Menu +",
+  "nav_settings": "Cài Đặt",
+
+  "home_version": "Phiên Bản Module",
+  "home_root": "Triển Khai Root",
+  "home_refresh": "Làm Mới Thông Tin",
+  "home_refreshing": "Đang làm mới...",
+  "home_status": "Trạng Thái",
+  "home_status_online": "Trực Tuyến",
+  "home_status_offline": "Ngoại Tuyến",
+  "home_clock_date": "Ngày",
+  "home_clock_time": "Giờ",
+
+  "menu_title": "MENU CHÍNH",
+  "menu_force_clear": "Buộc Dừng & Xóa Dữ Liệu Cửa Hàng Play",
+  "menu_keybox": "Thiết Lập Yuri Keybox",
+  "menu_target": "Thiết Lập Target.txt",
+  "menu_necessary": "Chỉ Thiết lập ứng dụng cần thiết",
+  "menu_patch": "Thiết lập Security Patch",
+
+  "advance_menu_title": "Menu Nâng Cao",
+  "advance_fix_detect_hma": "Sửa Phát Hiện HMA",
+  "advance_fix_detect_lsposed": "Sửa Phát Hiện lsposed (2)",
+  "advance_fix_detect_pif": "Sửa Phát Hiện PIF (1)",
+  "advance_fix_detect_recovery_file": "Sửa Phát Hiện File Recovery (TWRP)",
+  "advance_kill_all": "Giết tất cả",
+  "advance_wdevinel1": "Sửa Widevine L1",
+  "advance_set_verified_boot": "Đặt Verified Boothash",
+
+  "update_title": "CẬP NHẬT & HỖ TRỢ",
+  "update_desc": "Luôn cập nhật với phiên bản Yurikey mới nhất, sửa lỗi và tính năng mới.",
+  "update_github": "Xem trên GitHub",
+  "update_telegram": "Tham gia Kênh Telegram",
+  "update_note": "Tham gia kênh Telegram của chúng tôi hoặc kiểm tra GitHub để cập nhật, đóng góp và thảo luận kỹ thuật.",
+
+  "settings_contributors": "Những Người Đóng Góp Dự Án",
+
+  "role_Founder & Module Developer": "Người Sáng Lập & Nhà Phát Triển Module",
+  "role_Module Developer": "Nhà Phát Triển Module",
+  "role_WebUI Developer": "Nhà Phát Triển Giao Diện Web",
+  "role_Ex Module Developer": "Cựu Nhà Phát Triển Module",
+
+  "executing": "Đang thực thi \"{script}\"...",
+  "success": "Script \"{script}\" đã thực thi thành công.",
+  "failed": "Thực thi script \"{script}\" thất bại.",
+  "timeout": "Script \"{script}\" hết thời gian chờ.",
+  "ksu_not_available": "API KernelSU exec không khả dụng.",
+
+  "status_online": "Trạng thái: Trực tuyến",
+  "status_offline": "Trạng thái: Ngoại tuyến",
+  "home_refresh_failed": "Làm mới thông tin thất bại.",
+  "home_no_internet": "Không có kết nối internet.",
+  "home_connected": "Đã kết nối",
+  "home_disconnected": "Mất kết nối"
+}

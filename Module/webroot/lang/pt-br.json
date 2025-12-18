@@ -1,0 +1,59 @@
+{
+  "nav_home": "Home",
+  "nav_menu": "Menu",
+  "nav_update": "Update",
+  "nav_advancemenu": "Menu +",
+  "nav_settings": "Config",
+
+  "home_version": "Versão do Módulo",
+  "home_root": "Tipo de Root",
+  "home_refresh": "Atualizar",
+  "home_refreshing": "Atualizando...",
+  "home_status": "Status",
+  "home_status_online": "Online",
+  "home_status_offline": "Offline",
+  "home_clock_date": "Data",
+  "home_clock_time": "Hora",
+
+  "menu_title": "MENU PRINCIPAL",
+  "menu_force_clear": "Fechar & Limpar os Dados da PlayStore",
+  "menu_keybox": "Configurar Yuri Keybox",
+  "menu_target": "Configurar Target.txt",
+  "menu_necessary": "Configura l'aplicació necessària",
+  "menu_patch": "Configurar o Patch de Segurança",
+
+  "advance_menu_title": "Menu Avançado",
+  "advance_fix_detect_hma": "Reparar Detecção HMA",
+  "advance_fix_detect_lsposed": "Reparar Detecção lsposed (2)",
+  "advance_fix_detect_pif": "Reparar Detecção PIF (1)",
+  "advance_fix_detect_recovery_file": "Reparar Detecção Recovery File",
+  "advance_kill_all": "Matar todos os processos",
+  "advance_wdevinel1": "Reparar Widevine L1",
+  "advance_set_verified_boot": "Configurar a Verificação do Boothash",
+
+  "update_title": "ATUALIZAÇÃO & SUPORTE",
+  "update_desc": "Mantenha-se atualizado com a versão mais recente do Yurikey, correções de bugs e novos recursos.",
+  "update_github": "Ver no GitHub",
+  "update_telegram": "Junte-se ao canal Telegram",
+  "update_note": "Junte-se ao nosso canal no Telegram ou verifique o GitHub para atualizações, contribuições e discussões técnicas.",
+
+  "settings_contributors": "Colaboradores do Projeto",
+
+  "role_Founder & Module Developer": "Fundador e Desenvolvedor de Módulos",
+  "role_Module Developer": "Desenvolvedor de Módulos",
+  "role_WebUI Developer": "WebUI Desenvolver",
+  "role_Ex Module Developer": "Ex-desenvolvedor de módulos",
+
+  "executing": "Executing \"{script}\"...",
+  "success": "Script \"{script}\" executed successfully.",
+  "failed": "Failed to execute script \"{script}\".",
+  "timeout": "Script \"{script}\" timed out.",
+  "ksu_not_available": "KernelSU exec API not available.",
+
+  "status_online": "Status: Online",
+  "status_offline": "Status: Offline",
+  "home_refresh_failed": "Falha ao atualizar as informações.",
+  "home_no_internet": "Sem conexão com a internet.",
+  "home_connected": "Conectado",
+  "home_disconnected": "Desconectado"
+}

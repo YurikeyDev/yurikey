@@ -1,0 +1,59 @@
+{
+  "nav_home": "หน้าหลัก",
+  "nav_menu": "เมนู",
+  "nav_update": "อัปเดต",
+  "nav_advancemenu": "เมนู +",
+  "nav_settings": "การตั้งค่า",
+
+  "home_version": "เวอร์ชันโมดูล",
+  "home_root": "การติดตั้งรูท",
+  "home_refresh": "รีเฟรชข้อมูล",
+  "home_refreshing": "กำลังรีเฟรช...",
+  "home_status": "สถานะ",
+  "home_status_online": "ออนไลน์",
+  "home_status_offline": "ออฟไลน์",
+  "home_clock_date": "วันที่",
+  "home_clock_time": "เวลา",
+
+  "menu_title": "เมนูหลัก",
+  "menu_force_clear": "บังคับหยุด & ล้างข้อมูล Play Store",
+  "menu_keybox": "ตั้งค่า Yuri Keybox",
+  "menu_target": "ตั้งค่า target.txt",
+  "menu_necessary": "ตั้งค่าแอปที่จำเป็น",
+  "menu_patch": "ใช้แพตช์ความปลอดภัย",
+
+  "advance_menu_title": "เมนูล่วงหน้า",
+  "advance_fix_detect_hma": "แก้ไขการตรวจจับ HMA",
+  "advance_fix_detect_lsposed": "แก้ไขการตรวจจับ lsposed (2)",
+  "advance_fix_detect_pif": "แก้ไขการตรวจจับ PIF (1)",
+  "advance_fix_detect_recovery_file": "แก้ไขการตรวจจับไฟล์กู้คืน",
+  "advance_kill_all": "ฆ่ากระบวนการทั้งหมด",
+  "advance_wdevinel1": "แก้ไข Widevine L1",
+  "advance_set_verified_boot": "ตั้งค่า Verified Boothash",
+
+  "update_title": "อัปเดตและสนับสนุน",
+  "update_desc": "ติดตามเวอร์ชัน Yurikey ล่าสุด การแก้ไขบั๊ก และฟีเจอร์ใหม่ๆ",
+  "update_github": "ดูบน GitHub",
+  "update_telegram": "เข้าร่วมช่อง Telegram",
+  "update_note": "เข้าร่วมช่อง Telegram ของเราหรือดูที่ GitHub สำหรับการอัปเดต การมีส่วนร่วม และการสนทนาทางเทคนิค",
+
+  "settings_contributors": "ผู้ร่วมพัฒนาโครงการ",
+
+  "role_Founder & Module Developer": "ผู้ก่อตั้งและนักพัฒนาโมดูล",
+  "role_Module Developer": "นักพัฒนาโมดูล",
+  "role_WebUI Developer": "นักพัฒนา WebUI",
+  "role_Ex Module Developer": "อดีตนักพัฒนาโมดูล",
+
+  "executing": "กำลังดำเนินการ \"{script}\"...",
+  "success": "สคริปต์ \"{script}\" ดำเนินการสำเร็จแล้ว",
+  "failed": "สคริปต์ \"{script}\" ล้มเหลวในการดำเนินการ",
+  "timeout": "สคริปต์ \"{script}\" หมดเวลาการทำงาน",
+  "ksu_not_available": "ไม่พบ API KernelSU exec",
+
+  "status_online": "สถานะ: ออนไลน์",
+  "status_offline": "สถานะ: ออฟไลน์",
+  "home_refresh_failed": "รีเฟรชข้อมูลล้มเหลว",
+  "home_no_internet": "ไม่มีการเชื่อมต่ออินเทอร์เน็ต",
+  "home_connected": "เชื่อมต่อแล้ว",
+  "home_disconnected": "ตัดการเชื่อมต่อ"
+}

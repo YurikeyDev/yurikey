@@ -1,0 +1,59 @@
+{
+  "nav_home": "Ana Sayfa",
+  "nav_menu": "Menü",
+  "nav_update": "Güncelle",
+  "nav_advancemenu": "Gelişmiş Menü",
+  "nav_settings": "Ayarlar",
+
+  "home_version": "Modül Sürümü",
+  "home_root": "Root Uygulaması",
+  "home_refresh": "Bilgileri Yenile",
+  "home_refreshing": "Yenileniyor...",
+  "home_status": "Durum",
+  "home_status_online": "Çevrimiçi",
+  "home_status_offline": "Çevrimdışı",
+  "home_clock_date": "Tarih",
+  "home_clock_time": "Saat",
+
+  "menu_title": "ANA MENÜ",
+  "menu_force_clear": "Play Store'u Durdur & Verilerini Temizle",
+  "menu_keybox": "Yuri Keybox Kur",
+  "menu_target": "target.txt Ayarla",
+  "menu_necessary": "Sadece önerilen uygulamaları ayarlayın",
+  "menu_patch": "Güvenlik Yamasını Uygula",
+
+  "advance_menu_title": "Gelişmiş Menü",
+  "advance_fix_detect_hma": "HMA Tespitini Düzelt",
+  "advance_fix_detect_lsposed": "lsposed Tespitini Düzelt (2)",
+  "advance_fix_detect_pif": "PIF Tespitini Düzelt (1)",
+  "advance_fix_detect_recovery_file": "Recovery Dosyası Tespitini Düzelt",
+  "advance_kill_all": "Tüm İşlemleri Sonlandır",
+  "advance_wdevinel1": "Widevine L1'i Düzelt",
+  "advance_set_verified_boot": "Verified Boothash Ayarla",
+
+  "update_title": "GÜNCELLEME & DESTEK",
+  "update_desc": "Yurikey'in en son sürümü, hata düzeltmeleri ve yeni özelliklerle güncel kal.",
+  "update_github": "GitHub'da Görüntüle",
+  "update_telegram": "Telegram Kanalına Katıl",
+  "update_note": "Güncellemeler, katkılar ve teknik tartışmalar için Telegram kanalımıza katılabilir veya GitHub'ı kontrol edebilirsin.",
+
+  "settings_contributors": "Proje Katkıcıları",
+
+  "role_Founder & Module Developer": "Kurucu & Modül Geliştirici",
+  "role_Module Developer": "Modül Geliştirici",
+  "role_WebUI Developer": "WebUI Geliştirici",
+  "role_Ex Module Developer": "Eski Modül Geliştirici",
+
+  "executing": "\"{script}\" çalıştırılıyor...",
+  "success": "\"{script}\" başarıyla çalıştırıldı.",
+  "failed": "\"{script}\" çalıştırılamadı.",
+  "timeout": "\"{script}\" zaman aşımına uğradı.",
+  "ksu_not_available": "KernelSU exec API mevcut değil.",
+
+  "status_online": "Durum: Çevrimiçi",
+  "status_offline": "Durum: Çevrimdışı",
+  "home_refresh_failed": "Bilgiler yenilenemedi.",
+  "home_no_internet": "İnternet bağlantısı yok.",
+  "home_connected": "Bağlı",
+  "home_disconnected": "Bağlı Değil"
+}

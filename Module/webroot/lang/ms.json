@@ -1,0 +1,59 @@
+{
+  "nav_home": "Laman Utama",
+  "nav_menu": "Menu",
+  "nav_update": "Kemas Kini",
+  "nav_advancemenu": "Menu +",
+  "nav_settings": "Tetapan",
+
+  "home_version": "Versi Modul",
+  "home_root": "Pelaksanaan Root",
+  "home_refresh": "Segarkan Maklumat",
+  "home_refreshing": "Sedang Menyegarkan...",
+  "home_status": "Status",
+  "home_status_online": "Dalam Talian",
+  "home_status_offline": "Luar Talian",
+  "home_clock_date": "Tarikh Jam",
+  "home_clock_time": "Masa Jam",
+
+  "menu_title": "MENU UTAMA",
+  "menu_force_clear": "Paksa Berhenti & Kosongkan Data Play Store",
+  "menu_keybox": "Sediakan Yuri Keybox",
+  "menu_target": "Sediakan target.txt",
+  "menu_necessary": "Atur aplikasi yang diperlukan",
+  "menu_patch": "Terapkan Tampalan Keselamatan",
+
+  "advance_menu_title": "Menu Lanjutan",
+  "advance_fix_detect_hma": "Betulkan Pengesanan HMA",
+  "advance_fix_detect_lsposed": "Betulkan Pengesanan lsposed (2)",
+  "advance_fix_detect_pif": "Betulkan Pengesanan PIF (1)",
+  "advance_fix_detect_recovery_file": "Betulkan Pengesanan Fail Pemulihan",
+  "advance_kill_all": "Bunuh Semua Proses",
+  "advance_wdevinel1": "Betulkan Widevine L1",
+  "advance_set_verified_boot": "Tetapkan Verified Boothash",
+
+  "update_title": "KEMAS KINI & SOKONGAN",
+  "update_desc": "Sentiasa kemas kini dengan versi Yurikey terkini, pembaikan pepijat, dan ciri baru.",
+  "update_github": "Lihat di GitHub",
+  "update_telegram": "Sertai Saluran Telegram",
+  "update_note": "Sertai saluran Telegram kami atau semak GitHub untuk kemas kini, sumbangan, dan perbincangan teknikal.",
+
+  "settings_contributors": "Penyumbang Projek",
+
+  "role_Founder & Module Developer": "Pengasas & Pembangun Modul",
+  "role_Module Developer": "Pembangun Modul",
+  "role_WebUI Developer": "Pembangun WebUI",
+  "role_Ex Module Developer": "Bekas Pembangun Modul",
+
+  "executing": "Menjalankan \"{script}\"...",
+  "success": "Skrip \"{script}\" berjaya dijalankan.",
+  "failed": "Gagal menjalankan skrip \"{script}\".",
+  "timeout": "Skrip \"{script}\" tamat masa.",
+  "ksu_not_available": "API KernelSU exec tidak tersedia.",
+
+  "status_online": "Status: Dalam Talian",
+  "status_offline": "Status: Luar Talian",
+  "home_refresh_failed": "Gagal menyegarkan maklumat.",
+  "home_no_internet": "Tiada sambungan internet.",
+  "home_connected": "Bersambung",
+  "home_disconnected": "Terputus"
+}

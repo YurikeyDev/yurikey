@@ -1,0 +1,59 @@
+{
+  "nav_home": "Home",
+  "nav_menu": "Menu",
+  "nav_update": "Update",
+  "nav_advancemenu": "Menu +",
+  "nav_settings": "Settings",
+
+  "home_version": "Module Version",
+  "home_root": "Root Implementation",
+  "home_refresh": "Refresh Info",
+  "home_refreshing": "Refreshing...",
+  "home_status": "Status",
+  "home_status_online": "Online",
+  "home_status_offline": "Offline",
+  "home_clock_date": "Clock Date",
+  "home_clock_time": "Clock Time",
+
+  "menu_title": "MAIN MENU",
+  "menu_force_clear": "Force Stop & Clear Data Play Store",
+  "menu_keybox": "Set Up Yuri Keybox",
+  "menu_target": "Set Up Target.txt",
+  "menu_necessary": "Only Set Necessary App",
+  "menu_patch": "Set Up Security Patch",
+
+  "advance_menu_title": "Advanced Menu",
+  "advance_fix_detect_hma": "Fix Detect HMA",
+  "advance_fix_detect_lsposed": "Fix Detect lsposed (2)",
+  "advance_fix_detect_pif": "Fix Detect PIF (1)",
+  "advance_fix_detect_recovery_file": "Fix Detect Recovery File",
+  "advance_kill_all": "Kill All Process",
+  "advance_wdevinel1": "Fix Widevine L1",
+  "advance_set_verified_boot": "Set Up Verified Boothash",
+
+  "update_title": "UPDATE & SUPPORT",
+  "update_desc": "Stay up to date with the latest version of Yurikey, bug fixes, and new features.",
+  "update_github": "View on GitHub",
+  "update_telegram": "Join Telegram Channel",
+  "update_note": "Join our Telegram channel or check GitHub for updates, contributions, and technical discussions.",
+
+  "settings_contributors": "Project Contributors",
+
+  "role_Founder & Module Developer": "Founder & Module Developer",
+  "role_Module Developer": "Module Developer",
+  "role_WebUI Developer": "WebUI Developer",
+  "role_Ex Module Developer": "Former Module Developer",
+
+  "executing": "Executing \"{script}\"...",
+  "success": "Script \"{script}\" executed successfully.",
+  "failed": "Failed to execute script \"{script}\".",
+  "timeout": "Script \"{script}\" timed out.",
+  "ksu_not_available": "KernelSU exec API not available.",
+
+  "status_online": "Status: Online",
+  "status_offline": "Status: Offline",
+  "home_refresh_failed": "Failed to refresh info.",
+  "home_no_internet": "No internet connection.",
+  "home_connected": "Connected",
+  "home_disconnected": "Disconnected"
+}

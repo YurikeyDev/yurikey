@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta Tags and Page Setup -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#121212" />
+  <title>Yurikey Manager</title>
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div id="app">
+    <main id="page-content">
+      <!-- Home Page Section -->
+      <section id="home-page" class="page active">
+        <div class="content">
+          <h1 class="big-title" style="margin-bottom: 4rem;">Yurikey Manager</h1>
+
+          <div class="refresh-section split-items">
+            <h3 id="version-text" class="version-text">Error</h3>
+            <button
+              id="refresh-info-btn"
+              class="refresh-btn-main"
+              data-script="device-info.sh"
+            >
+              <img src="/common/assets/icon/refresh.svg" alt="Refresh" />
+              <span data-i18n="home_refresh">Refresh Info</span>
+            </button>
+          </div>
+
+          <div class="info-cards-grid">
+            <div class="info-card">
+              <div class="card-header" style="display: flex; flex-direction: row; gap: 0.25rem;">
+                <h3 data-i18n="home_clock_date">Clock Date</h3><h3>&</h3><h3 data-i18n="home_clock_time">Clock Time</h3>
+              </div>
+              <div class="card-content gap-2">
+                <span id="clock-date" class="card-value">--/--/--</span>
+                <span id="clock-time" class="card-value">--:--:--</span>
+              </div>
+            </div>
+
+            <div class="info-card status-card offline" id="status-row">
+              <div class="card-header">
+                <h3 data-i18n="home_status">Status</h3>
+              </div>
+              <div class="card-content">
+                <span id="status-bar-text" class="card-value status-text" data-i18n="home_status_offline">Offline</span>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <div class="card-header">
+                <h3>Android</h3>
+              </div>
+              <div class="card-content">
+                <span id="android-version" class="card-value">Error</span>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <div class="card-header">
+                <h3>Kernel</h3>
+              </div>
+              <div class="card-content">
+                <span id="kernel-version" class="card-value">Error</span>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <div class="card-header">
+                <h3 data-i18n="home_root">Root Implementation</h3>
+              </div>
+              <div class="card-content">
+                <span id="root-type" class="card-value">Error</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="actions-page" class="page">
+        <div class="content">
+          <h1 class="main-title" data-i18n="menu_title">Main Menu</h1>
+          <div class="info-box info-content" style="margin-top: 3.5rem;">
+            <h3 class="sec-title" data-i18n="menu_keybox_title">Keybox</h3>
+            <div class="action-buttons">
+              <button class="menu-btn split-items" data-script="yuri_keybox.sh">
+                <img src="/common/assets/icon/play.svg" alt="Run" />
+                <span data-i18n="menu_keybox">Set up Yuri Keybox</span>
+              </button>
+            </div>
+          </div>
+          <div class="info-box info-content">
+            <h3 class="sec-title">GMS</h3>
+            <div class="action-buttons">
+              <button class="menu-btn split-items" data-script="kill_google_process.sh">
+                <img src="/common/assets/icon/play.svg" alt="Run" />
+                <span data-i18n="menu_force_clear">Force Stop & Clear Data Play Store</span>
+              </button>
+
+              <button class="menu-btn split-items" data-script="target_txt.sh">
+                <img src="/common/assets/icon/play.svg" alt="Run" />
+                <span data-i18n="menu_target">Set up target.txt</span>
+              </button>
+
+              <button class="menu-btn split-items" data-script="select_app_neccesary.sh">
+                <img src="/common/assets/icon/play.svg" alt="Run" />
+                <span data-i18n="menu_necessary">Set Necessary App</span>
+              </button>
+
+              <button class="menu-btn split-items" data-script="security_patch.sh">
+                <img src="/common/assets/icon/play.svg" alt="Run" />
+                <span data-i18n="menu_patch">Set up Security Patch</span>
+              </button>
+
+              <button class="menu-btn split-items" data-script="boot_hash.sh">
+                <img src="/common/assets/icon/play.svg" alt="Run" />
+                <span data-i18n="advance_set_verified_boot">Set Verified Boothash</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="advance-menu" class="page">
+        <div class="content">
+          <h1 class="main-title" data-i18n="advance_menu_title">Advanced Menu</h1>
+          <div class="info-box info-content" style="margin-top: 3.5rem;">
+            <h3 class="sec-title" data-i18n="nav_advancemenu">Menu +</h3>
+            <div class="action-buttons">
+              <!-- 6. Fix HMA Detection -->
+              <button id="btn-fix-detect-hma" class="menu-btn split-items" data-script="hma.sh">
+                <img src="/common/assets/icon/play.svg" alt="Run" />
+                <span data-i18n="advance_fix_detect_hma">Fix HMA Detection</span>
+              </button>
+
+              <!-- 7. Fix LSPosed Detection (2) -->
+              <button id="btn-fix-detect-lsposed" class="menu-btn split-items" data-script="lsposed2.sh">
+                <img src="/common/assets/icon/play.svg" alt="Run" />
+                <span data-i18n="advance_fix_detect_lsposed">Fix LSPosed Detection (2)</span>
+              </button>
+
+              <!-- 8. Fix PIF Detection (2) -->
+              <button id="btn-fix-detect-pif" class="menu-btn split-items" data-script="pif2.sh">
+                <img src="/common/assets/icon/play.svg" alt="Run" />
+                <span data-i18n="advance_fix_detect_pif">Fix PIF Detection (2)</span>
+              </button>
+
+              <!-- 9. Fix Recovery File Detection -->
+              <button id="btn-fix-detect-recovery-file" class="menu-btn split-items" data-script="twrp.sh">
+                <img src="/common/assets/icon/play.svg" alt="Run" />
+                <span data-i18n="advance_fix_detect_recovery_file">Fix Recovery File Detection</span>
+              </button>
+
+              <!-- 10. Kill All Proces -->
+              <button id="btn-kill-all" class="menu-btn split-items" data-script="kill_all.sh">
+                <img src="/common/assets/icon/play.svg" alt="Run" />
+                <span data-i18n="advance_kill_all">Kill All Process</span>
+              </button>
+
+              <!-- 11. Clear all detections trace -->
+              <button id="btn-fix-detect-pif" class="menu-btn split-items" data-script="clear_trace.sh">
+                <img src="/common/assets/icon/play.svg" alt="Run" />
+                <span data-i18n="advance_fix_clear_trace">Clear all detections trace</span>
+              </button>
+            </div>
+          </div>
+          <div class="info-box info-content">
+            <h3 class="sec-title">OnePlus, Realme, Oppo...</h3>
+            <div class="action-buttons">
+              <button id="btn-kill-all" class="menu-btn split-items" data-script="wdevinel1.sh">
+                <img src="/common/assets/icon/play.svg" alt="Run" />
+                <span data-i18n="advance_wdevinel1">Fix Widevine L1</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Update Page Section -->
+      <section id="update-page" class="page">
+        <h1 class="main-title" data-i18n="update_title">Update & Support</h1>
+        <div class="update-box">
+          <p data-i18n="update_desc">
+            Stay up-to-date with the latest version of <strong>YuriKey</strong>,
+            bug fixes, and new features.
+          </p>
+
+          <div class="update-links">
+            <button class="update-link" data-url="https://github.com/dpejoh/yurikey">
+              <img src="/common/assets/icon/github.gif" class="update-icon" alt="GitHub" />
+              <span data-i18n="update_github">View on GitHub</span>
+            </button>
+            <button class="update-link" data-url="https://t.me/yuriiroot">
+              <img src="/common/assets/icon/telegram.gif" class="update-icon" alt="Telegram" />
+              <span data-i18n="update_telegram">Join Telegram Channel</span>
+            </button>
+          </div>
+
+          <p class="note" data-i18n="update_note">
+            Join our Telegram channel or check GitHub for updates, contributions, and technical discussions.
+          </p>
+        </div>
+      </section>
+
+      <!-- Settings Page Section -->
+      <section id="settings-page" class="page">
+        <h1 class="main-title" data-i18n="settings_title">Settings</h1>
+        <div class="info-box info-content" style="margin-top: 0.5rem;">
+          <h3 class="sec-title" data-i18n="settings_language">Language</h3>
+          <div class="action-buttons">
+            <div class="custom-dropdown">
+              <button id="lang-btn" class="setting-btn">🇬🇧 English</button>
+              <ul id="lang-options" class="dropdown-list">
+                <li data-lang="en">🇬🇧 English</li>
+                <li data-lang="zh-han">🇨🇳 China</li>
+                <li data-lang="hi">🇮🇳 India</li>
+                <li data-lang="ru">🇷🇺 Russia</li>
+                <li data-lang="jp">🇯🇵 Japan</li>
+                <li data-lang="bn">🇧🇩 Bangladesh</li>
+                <li data-lang="id">🇮🇩 Indonesia</li>
+                <li data-lang="vn">🇻🇳 Vietnam</li>
+                <li data-lang="tr">🇹🇷 Turkish</li>
+                <li data-lang="es">🇪🇸 Spanish</li>
+                <li data-lang="ar">🇸🇦 Arabic</li>
+                <li data-lang="ms">🇲🇾 Malaysia</li>
+                <li data-lang="ph">🇵🇭 Philippines</li>
+                <li data-lang="th">🇹🇭 Thailand</li>
+                <li data-lang="uka">🇺🇦 Ukraine</li>
+                <li data-lang="pt-br">🇧🇷 Brazil</li>
+                <li data-lang="ro-md">🇲🇩 Moldova</li>
+                <li data-lang="ro-md">🇷🇴 Romania</li>
+                <li data-lang="pl">🇵🇱 Polish</li>
+                <li data-lang="hu">🇭🇺 Hungary</li>
+                
+              
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-box info-content">
+          <h3 class="sec-title" data-i18n="settings_theme">Theme</h3>
+          <div class="action-buttons">
+            <div class="custom-dropdown">
+              <button id="theme-btn" class="setting-btn">🌙 Dark Blue</button>
+              <ul id="theme-options" class="dropdown-list">
+                <li data-theme="dark-blue">🌙 <span data-i18n="theme_dark_blue">Dark Blue</span></li>
+                <li data-theme="dark-purple">🔮 <span data-i18n="theme_dark_purple">Dark Purple</span></li>
+                <li data-theme="dark-green">🌿 <span data-i18n="theme_dark_green">Dark Green</span></li>
+                <li data-theme="dark-orange">🔥 <span data-i18n="theme_dark_orange">Dark Orange</span></li>
+                <li data-theme="dark-red">❤️ <span data-i18n="theme_dark_red">Dark Red</span></li>
+                <li data-theme="cyberpunk">💫 <span data-i18n="theme_cyberpunk">Cyberpunk</span></li>
+                <li data-theme="midnight">🌃 <span data-i18n="theme_midnight">Midnight</span></li>
+                <li data-theme="forest">🌲 <span data-i18n="theme_forest">Forest</span></li>
+                <li data-theme="monet">🎨 <span data-i18n="theme_monet">Monet</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="update-box" id="dev-info">
+          <h3 class="action-title" data-i18n="settings_contributors">Project Contributors</h3>
+          <div id="contrib-list" class="contrib-grid"></div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Bottom Navigation Bar -->
+    <nav class="bottom-nav">
+      <button class="nav-btn active" data-target="home-page">
+        <img src="/common/assets/navbar/home.svg" alt="Home" class="nav-icon" />
+        <span data-i18n="nav_home">Home</span>
+      </button>
+      <button class="nav-btn" data-target="actions-page">
+        <img src="/common/assets/navbar/menu.svg" alt="Menu" class="nav-icon" />
+        <span data-i18n="nav_menu">Menu</span>
+      </button>
+      <button class="nav-btn" data-target="advance-menu">
+        <img src="/common/assets/navbar/android.png" alt="Advance Menu" class="nav-icon" />
+        <span data-i18n="nav_advancemenu">Menu +</span>
+      </button>
+      <button class="nav-btn" data-target="update-page">
+        <img src="/common/assets/navbar/community.png" alt="Update" class="nav-icon" />
+        <span data-i18n="nav_update">Update</span>
+      </button>
+      <button class="nav-btn" data-target="settings-page">
+        <img src="/common/assets/navbar/settings.svg" alt="Settings" class="nav-icon" />
+        <span data-i18n="nav_settings">Settings</span>
+      </button>
+    </nav>
+
+    <!-- JavaScript Files -->
+    <script src="js/language.js"></script>
+    <script src="js/redirect.js"></script>
+    <script src="js/device.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/version.js"></script>
+    <script src="js/dev.js"></script>
+    <script src="js/theme.js"></script>
+  </div>
+  <div id="toast-container"></div>
+</body>
+</html>
