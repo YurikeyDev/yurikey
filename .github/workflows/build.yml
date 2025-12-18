@@ -1,12 +1,6 @@
 name: Build Module
 
 on:
-  #push:
-  #  paths:
-  #    - 'Module/**'
-  #  branches:
-  #    - main
-  #    - dev
   workflow_dispatch:
 
 jobs:
