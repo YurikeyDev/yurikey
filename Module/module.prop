@@ -1,0 +1,8 @@
+id=Yurikey
+name=Yuri Keybox Manager
+version=v2.20
+versionCode=220
+author=Yurikey Dev
+banner=https://raw.githubusercontent.com/dpejoh/yurikey/main/Module/banner.png
+description=A systemless module to get strong integrity so easily
+updateJson=https://raw.githubusercontent.com/dpejoh/yurikey/main/update.json
