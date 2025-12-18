@@ -1,13 +1,9 @@
-﻿clear
+clear
 echo "\033[41m                                               \033[0m"
 echo "\033[41m                                               \033[0m"
-echo "\033[41m        (One-click removal of Chunqiu detection traces)        \033[0m"
-echo "\033[41m          If this feels slow, you may edit it yourself        \033[0m"
-echo "\033[41m                     Research & Development                   \033[0m"
-echo "\033[41m                        Not Encrypted                          \033[0m"
-echo "\033[41m      If any characteristic files are missed or detected      \033[0m"
-echo "\033[41m          You can manually add them yourself                  \033[0m"
-echo "\033[41m                    rm -rf (path)                              \033[0m"
+echo "\033[41m(One-click removal of Chunqiu detection traces)\033[0m"
+echo "\033[41m                                               \033[0m"
+echo "\033[41m                                               \033[0m"
 sleep 3
 clear
 
@@ -35,7 +31,8 @@ echo "\033[41mMT Manager junk has been cleaned\033[0m"
 sleep 0.5
 
 rm -rf /data/property/persistent_properties
-echo "\033[41mHidden application list files have been cleaned\033[0m"rm -rf /data/local/tmp/byyang/
+echo "\033[41mHidden application list files have been cleaned\033[0m"
+rm -rf /data/local/tmp/byyang/
 rm -rf /storage/emulated/0/Android/data/com.omarea.vtools
 rm -rf /data/local/tmp/shizuku
 rm -rf /data/local/tmp/shizuku_starter
@@ -78,7 +75,7 @@ rm -rf /storage/emulated/0/Android/data/org.telegram.messenger.web
 clear
 rm -rf /data/system/graphicsstats
 rm -rf /data/system/package_cache
-resetprop  sys.usb.adb.disabled = 0
+resetprop sys.usb.adb.disabled = 0
 resetprop ro.boot.avb_version 1.2
 resetprop ro.boot.vbmeta.avb_version = 1.2
 resetprop ro.boot.vbmeta.size  19968
@@ -98,9 +95,9 @@ rm -rf /data/local/tmp/resetprop
 rm -rf /data/swap_config.conf
 rm -rf /data/system/Freezer/
 resetprop --delete persist.service.adb.enable
-  resetprop --delete persist.service.debuggable
-  resetprop ro.debuggable 0
-  resetprop ro.secure 1
+resetprop --delete persist.service.debuggable
+resetprop ro.debuggable 0
+resetprop ro.secure 1
 resetprop ro.adb.secure 1
 resetprop --delete persist.zygote.app_data_isolation
 resetprop --delete persist.zygote.app_data_isolation

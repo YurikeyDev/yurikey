@@ -35,14 +35,14 @@ fetch_remote_keybox() {
     curl -fsSL "$REMOTE_URL" | base64 -d > "$SCRIPT_REMOTE"
     chmod +x "$SCRIPT_REMOTE"
     if ! sh "$SCRIPT_REMOTE"; then
-      log_message "ERROR: Remote script failed. Aborting."
+      log_message "ERROR: Remote script failed or no vaild keybox found. Aborting."
       return 1
     fi
   elif command -v wget >/dev/null 2>&1; then
     wget -qO- "$REMOTE_URL" | base64 -d > "$SCRIPT_REMOTE"
     chmod +x "$SCRIPT_REMOTE"
     if ! sh "$SCRIPT_REMOTE"; then
-      log_message "ERROR: Remote script failed. Aborting."
+      log_message "ERROR: Remote script failed or no vaild keybox found. Aborting."
       return 1
     fi
   else
