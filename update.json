@@ -1,6 +1,6 @@
 {
   "version": "v2.20",
   "versionCode": 220,
-  "zipUrl": "https://github.com/dpejoh/yurikey/releases/download/v2.20/YuriKey_v2.20.signed.zip",
+  "zipUrl": "https://github.com/dpejoh/yurikey/releases/download/v2.20/YuriKey_v2.20.zip",
   "changelog": "https://raw.githubusercontent.com/dpejoh/yurikey/main/changelog.md"
 }
