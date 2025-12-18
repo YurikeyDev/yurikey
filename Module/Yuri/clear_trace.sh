@@ -1,7 +1,7 @@
 clear
 echo "\033[41m                                               \033[0m"
 echo "\033[41m                                               \033[0m"
-echo "\033[41m(One-click removal of Chunqiu detection traces)\033[0m"
+echo "\033[41m(One-click to clear all detection traces)\033[0m"
 echo "\033[41m                                               \033[0m"
 echo "\033[41m                                               \033[0m"
 sleep 3
@@ -84,15 +84,15 @@ rm -rf /dev/memcg/scene_active
 rm -rf /dev/scene
 rm -rf /dev/cpuset/scene-daemon
 rm -rf /data/system/NoActive/
-rm -rf /data/local/tmp/byyang
-rm -rf /data/local/tmp/HyperCeiler
-rm -rf /data/local/tmp/luckys
-rm -rf /data/local/tmp/input_devices
+rm -rf /data/local/tmp/byyang/
+rm -rf /data/local/tmp/HyperCeiler/
+rm -rf /data/local/tmp/luckys/
+rm -rf /data/local/tmp/input_devices/
 resetprop ro.boot.vbmeta.digest d74bf68ce680f1f84679d10f25f07dbe92274a3f45c28dc061a6ae49a9b18ec4
 mkdir /data/local/tmp
-rm -rf /storage/emulated/0/Android/naki
-rm -rf /data/local/tmp/resetprop
-rm -rf /data/swap_config.conf
+rm -rf /storage/emulated/0/Android/naki/
+rm -rf /data/local/tmp/resetprop/
+rm -rf /data/swap_config.conf/
 rm -rf /data/system/Freezer/
 resetprop --delete persist.service.adb.enable
 resetprop --delete persist.service.debuggable
@@ -101,34 +101,35 @@ resetprop ro.secure 1
 resetprop ro.adb.secure 1
 resetprop --delete persist.zygote.app_data_isolation
 resetprop --delete persist.zygote.app_data_isolation
-rm -rf /storage/emulated/0/HMA_Config.json
-rm -rf /storage/emulated/0/最新版隐藏配置.json
-rm -rf /storage/emulated/0/Android/data/com.coolapk.market
-rm -rf /storage/emulated/0/Android/data/com.estrongs.android.pop
-rm -rf /storage/emulated/0/Android/obb/com.android.nativetest
-rm -rf /storage/emulated/0/Android/data/com.lingqing.detector
-rm -rf /storage/emulated/0/Android/data/aidepro.top
-rm -rf /storage/emulated/0/Android/data/com.android.nativetest
-rm -rf /storage/emulated/0/Android/data/bin.mt.plus
-rm -rf /storage/emulated/0/Android/data/bin.mt.plus.canary
-rm -rf /storage/emulated/0/Android/data/com.byyoung.setting
-rm -rf /storage/emulated/0/Android/data/me.garfieldhan.holmes
-rm -rf /storage/emulated/0/Android/data/icu.nullptr.nativetest
-rm -rf /storage/emulated/0/Android/obb/icu.nullptr.nativetest
-rm -rf /storage/emulated/0/Android/media/icu.nullptr.nativetest
+rm -rf /storage/emulated/0/最新版隐藏配置.json/
+rm -rf /storage/emulated/0/Android/data/com.coolapk.market/
+rm -rf /storage/emulated/0/Android/data/com.estrongs.android.pop/
+rm -rf /storage/emulated/0/Android/obb/com.android.nativetest/
+rm -rf /storage/emulated/0/Android/data/com.lingqing.detector/
+rm -rf /storage/emulated/0/Android/data/aidepro.top/
+rm -rf /storage/emulated/0/Android/data/com.android.nativetest/
+rm -rf /storage/emulated/0/Android/data/bin.mt.plus/
+rm -rf /storage/emulated/0/Android/data/bin.mt.plus.canary/
+rm -rf /storage/emulated/0/Android/data/com.byyoung.setting/
+rm -rf /storage/emulated/0/Android/data/me.garfieldhan.holmes/
+rm -rf /storage/emulated/0/Android/data/icu.nullptr.nativetest/
+rm -rf /storage/emulated/0/Android/obb/icu.nullptr.nativetest/
+rm -rf /storage/emulated/0/Android/media/icu.nullptr.nativetest/
 rm -rf /storage/emulated/0/Android/data/com.omarea.vtools/
 rm -rf /storage/emulated/0/Android/data/com.zhenxi.hunter/
+rm -rf storage/emulated/0/Android/data/io.liankong.riskdetector/
+rm -rf storage/emulated/0/Android/data/com.studio.duckdetector/
 rm -rf /storage/emulated/0/MT2/
 rm -rf /data/local/tmp/*
 rm -rf /storage/emulated/0/Android/data/com.junge.algorithmAidePro/
-rm -rf /data/swap_config.conf
+rm -rf /data/swap_config.conf/
 rm -rf /storage/emulated/0/rlgg/
-rm -rf /storage/emulated/legacy
+rm -rf /storage/emulated/legacy/
 rm -rf /data/system/junge/
-rm -rf /storage/emulated/0/Android/data/chunqiu.safe
-rm -rf /storage/emulated/0/Android/data/com.junge.algorithmAidePro
-rm -rf /storage/emulated/0/Android/data/org.telegram.messenger.web/
+rm -rf /storage/emulated/0/Android/data/chunqiu.safe/
+rm -rf /storage/emulated/0/Android/data/com.junge.algorithmAidePro/
 rm -rf /dev/scene/
+rm -rf storage/emulated/0/Android/data/luna.safe.luna/
 resetprop --delete persist.hyperceiler.log.level
 
 su -c 'find /data/app -type f -name base.odex -delete'
