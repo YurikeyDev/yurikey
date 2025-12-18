@@ -61,11 +61,12 @@ For the error on the side "ERROR: curl or wget not found!"
 [Yuri](https://github.com/Yurii0307)  
 [yourbestregard](https://github.com/yourbestregard)  
 [cvnertnc](https://github.com/cvnertnc)  
-[ZG089](https://github.com/ZG089)
+[ZG089](https://github.com/ZG089)  
 [Tam](https://github.com/Tam97123)  
 [Munch](https://github.com/SudoNothing404)  
 [Wes](https://github.com/ihatenodejs)  
 [Khx](https://github.com/dpejoh)  
+
 
 
 
