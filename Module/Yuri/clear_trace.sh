@@ -27,15 +27,16 @@ sleep 0.5
 
 rm -rf /storage/emulated/0/Android/data/bin.mt.plus
 rm -rf /storage/emulated/0/Android/data/bin.mt.plus.canary
+rm -rf /storage/emulated/0/MT2
 echo "\033[41mMT Manager junk has been cleaned\033[0m"
 sleep 0.5
 
 rm -rf /data/property/persistent_properties
 echo "\033[41mHidden application list files have been cleaned\033[0m"
 rm -rf /data/local/tmp/byyang/
-rm -rf /storage/emulated/0/Android/data/com.omarea.vtools
-rm -rf /data/local/tmp/shizuku
-rm -rf /data/local/tmp/shizuku_starter
+rm -rf /storage/emulated/0/Android/data/com.omarea.vtools/
+rm -rf /data/local/tmp/shizuku/
+rm -rf /data/local/tmp/shizuku_starter/
 rm -rf /storage/emulated/0/Android/data/moe.shizuku.privileged.api
 rm -rf /storage/emulated/0/Android/obb/io.github.vvb2060.mahoshojo
 rm -rf /storage/emulated/0/Android/data/io.github.vvb2060.mahoshojo
@@ -71,7 +72,6 @@ rm -rf /storage/emulated/0/com.termux
 m -rf /storage/emulated/0/xzr.hkf
 rm -rf /data/local/tmp/*
 rm -rf /data/user/0/com.juom
-rm -rf /storage/emulated/0/Android/data/org.telegram.messenger.web
 clear
 rm -rf /data/system/graphicsstats
 rm -rf /data/system/package_cache
@@ -130,6 +130,7 @@ rm -rf /storage/emulated/0/Android/data/chunqiu.safe/
 rm -rf /storage/emulated/0/Android/data/com.junge.algorithmAidePro/
 rm -rf /dev/scene/
 rm -rf storage/emulated/0/Android/data/luna.safe.luna/
+rm -rf storage/emulated/0/Android/com.byxiaorun.detector/
 resetprop --delete persist.hyperceiler.log.level
 
 su -c 'find /data/app -type f -name base.odex -delete'
