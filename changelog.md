@@ -1,9 +1,10 @@
-**_✨ v2.30 – Version Changes:_**
+**_✨ v2.31 – Version Changes:_**
 
-**_⚙️ Add new keybox, clear cache only for Google Play Store**
+**_⚙️ Just improve some code on some file**
 
 **_📌 Other Changes:_**
 
-→ Fix error on action.sh, conf
+→ Fix error why can't fetch keybox
+(Use busybox)
 
-→ [All changes](https://github.com/YurikeyDev/yurikey/compare/v2.20...v2.30)
+→ [All changes](https://github.com/YurikeyDev/yurikey/compare/v2.30...v2.31)
