@@ -20,12 +20,12 @@ log_message "Start"
 
 # Check if Tricky Store module is installed (required dependency)
 if [ -d "$DEPENDENCY_MODULE_UPDATE" ]; then
-  ui_print "- Tricky Store installed"
+  log_message "- Tricky Store installed"
 elif [ -d "$DEPENDENCY_MODULE" ]; then
-  ui_print "- Tricky Store installed"
+  log_message "- Tricky Store installed"
 else
-  ui_print "- Error: Tricky Store module file not found!"
-  ui_print "- Please install Tricky Store before using Yuri Keybox."
+  log_message "- Error: Tricky Store module file not found!"
+  log_message "- Please install Tricky Store before using Yuri Keybox."
   exit 0
 fi
 mv "$TARGET_FILE" "$BACKUP_FILE"
@@ -46,9 +46,9 @@ fetch_remote_keybox() {
       return 1
     fi
   else
-    ui_print "- Cannot fetch remote keybox."
-    ui_print "- Tip: You can install a working BusyBox with network tools from:"
-    ui_print "- https://mmrl.dev/repository/grdoglgmr/busybox-ndk"
+    log_message "- Cannot fetch remote keybox."
+    log_message "- Tip: You can install a working BusyBox with network tools from:"
+    log_message "- https://mmrl.dev/repository/grdoglgmr/busybox-ndk"
     return 1
   fi
   return 0
