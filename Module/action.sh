@@ -9,7 +9,6 @@ for SCRIPT in \
   "target_txt.sh" \
   "security_patch.sh" \
   "boot_hash.sh" \
-  "clear_trace.sh" \
   "yuri_keybox.sh"
 do
   if ! sh "$MODPATH/Yuri/$SCRIPT"; then
