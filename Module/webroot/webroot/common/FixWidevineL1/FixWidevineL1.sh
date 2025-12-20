@@ -1,1 +1,0 @@
-LD_LIBRARY_PATH=/vendor/lib64/hw /vendor/bin/KmInstallKeybox /data/local/tmp/attestation attestation true
