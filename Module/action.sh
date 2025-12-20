@@ -4,6 +4,16 @@ MODPATH="${0%/*}"
 set +o standalone
 unset ASH_STANDALONE
 
+if ! command -v curl >/dev/null 2>&1 \
+   && ! command -v wget >/dev/null 2>&1 \
+   && ! command -v toybox >/dev/null 2>&1
+then
+  log_message "- Cannot work without missing command."
+  log_message "- Tip: You can install a working BusyBox with network tools from:"
+  log_message "- https://mmrl.dev/repository/grdoglgmr/busybox-ndk"
+  exit 1
+fi
+
 for SCRIPT in \
   "kill_google_process.sh" \
   "target_txt.sh" \
@@ -13,11 +23,6 @@ for SCRIPT in \
 do
   if ! sh "$MODPATH/Yuri/$SCRIPT"; then
     echo "- Error: $SCRIPT failed. Aborting."
-    exit 1
-  elif ! sh "$MODPATH/Yuri/yuri_keybox.sh"; then
-    log_message "- Cannot fetch remote keybox. Aborting"
-    log_message "- Tip: You can install a working BusyBox with network tools from:"
-    log_message "- https://mmrl.dev/repository/grdoglgmr/busybox-ndk"
     exit 1
   fi
 done
