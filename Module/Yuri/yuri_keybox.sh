@@ -2,7 +2,7 @@
 
 # Define important paths and file names
 TRICKY_DIR="/data/adb/tricky_store"
-REMOTE_URL="https://raw.githubusercontent.com/dpejoh/yurikey/main/conf"
+REMOTE_URL="https://raw.githubusercontent.com/Yurikey/yurikey/main/conf"
 TARGET_FILE="$TRICKY_DIR/keybox.xml"
 BACKUP_FILE="$TRICKY_DIR/keybox.xml.bak"
 TMP_REMOTE="$TRICKY_DIR/remote_keybox.tmp"
@@ -19,9 +19,7 @@ log_message() {
 log_message "Start"
 
 # Check if Tricky Store module is installed ( required dependency )
-if [ -d "$DEPENDENCY_MODULE_UPDATE" ]; then
-  log_message "- Tricky Store installed"
-elif [ -d "$DEPENDENCY_MODULE" ]; then
+if [ -d "$DEPENDENCY_MODULE_UPDATE" ] || [ -d "$DEPENDENCY_MODULE" ]; then
   log_message "- Tricky Store installed"
 else
   log_message "- Error: Tricky Store module file not found!"
