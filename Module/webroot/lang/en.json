@@ -30,6 +30,7 @@
   "advance_kill_all": "Kill All Process",
   "advance_wdevinel1": "Fix Widevine L1",
   "advance_set_verified_boot": "Set Up Verified Boothash",
+  "advance_hma_cfg": "Update HMA-OSS config",
 
   "update_title": "UPDATE & SUPPORT",
   "update_desc": "Stay up to date with the latest version of Yurikey, bug fixes, and new features.",
@@ -56,4 +57,5 @@
   "home_no_internet": "No internet connection.",
   "home_connected": "Connected",
   "home_disconnected": "Disconnected"
+
 }
