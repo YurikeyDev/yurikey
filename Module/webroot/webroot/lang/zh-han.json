@@ -1,0 +1,62 @@
+{
+  "nav_home": "主页",
+  "nav_menu": "菜单",
+  "nav_advancemenu": "菜单 +",
+  "nav_update": "更新",
+  "nav_settings": "设置",
+
+  "home_version": "模块版本",
+  "home_root": "Root 管理器",
+  "home_refresh": "刷新数据",
+  "home_refreshing": "正在刷新……",
+  "home_status": "状态",
+  "home_status_online": "在线",
+  "home_status_offline": "离线",
+  "home_clock_date": "日期",
+  "home_clock_time": "时间",
+
+  "menu_title": "主菜单",
+  "menu_force_clear": "强制停止并清除 Play Store 数据",
+  "menu_keybox": "设置 Yuri Keybox",
+  "menu_target": "设置 target.txt",
+  "menu_necessary": "设置必要的应用程序",
+  "menu_patch": "应用安全补丁",
+  "menu_keybox_title": "Keybox",
+  "menu_keybox_restore": "恢复 Keybox 备份",
+
+  "advance_menu_title": "高级菜单",
+  "advance_fix_detect_hma": "修复 HMA 检测",
+  "advance_fix_detect_lsposed": "修复 lsposed 检测 (2)",
+  "advance_fix_detect_pif": "修复 PIF 检测 (1)",
+  "advance_fix_detect_recovery_file": "修复恢复文件检测",
+  "advance_kill_all": "终止所有进程",
+  "advance_wdevinel1": "修复 Widevine L1",
+  "advance_set_verified_boot": "设置 Verified Boothash",
+
+  "update_title": "更新和支持",
+  "update_desc": "关注最新的 Yurikey 版本、错误修复和新功能",
+  "update_github": "在 GitHub 上查看",
+  "update_telegram": "加入电报频道",
+  "update_note": "加入我们的 Telegram 频道或查看我们的 GitHub 以获取更新、贡献和技术讨论",
+  "settings_title": "设置",
+
+  "settings_contributors": "项目联合开发者",
+
+  "role_Founder & Module Developer": "创始人和模块开发人员",
+  "role_Module Developer": "模块开发人员",
+  "role_WebUI Developer": "WebUI 开发人员",
+  "role_Ex Module Developer": "前模块开发人员",
+
+  "executing": "正在执行 \"{script}\"...",
+  "success": "脚本 \"{script}\" 已成功执行",
+  "failed": "脚本 \"{script}\" 执行失败",
+  "timeout": "脚本 \"{script}\" 超时",
+  "ksu_not_available": "未找到 KernelSU 执行 API",
+
+  "status_online": "状态：在线",
+  "status_offline": "状态：离线",
+  "home_refresh_failed": "刷新数据失败",
+  "home_no_internet": "没有互联网连接",
+  "home_connected": "已连接",
+  "home_disconnected": "断开"
+}

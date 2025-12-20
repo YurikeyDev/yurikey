@@ -18,7 +18,7 @@ log_message() {
 
 log_message "Start"
 
-# Check if Tricky Store module is installed (required dependency)
+# Check if Tricky Store module is installed ( required dependency )
 if [ -d "$DEPENDENCY_MODULE_UPDATE" ]; then
   log_message "- Tricky Store installed"
 elif [ -d "$DEPENDENCY_MODULE" ]; then

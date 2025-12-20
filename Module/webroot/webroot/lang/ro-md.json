@@ -1,0 +1,59 @@
+{
+  "nav_home": "Acasă",
+  "nav_menu": "Meniu",
+  "nav_update": "Actualizare",
+  "nav_advancemenu": "Meniu +",
+  "nav_settings": "Setări",
+
+  "home_version": "Versiune Modul",
+  "home_root": "Implementare Root",
+  "home_refresh": "Actualizați Informația",
+  "home_refreshing": "Actualizare...",
+  "home_status": "Statut",
+  "home_status_online": "Online",
+  "home_status_offline": "Offline",
+  "home_clock_date": "Data locală",
+  "home_clock_time": "Ora locală",
+
+  "menu_title": "MENIU PRINCIPAL",
+  "menu_force_clear": "Forțare Stopare & Curățare Date pentru Play Store",
+  "menu_keybox": "Setare Yuri Keybox",
+  "menu_target": "Setare Target.txt",
+  "menu_necessary": "Setați aplicația necesară",
+  "menu_patch": "Setare Security Patch",
+
+  "advance_menu_title": "Meniu avansat",
+  "advance_fix_detect_hma": "Fixare Detect HMA",
+  "advance_fix_detect_lsposed": "Fixare Detect lsposed (2)",
+  "advance_fix_detect_pif": "Fixare Detect PIF (1)",
+  "advance_fix_detect_recovery_file": "Fixare Detect Recovery File",
+  "advance_kill_all": "Opriți toate procesele",
+  "advance_wdevinel1": "Fixare Widevine L1",
+  "advance_set_verified_boot": "Setare Verified Boothash",
+
+  "update_title": "ACTUALIZARE & SUPORT",
+  "update_desc": "Rămâneți la curent cu cea mai recentă versiune de Yurikey, corecțiile de erori și noile funcții.",
+  "update_github": "Vedeți pe GitHub",
+  "update_telegram": "Alăturați-vă la canalul din Telegram",
+  "update_note": "Alăturați-vă canalului nostru de Telegram sau verificați GitHub pentru actualizări, contribuții și discuții tehnice..",
+
+  "settings_contributors": "Contribuitorii Proiectului",
+
+  "role_Founder & Module Developer": "Founder & Module Developer",
+  "role_Module Developer": "Module Developer",
+  "role_WebUI Developer": "WebUI Developer",
+  "role_Ex Module Developer": "Former Module Developer",
+
+  "executing": "Executare \"{script}\"...",
+  "success": "Script-ul \"{script}\" a fost executat cu succes.",
+  "failed": "Executrea script-ului \"{script}\" a eșuat.",
+  "timeout": "Timpul pentru executarea cript-ului \"{script}\" a expirat.",
+  "ksu_not_available": "KernelSU execuatabil API nu este disponibil.",
+
+  "status_online": "Statut: Online",
+  "status_offline": "Statut: Offline",
+  "home_refresh_failed": "Reîmrospătarea informației a eșuat.",
+  "home_no_internet": "Nu este conexiune internet.",
+  "home_connected": "Conectat",
+  "home_disconnected": "Deconectat"
+}

@@ -1,0 +1,149 @@
+{
+  "selected_theme": "dark-blue",
+  "themes": {
+    "dark-blue": {
+      "name": "Dark Blue",
+      "colors": {
+        "green": "#66bb6a",
+        "primary-red": "#ef5350",
+        "accent-pink": "#4fc3f7",
+        "deep-pink": "#82d7ff",
+        "gothic-black": "#121212",
+        "gothic-purple": "#1e1e1e",
+        "soft-white": "#ffffff",
+        "soft-gray": "#2c2c2c",
+        "secondary-bg": "#1e1e1e",
+        "secondary-border": "#2c2c2c",
+        "nav-inactive": "#888"
+      }
+    },
+    "dark-purple": {
+      "name": "Dark Purple",
+      "colors": {
+        "green": "#66bb6a",
+        "primary-red": "#ef5350",
+        "accent-pink": "#ab47bc",
+        "deep-pink": "#e1bee7",
+        "gothic-black": "#121212",
+        "gothic-purple": "#1e1e1e",
+        "soft-white": "#ffffff",
+        "soft-gray": "#2c2c2c",
+        "secondary-bg": "#1e1e1e",
+        "secondary-border": "#2c2c2c",
+        "nav-inactive": "#888"
+      }
+    },
+    "dark-green": {
+      "name": "Dark Green",
+      "colors": {
+        "green": "#66bb6a",
+        "primary-red": "#ef5350",
+        "accent-pink": "#4caf50",
+        "deep-pink": "#81c784",
+        "gothic-black": "#121212",
+        "gothic-purple": "#1e1e1e",
+        "soft-white": "#ffffff",
+        "soft-gray": "#2c2c2c",
+        "secondary-bg": "#1e1e1e",
+        "secondary-border": "#2c2c2c",
+        "nav-inactive": "#888"
+      }
+    },
+    "dark-orange": {
+      "name": "Dark Orange",
+      "colors": {
+        "green": "#66bb6a",
+        "primary-red": "#ef5350",
+        "accent-pink": "#ff9800",
+        "deep-pink": "#ffcc02",
+        "gothic-black": "#121212",
+        "gothic-purple": "#1e1e1e",
+        "soft-white": "#ffffff",
+        "soft-gray": "#2c2c2c",
+        "secondary-bg": "#1e1e1e",
+        "secondary-border": "#2c2c2c",
+        "nav-inactive": "#888"
+      }
+    },
+    "dark-red": {
+      "name": "Dark Red",
+      "colors": {
+        "green": "#66bb6a",
+        "primary-red": "#ef5350",
+        "accent-pink": "#f44336",
+        "deep-pink": "#e57373",
+        "gothic-black": "#121212",
+        "gothic-purple": "#1e1e1e",
+        "soft-white": "#ffffff",
+        "soft-gray": "#2c2c2c",
+        "secondary-bg": "#1e1e1e",
+        "secondary-border": "#2c2c2c",
+        "nav-inactive": "#888"
+      }
+    },
+    "cyberpunk": {
+      "name": "Cyberpunk",
+      "colors": {
+        "green": "#00ff41",
+        "primary-red": "#ff073a",
+        "accent-pink": "#ff00ff",
+        "deep-pink": "#00ffff",
+        "gothic-black": "#0d0d0d",
+        "gothic-purple": "#1a001a",
+        "soft-white": "#ffffff",
+        "soft-gray": "#2c2c2c",
+        "secondary-bg": "#1a001a",
+        "secondary-border": "#330033",
+        "nav-inactive": "#888"
+      }
+    },
+    "midnight": {
+      "name": "Midnight",
+      "colors": {
+        "green": "#66bb6a",
+        "primary-red": "#ef5350",
+        "accent-pink": "#6366f1",
+        "deep-pink": "#a5b4fc",
+        "gothic-black": "#0f0f23",
+        "gothic-purple": "#1e1e3f",
+        "soft-white": "#ffffff",
+        "soft-gray": "#2c2c54",
+        "secondary-bg": "#1e1e3f",
+        "secondary-border": "#2c2c54",
+        "nav-inactive": "#888"
+      }
+    },
+    "forest": {
+      "name": "Forest",
+      "colors": {
+        "green": "#66bb6a",
+        "primary-red": "#ef5350",
+        "accent-pink": "#2e7d32",
+        "deep-pink": "#4caf50",
+        "gothic-black": "#0d1b0e",
+        "gothic-purple": "#1a2f1b",
+        "soft-white": "#ffffff",
+        "soft-gray": "#2c3e2c",
+        "secondary-bg": "#1a2f1b",
+        "secondary-border": "#2c3e2c",
+        "nav-inactive": "#888"
+      }
+    },
+    "monet": {
+      "name": "Monet",
+      "colors": {
+        "green": "#66bb6a",
+        "primary-red": "#ef5350",
+        "accent-pink": "var(--primary, #007bff)",
+        "deep-pink": "var(--onPrimary, #fff)",
+        "gothic-black": "var(--background, #121212)",
+        "gothic-purple": "var(--tonalSurface, #1e1e1e)",
+        "soft-white": "var(--onSurface, #fff)",
+        "soft-gray": "var(--surfaceBright, #2c2c2c)",
+        "secondary-bg": "var(--tonalSurface, #1e1e1e)",
+        "secondary-border": "var(--outlineVariant, #2c2c2c)",
+        "nav-inactive": "#888"
+      }
+    }
+  }
+}

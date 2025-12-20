@@ -1,0 +1,59 @@
+{
+  "nav_home": "Главная",
+  "nav_menu": "Меню",
+  "nav_update": "Обновить",
+  "nav_advancemenu": "Меню +",
+  "nav_settings": "Настройки",
+
+  "home_version": "Версия модуля",
+  "home_root": "Реализация Root",
+  "home_refresh": "Обновить информацию",
+  "home_refreshing": "Обновление...",
+  "home_status": "Статус",
+  "home_status_online": "Онлайн",
+  "home_status_offline": "Оффлайн",
+  "home_clock_date": "Дата часов",
+  "home_clock_time": "Время часов",
+
+  "menu_title": "ГЛАВНОЕ МЕНЮ",
+  "menu_force_clear": "Принудительная остановка и очистка данных Play Store",
+  "menu_keybox": "Настроить Yuri Keybox",
+  "menu_target": "Настроить Target.txt",
+  "menu_necessary": "Установить необходимое приложение",
+  "menu_patch": "Настроить патч безопасности",
+
+  "advance_menu_title": "Расширенное меню",
+  "advance_fix_detect_hma": "Исправить обнаружение HMA",
+  "advance_fix_detect_lsposed": "Исправить обнаружение LSposed (2)",
+  "advance_fix_detect_pif": "Исправить обнаружение PIF (1)",
+  "advance_fix_detect_recovery_file": "Исправить обнаружение файла Recovery",
+  "advance_kill_all": "Убить все процессы",
+  "advance_wdevinel1": "Исправить Widevine L1",
+  "advance_set_verified_boot": "Настроить проверенный Boothash",
+
+  "update_title": "ОБНОВЛЕНИЯ И ПОДДЕРЖКА",
+  "update_desc": "Будьте в курсе последней версии Yurikey, исправлений ошибок и новых возможностей.",
+  "update_github": "Смотреть на GitHub",
+  "update_telegram": "Присоединиться к каналу Telegram",
+  "update_note": "Присоединяйтесь к нашему каналу в Telegram или проверьте GitHub на предмет обновлений, contribut'ов и технических обсуждений.",
+
+  "settings_contributors": "Участники проекта",
+
+  "role_Founder & Module Developer": "Основатель и разработчик модуля",
+  "role_Module Developer": "Разработчик модуля",
+  "role_WebUI Developer": "Разработчик WebUI",
+  "role_Ex Module Developer": "Бывший разработчик модуля",
+
+  "executing": "Выполнение \"{script}\"...",
+  "success": "Скрипт \"{script}\" успешно выполнен.",
+  "failed": "Не удалось выполнить скрипт \"{script}\".",
+  "timeout": "Превышено время выполнения скрипта \"{script}\"",
+  "ksu_not_available": "API исполнения KernelSU недоступно.",
+
+  "status_online": "Статус: Онлайн",
+  "status_offline": "Статус: Оффлайн",
+  "home_refresh_failed": "Не удалось обновить информацию.",
+  "home_no_internet": "Нет подключения к интернету.",
+  "home_connected": "Подключено",
+  "home_disconnected": "Отключено"
+}

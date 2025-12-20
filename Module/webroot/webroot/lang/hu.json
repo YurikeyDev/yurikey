@@ -1,0 +1,59 @@
+{
+  "nav_home": "Home",
+  "nav_menu": "Menü",
+  "nav_update": "Frissítés",
+  "nav_advancemenu": "Haladó menü",
+  "nav_settings": "Beállítások",
+
+  "home_version": "Modul verzió",
+  "home_root": "Root megvalósítás",
+  "home_refresh": "Frissítési információ",
+  "home_refreshing": "Frissítés...",
+  "home_status": "Állapot",
+  "home_status_online": "Online",
+  "home_status_offline": "Offline",
+  "home_clock_date": "Dátum",
+  "home_clock_time": "Idő",
+
+  "menu_title": "FŐMENÜ",
+  "menu_force_clear": "Kényszerített leállítás és Adat törlés Play Store",
+  "menu_keybox": "Yuri Keybox beállítása",
+  "menu_target": "Target.txt beállítása",
+  "menu_necessary": "Állítsa be a szükséges alkalmazást",
+  "menu_patch": "Security Patch beállítása",
+
+  "advance_menu_title": "Haladó menü",
+  "advance_fix_detect_hma": "Észlelt HMA javítása",
+  "advance_fix_detect_lsposed": "Észlelt Lsposed javítása",
+  "advance_fix_detect_pif": "Észlelt PIF javítása",
+  "advance_fix_detect_recovery_file": "Észlelt Recovery fájl javítása",
+  "advance_kill_all": "Ölj meg minden folyamatot",
+  "advance_wdevinel1": "Widevine L1 javítása",
+  "advance_set_verified_boot": "Ellenőrzött Boothash létrehozása",
+
+  "update_title": "FRISSÍTÉS és TÁMOGATÁS",
+  "update_desc": "Maradj naprakész a Yurikey legújabb verziójával, hibajavításaival és új funkcióival kapcsolatban.",
+  "update_github": "Megtekintés a GitHub-on",
+  "update_telegram": "Csatlakozás a Telegram csatornához",
+  "update_note": "Csatlakozz Telegram csatornánkhoz, vagy látogass el a GitHub oldalra frissítésekért, hozzászólásokért és technikai megbeszélésekért.",
+
+  "settings_contributors": "Projekt közreműködői",
+
+  "role_Founder & Module Developer": "Alapító és modulfejlesztő",
+  "role_Module Developer": "Modul fejlesztő",
+  "role_WebUI Developer": "WebUI fejlesztő",
+  "role_Ex Module Developer": "Korábbi modulfejlesztő",
+
+  "executing": "Végrehajtó \"{script}\"...",
+  "success": "Szkript \"{script}\" sikeresen végrehajtva.",
+  "failed": "Nem sikerült végrehajtani a szkriptet \"{script}\".",
+  "timeout": "Szkript \"{script}\" időtúllépés.",
+  "ksu_not_available": "A KernelSU végrehajtási API nem érhető el.",
+
+  "status_online": "Status: Online",
+  "status_offline": "Status: Offline",
+  "home_refresh_failed": "Nem sikerült frissíteni az információkat.",
+  "home_no_internet": "Nincs internet kapcsolat.",
+  "home_connected": "Csatlakozva",
+  "home_disconnected": "Szétkapcsolt"
+}

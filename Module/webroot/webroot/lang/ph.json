@@ -1,0 +1,59 @@
+{
+  "nav_home": "Bahay",
+  "nav_menu": "Menu",
+  "nav_update": "I-update",
+  "nav_advancemenu": "Menu +",
+  "nav_settings": "Mga Setting",
+
+  "home_version": "Bersyon ng Module",
+  "home_root": "Implementasyon ng Root",
+  "home_refresh": "I-refresh ang Impormasyon",
+  "home_refreshing": "Nagre-refresh...",
+  "home_status": "Status",
+  "home_status_online": "Online",
+  "home_status_offline": "Offline",
+  "home_clock_date": "Petsa ng Orasan",
+  "home_clock_time": "Oras ng Orasan",
+
+  "menu_title": "PANGUNAHING MENU",
+  "menu_force_clear": "Piliting Itigil & Linisin ang Data ng Play Store",
+  "menu_keybox": "I-set Up ang Yuri Keybox",
+  "menu_target": "I-set Up ang target.txt",
+  "menu_necessary": "Itakda ang kinakailangang app",
+  "menu_patch": "I-apply ang Security Patch",
+
+  "advance_menu_title": "Advanced Menu",
+  "advance_fix_detect_hma": "Ayusin ang Pag-detect ng HMA",
+  "advance_fix_detect_lsposed": "Ayusin ang Pag-detect ng lsposed (2)",
+  "advance_fix_detect_pif": "Ayusin ang Pag-detect ng PIF (1)",
+  "advance_fix_detect_recovery_file": "Ayusin ang Pag-detect ng Recovery File",
+  "advance_kill_all": "Patayin ang Lahat ng Proseso",
+  "advance_wdevinel1": "Ayusin ang Widevine L1",
+  "advance_set_verified_boot": "Itakda ang Verified Boothash",
+
+  "update_title": "UPDATE AT SUPORTA",
+  "update_desc": "Manatiling updated sa pinakabagong bersyon ng Yurikey, mga pag-aayos ng bug, at mga bagong tampok.",
+  "update_github": "Tingnan sa GitHub",
+  "update_telegram": "Sumali sa Telegram Channel",
+  "update_note": "Sumali sa aming Telegram channel o tingnan ang GitHub para sa mga update, kontribusyon, at teknikal na talakayan.",
+
+  "settings_contributors": "Mga Kontribyutor ng Proyekto",
+
+  "role_Founder & Module Developer": "Tagapagtatag at Developer ng Module",
+  "role_Module Developer": "Developer ng Module",
+  "role_WebUI Developer": "Developer ng WebUI",
+  "role_Ex Module Developer": "Dating Developer ng Module",
+
+  "executing": "Isinasagawa ang \"{script}\"...",
+  "success": "Matagumpay na naisagawa ang script na \"{script}\".",
+  "failed": "Nabigong isagawa ang script na \"{script}\".",
+  "timeout": "Nauubos ang oras ng script na \"{script}\".",
+  "ksu_not_available": "Hindi available ang KernelSU exec API.",
+
+  "status_online": "Status: Online",
+  "status_offline": "Status: Offline",
+  "home_refresh_failed": "Nabigong i-refresh ang impormasyon.",
+  "home_no_internet": "Walang koneksyon sa internet.",
+  "home_connected": "Konektado",
+  "home_disconnected": "Nawalan ng koneksyon"
+}

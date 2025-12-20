@@ -1,0 +1,59 @@
+{
+  "nav_home": "Strona główna",
+  "nav_menu": "Menu",
+  "nav_update": "Aktualizacja",
+  "nav_advancemenu": "Menu +",
+  "nav_settings": "Ustawienia",
+
+  "home_version": "Wersja modułu",
+  "home_root": "Implementacja Root",
+  "home_refresh": "Odśwież informacje",
+  "home_refreshing": "Odświeżanie...",
+  "home_status": "Status",
+  "home_status_online": "Online",
+  "home_status_offline": "Offline",
+  "home_clock_date": "Data zegara",
+  "home_clock_time": "Czas zegara",
+
+  "menu_title": "MENU GŁÓWNE",
+  "menu_force_clear": "Wymuś zatrzymanie i wyczyść dane Play Store",
+  "menu_keybox": "Skonfiguruj Yuri Keybox",
+  "menu_target": "Skonfiguruj Target.txt",
+  "menu_necessary": "Ustaw potrzebną aplikację",
+  "menu_patch": "Skonfiguruj łatkę bezpieczeństwa",
+
+  "advance_menu_title": "Menu zaawansowane",
+  "advance_fix_detect_hma": "Napraw wykrywanie HMA",
+  "advance_fix_detect_lsposed": "Napraw wykrywanie lsposed (2)",
+  "advance_fix_detect_pif": "Napraw wykrywanie PIF (1)",
+  "advance_fix_detect_recovery_file": "Napraw wykrywanie pliku recovery",
+  "advance_kill_all": "Zabij wszystkie procesy",
+  "advance_wdevinel1": "Napraw Widevine L1",
+  "advance_set_verified_boot": "Skonfiguruj hash zweryfikowanego rozruchu",
+
+  "update_title": "AKTUALIZACJA I WSPARCIE",
+  "update_desc": "Bądź na bieżąco z najnowszą wersją Yurikey, poprawkami błędów i nowymi funkcjami.",
+  "update_github": "Zobacz na GitHub",
+  "update_telegram": "Dołącz do kanału Telegram",
+  "update_note": "Dołącz do naszego kanału Telegram lub sprawdź GitHub w celu aktualizacji, wkładu i dyskusji technicznych.",
+
+  "settings_contributors": "Współtwórcy projektu",
+
+  "role_Founder & Module Developer": "Założyciel i deweloper modułu",
+  "role_Module Developer": "Deweloper modułu",
+  "role_WebUI Developer": "Deweloper interfejsu webowego",
+  "role_Ex Module Developer": "Były deweloper modułu",
+
+  "executing": "Wykonywanie \"{script}\"...",
+  "success": "Skrypt \"{script}\" wykonany pomyślnie.",
+  "failed": "Nie udało się wykonać skryptu \"{script}\".",
+  "timeout": "Skrypt \"{script}\" przekroczył limit czasu.",
+  "ksu_not_available": "API exec KernelSU niedostępne.",
+
+  "status_online": "Status: Online",
+  "status_offline": "Status: Offline",
+  "home_refresh_failed": "Nie udało się odświeżyć informacji.",
+  "home_no_internet": "Brak połączenia z internetem.",
+  "home_connected": "Połączony",
+  "home_disconnected": "Rozłączony"
+}

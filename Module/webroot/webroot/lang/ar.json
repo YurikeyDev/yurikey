@@ -1,0 +1,59 @@
+{
+  "nav_home": "الرئيسية",
+  "nav_menu": "القائمة",
+  "nav_update": "تحديث",
+  "nav_advancemenu": "القائمة المتقدمة",
+  "nav_settings": "الإعدادات",
+
+  "home_version": "إصدار الإضافة",
+  "home_root": "مدير الروت",
+  "home_refresh": "تحديث المعلومات",
+  "home_refreshing": "جارٍ التحديث...",
+  "home_status": "الحالة",
+  "home_status_online": "متصل",
+  "home_status_offline": "غير متصل",
+  "home_clock_date": "التاريخ",
+  "home_clock_time": "الوقت",
+
+  "menu_title": "القائمة الرئيسية",
+  "menu_force_clear": "إيقاف إجباري ومسح بيانات تطبيق متجر بلاي",
+  "menu_keybox": "إعداد Yuri Keybox",
+  "menu_target": "إعداد target.txt",
+  "menu_necessary": "تعيين التطبيق الضروري",
+  "menu_patch": "تطبيق تصحيح الأمان",
+
+  "advance_menu_title": "القائمة المتقدمة",  
+  "advance_fix_detect_hma": "إصلاح اكتشاف HMA",  
+  "advance_fix_detect_lsposed": "إصلاح اكتشاف lsposed (2)",  
+  "advance_fix_detect_pif": "إصلاح اكتشاف PIF (1)",  
+  "advance_fix_detect_recovery_file": "إصلاح اكتشاف ملف recovery",  
+  "advance_kill_all": "إنهاء كل العمليات",  
+  "advance_wdevinel1": "إصلاح Widevine L1",  
+  "advance_set_verified_boot": "تعيين verified boot hash",
+
+  "update_title": "التحديث والدعم",
+  "update_desc": "ابقَ على اطلاع بأحدث إصدار من Yurikey، إصلاحات الأخطاء، والميزات الجديدة.",
+  "update_github": "عرض على GitHub",
+  "update_telegram": "انضم إلى قناة Telegram",
+  "update_note": "انضم إلى قناتنا على Telegram أو تحقق GitHub للحصول على التحديثات والمساهمات والنقاشات التقنية.",
+
+  "settings_contributors": "المساهمون",
+
+  "role_Founder & Module Developer": "المؤسس ومطور الإضافة",
+  "role_Module Developer": "مطور الإضافة",
+  "role_WebUI Developer": "مطور واجهة الويب",
+  "role_Ex Module Developer": "مطور الإضافة السابق",
+
+  "executing": "جارٍ تشغيل \"{script}\"...",
+  "success": "تم تشغيل \"{script}\" بنجاح.",
+  "failed": "فشل في تشغيل \"{script}\".",
+  "timeout": "انتهت مهلة \"{script}\".",
+  "ksu_not_available": "KernelSU exec API غير متوفر.",
+
+  "status_online": "الحالة: متصل",
+  "status_offline": "الحالة: غير متصل",
+  "home_refresh_failed": "فشل في تحديث المعلومات.",
+  "home_no_internet": "لا يوجد اتصال بالإنترنت.",
+  "home_connected": "متصل",
+  "home_disconnected": "غير متصل"
+}

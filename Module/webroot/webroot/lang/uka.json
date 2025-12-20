@@ -1,0 +1,59 @@
+{
+  "nav_home": "Головна",
+  "nav_menu": "Меню",
+  "nav_update": "Оновлення",
+  "nav_advancemenu": "Меню +",
+  "nav_settings": "Налаштування",
+
+  "home_version": "Версія модуля",
+  "home_root": "Реалізація Root",
+  "home_refresh": "Оновити інформацію",
+  "home_refreshing": "Оновлення...",
+  "home_status": "Статус",
+  "home_status_online": "Онлайн",
+  "home_status_offline": "Офлайн",
+  "home_clock_date": "Дата",
+  "home_clock_time": "Час",
+
+  "menu_title": "ГОЛОВНЕ МЕНЮ",
+  "menu_force_clear": "Примусово зупинити та очистити дані Play Store",
+  "menu_keybox": "Налаштувати Yuri Keybox",
+  "menu_target": "Налаштувати Target.txt",
+  "menu_necessary": "Встановити потрібний додаток",
+  "menu_patch": "Налаштувати патч безпеки",
+
+  "advance_menu_title": "Розширене меню",
+  "advance_fix_detect_hma": "Виправити виявлення HMA",
+  "advance_fix_detect_lsposed": "Виправити виявлення lsposed (2)",
+  "advance_fix_detect_pif": "Виправити виявлення PIF (1)",
+  "advance_fix_detect_recovery_file": "Виправити виявлення файлу відновлення",
+  "advance_kill_all": "Знищити всі процеси",
+  "advance_wdevinel1": "Виправити Widevine L1",
+  "advance_set_verified_boot": "Налаштувати хеш перевіреного завантаження",
+
+  "update_title": "ОНОВЛЕННЯ ТА ПІДТРИМКА",
+  "update_desc": "Будьте в курсі останньої версії Yurikey, виправлень помилок та нових функцій.",
+  "update_github": "Переглянути на GitHub",
+  "update_telegram": "Приєднатися до Telegram каналу",
+  "update_note": "Приєднуйтесь до нашого Telegram каналу або переглядайте GitHub для оновлень, внесків та технічних обговорень.",
+
+  "settings_contributors": "Учасники проєкту",
+
+  "role_Founder & Module Developer": "Засновник та розробник модуля",
+  "role_Module Developer": "Розробник модуля",
+  "role_WebUI Developer": "Розробник WebUI",
+  "role_Ex Module Developer": "Колишній розробник модуля",
+
+  "executing": "Виконання \"{script}\"...",
+  "success": "Скрипт \"{script}\" успішно виконано.",
+  "failed": "Не вдалося виконати скрипт \"{script}\".",
+  "timeout": "Час виконання скрипта \"{script}\" вичерпано.",
+  "ksu_not_available": "API виконання KernelSU недоступне.",
+
+  "status_online": "Статус: Онлайн",
+  "status_offline": "Статус: Офлайн",
+  "home_refresh_failed": "Не вдалося оновити інформацію.",
+  "home_no_internet": "Немає підключення до інтернету.",
+  "home_connected": "Підключено",
+  "home_disconnected": "Відключено"
+}

@@ -1,0 +1,59 @@
+{
+  "nav_home": "হোম",
+  "nav_menu": "মেনু",
+  "nav_update": "আপডেট",
+  "nav_advancemenu": "মেনু +",
+  "nav_settings": "সেটিংস",
+
+  "home_version": "মডিউল সংস্করণ",
+  "home_root": "রুট বাস্তবায়ন",
+  "home_refresh": "তথ্য রিফ্রেশ করুন",
+  "home_refreshing": "রিফ্রেশ হচ্ছে...",
+  "home_status": "স্থিতি",
+  "home_status_online": "অনলাইন",
+  "home_status_offline": "অফলাইন",
+  "home_clock_date": "ঘড়ির তারিখ",
+  "home_clock_time": "ঘড়ির সময়",
+
+  "menu_title": "প্রধান মেনু",
+  "menu_force_clear": "প্লে স্টোরের ডেটা জোরপূর্বক বন্ধ ও পরিষ্কার করুন",
+  "menu_keybox": "ইউরি কিবক্স সেট আপ করুন",
+  "menu_target": "টার্গেট.টেক্সট সেট আপ করুন",
+  "menu_necessary": "প্রয়োজনীয় অ্যাপ সেট করুন",
+  "menu_patch": "নিরাপত্তা প্যাচ প্রয়োগ করুন",
+
+  "advance_menu_title": "উন্নত মেনু",
+  "advance_fix_detect_hma": "এইচএমএ সনাক্তকরণ ঠিক করুন",
+  "advance_fix_detect_lsposed": "এলএসপোজড সনাক্তকরণ ঠিক করুন (2)",
+  "advance_fix_detect_pif": "পিআইএফ সনাক্তকরণ ঠিক করুন (1)",
+  "advance_fix_detect_recovery_file": "রিকভারি ফাইল সনাক্তকরণ ঠিক করুন",
+  "advance_kill_all": "সমস্ত প্রক্রিয়া হত্যা করুন",
+  "advance_wdevinel1": "ওয়াইডভাইন L1 ঠিক করুন",
+  "advance_set_verified_boot": "যাচাইকৃত বুটহ্যাশ সেট আপ করুন",
+
+  "update_title": "আপডেট ও সমর্থন",
+  "update_desc": "ইউরিকি-এর সর্বশেষ সংস্করণ, বাগ ফিক্স এবং নতুন ফিচারের সাথে আপডেট থাকুন।",
+  "update_github": "গিটহাবে দেখুন",
+  "update_telegram": "টেলিগ্রাম চ্যানেলে যোগ দিন",
+  "update_note": "আপডেট, অবদান এবং প্রযুক্তিগত আলোচনার জন্য আমাদের টেলিগ্রাম চ্যানেলে যোগ দিন বা গিটহাব চেক করুন।",
+
+  "settings_contributors": "প্রকল্প অবদানকারী",
+
+  "role_Founder & Module Developer": "প্রতিষ্ঠাতা ও মডিউল ডেভেলপার",
+  "role_Module Developer": "মডিউল ডেভেলপার",
+  "role_WebUI Developer": "ওয়েবইউআই ডেভেলপার",
+  "role_Ex Module Developer": "প্রাক্তন মডিউল ডেভেলপার",
+
+  "executing": "\"{script}\" স্ক্রিপ্ট চালানো হচ্ছে...",
+  "success": "\"{script}\" স্ক্রিপ্ট সফলভাবে চালানো হয়েছে।",
+  "failed": "\"{script}\" স্ক্রিপ্ট চালাতে ব্যর্থ।",
+  "timeout": "\"{script}\" স্ক্রিপ্টের সময় শেষ হয়েছে।",
+  "ksu_not_available": "কার্নেলএসইউ এক্সেক এপিআই উপলব্ধ নয়।",
+
+  "status_online": "স্থিতি: অনলাইন",
+  "status_offline": "স্থিতি: অফলাইন",
+  "home_refresh_failed": "তথ্য রিফ্রেশ করতে ব্যর্থ।",
+  "home_no_internet": "ইন্টারনেট সংযোগ নেই।",
+  "home_connected": "সংযুক্ত",
+  "home_disconnected": "সংযোগ বিচ্ছিন্ন"
+}
