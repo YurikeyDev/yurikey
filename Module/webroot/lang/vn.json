@@ -30,7 +30,6 @@
   "advance_kill_all": "Giết tất cả",
   "advance_wdevinel1": "Sửa Widevine L1",
   "advance_set_verified_boot": "Đặt Verified Boothash",
-  "advance_hma_cfg": "Cập nhật cấu hình HMA-OSS",
 
   "update_title": "CẬP NHẬT & HỖ TRỢ",
   "update_desc": "Luôn cập nhật với phiên bản Yurikey mới nhất, sửa lỗi và tính năng mới.",
@@ -57,5 +56,4 @@
   "home_no_internet": "Không có kết nối internet.",
   "home_connected": "Đã kết nối",
   "home_disconnected": "Mất kết nối"
-
 }
