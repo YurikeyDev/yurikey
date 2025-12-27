@@ -172,7 +172,13 @@ export async function openFileSelector(type) {
             if (item && item.querySelector('span').textContent.endsWith('.' + fileType)) {
                 exec(`cat "${currentPath}/${item.querySelector('span').textContent}"`)
                     .then(({ errno, stdout, stderr }) => {
-                        errno === 0 ? resolve(stdout) : reject(stderr);
+                        if (errno === 0) {
+                            const filename = item.querySelector('span').textContent;
+                            resolve({ content: stdout,
+                            path: `${currentPath}/${fileName}`
+                        } else {
+                            reject(stderr);
+                        }
                         fileSelectorDialog.close();
                     });
             }

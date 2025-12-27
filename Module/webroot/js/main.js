@@ -243,3 +243,31 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("offline", updateNetworkStatus);
   }, 500);
 });
+document.getElementById("import-keybox-btn").addEventListener("click", async () => {
+  try {
+    // Open picker (allow all files)
+    const result = await openFileSelector("*");
+    const srcPath = result.path;
+
+    const targetDir = "/data/adb/tricky_store";
+    const targetFile = "keybox.xml";
+
+    const cmd = `
+      mkdir -p ${targetDir} && \
+      if [ -f ${targetDir}/${targetFile} ]; then
+        mv ${targetDir}/${targetFile} ${targetDir}/${targetFile}.bak
+      fi && \
+      cp "${srcPath}" ${targetDir}/${targetFile} && \
+      chmod 644 ${targetDir}/${targetFile}
+    `;
+
+    const { errno, stderr } = await exec(cmd);
+    if (errno === 0) {
+      showToast("Imported custom keybox sucessfully", "success");
+    } else {
+      showToast("Copy failed: " + stderr, "error");
+    }
+  } catch (err) {
+    showToast("No file selected or error", "error");
+  }
+});

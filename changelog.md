@@ -1,15 +1,13 @@
-**_✨ v2.32 – Version Changes:_**
+***✨ v2.40 – Version Changes:***
 
-→ Improre code yurikey.sh, security patch.sh, clear_all_detection_traces.sh
+→ Fix error when fetching keybox as busybox is required
 
-→ Delete outdated Fix Detect HMA in webUI. Replace it with Clear All Detection Traces.
+→ Add function to add custom keybox
+→ Stop using remote script because @fateh7 like to bark much
 
-→ Correct some typos and spelling errors.
-
-**_📌 Other Changes:_**
-
-→ Fix error why can't fetch the keybox and show instructions if need.
+***📌 Other Changes:***
 
 → Various performance improvement
 
-→ [All changes](https://github.com/YurikeyDev/yurikey/compare/v2.31...v2.32).
+→ [All changes](https://github.com/YurikeyDev/yurikey/compare/v2.32...v2.40).
+
