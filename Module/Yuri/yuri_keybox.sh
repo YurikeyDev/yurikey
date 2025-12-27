@@ -82,5 +82,15 @@ update_keybox() {
 # Start main logic
 mkdir -p "$TRICKY_DIR" # Make sure the directory exists
 update_keybox          # Begin the update process
+#Update status
 
+URL="https://raw.githubusercontent.com/hzzmonetvn/yurikey/refs/heads/main/status.json"
+PROP="/data/adb/modules/Yurikey/module.prop"
+
+STATUS="$(curl -fsSL "$URL" | tr -d '\r\n')"
+
+[ -z "$STATUS" ] && exit 1
+[ ! -f "$PROP" ] && exit 1
+
+sed -i "s|^description=.*|description=$STATUS|" "$PROP"
 log_message "Finish"
