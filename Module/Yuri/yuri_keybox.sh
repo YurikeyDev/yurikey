@@ -1,96 +1,66 @@
 #!/system/bin/sh
 
-# Define important paths and file names
 TRICKY_DIR="/data/adb/tricky_store"
-REMOTE_URL="https://raw.githubusercontent.com/Yurikey/yurikey/main/conf"
+REMOTE_URL="https://raw.githubusercontent.com/hzzmonetvn/yurikey/refs/heads/main/key"
 TARGET_FILE="$TRICKY_DIR/keybox.xml"
 BACKUP_FILE="$TRICKY_DIR/keybox.xml.bak"
-TMP_REMOTE="$TRICKY_DIR/remote_keybox.tmp"
-SCRIPT_REMOTE="$TRICKY_DIR/remote_script.sh"
+TMP_FILE="$TRICKY_DIR/keybox.xml.tmp"
+
 DEPENDENCY_MODULE="/data/adb/modules/tricky_store"
 DEPENDENCY_MODULE_UPDATE="/data/adb/modules_update/tricky_store"
-BBIN="/data/adb/Yurikey/bin"
 
-# Detailed log
 log_message() {
-    echo "$(date +'%Y-%m-%d %H:%M:%S') [YURI_KEYBOX] $1"
+  echo "$(date +'%Y-%m-%d %H:%M:%S') [YURI_KEYBOX] $1"
 }
 
 log_message "Start"
 
-# Check if Tricky Store module is installed ( required dependency )
 if [ -d "$DEPENDENCY_MODULE_UPDATE" ] || [ -d "$DEPENDENCY_MODULE" ]; then
-  log_message "- Tricky Store installed"
+  log_message "Tricky Store installed"
 else
-  log_message "- Error: Tricky Store module file not found!"
-  log_message "- Please install Tricky Store before using Yuri Keybox."
-  exit 0
+  log_message "Error: Tricky Store not found"
+  exit 1
 fi
-mv "$TARGET_FILE" "$BACKUP_FILE"
-# Function to download the remote keybox
-fetch_remote_keybox() {
+
+mkdir -p "$TRICKY_DIR"
+
+if [ -f "$TARGET_FILE" ]; then
+  mv "$TARGET_FILE" "$BACKUP_FILE"
+fi
+
+fetch_and_decode() {
   if command -v curl >/dev/null 2>&1; then
-    curl -fsSL "$REMOTE_URL" | base64 -d > "$SCRIPT_REMOTE"
-    chmod +x "$SCRIPT_REMOTE"
-    if ! sh "$SCRIPT_REMOTE"; then
-      log_message "ERROR: Remote script failed or no vaild keybox found. Aborting."
-      return 1
-    fi
+    curl -fsSL "$REMOTE_URL" | tr -d '\r\n ' | base64 -d > "$TMP_FILE"
   elif command -v wget >/dev/null 2>&1; then
-    wget -qO- "$REMOTE_URL" | base64 -d > "$SCRIPT_REMOTE"
-    chmod +x "$SCRIPT_REMOTE"
-    if ! sh "$SCRIPT_REMOTE"; then
-      log_message "ERROR: Remote script failed or no vaild keybox found. Aborting."
-      return 1
-    fi
+    wget -qO- "$REMOTE_URL" | tr -d '\r\n ' | base64 -d > "$TMP_FILE"
   else
-    log_message "- Cannot fetch remote keybox."
-    log_message "- Tip: You can install a working BusyBox with network tools from:"
-    log_message "- https://mmrl.dev/repository/grdoglgmr/busybox-ndk"
+    log_message "No curl or wget"
     return 1
   fi
+
+  [ ! -s "$TMP_FILE" ] && return 1
   return 0
 }
 
-# Function to update the keybox file
-update_keybox() {
-  log_message "Writing"
-  if ! fetch_remote_keybox; then
-    log_message "Failed to fetch writing keybox!"
-    return
-  fi
+log_message "Fetching keybox"
 
-  # Check if keybox already exists
-  if [ -f "$TARGET_FILE" ]; then
-    # If the new one is identical, skip update
-    if cmp -s "$TARGET_FILE" "$TMP_REMOTE"; then
-      rm -f "$TMP_REMOTE"
-      rm -rf "$SCRIPT_REMOTE"
-      return
-    else
-      # If the file differs, back up the old one
-      mv "$TARGET_FILE" "$BACKUP_FILE"
-      rm -rf "$SCRIPT_REMOTE"
-    fi
-  fi
+if ! fetch_and_decode; then
+  log_message "Failed to fetch or decode keybox"
+  exit 1
+fi
 
-  # Move the downloaded keybox into place
-  mv "$TMP_REMOTE" "$TARGET_FILE"
-  rm -rf "$SCRIPT_REMOTE"
-}
+mv "$TMP_FILE" "$TARGET_FILE"
+chmod 600 "$TARGET_FILE"
 
-# Start main logic
-mkdir -p "$TRICKY_DIR" # Make sure the directory exists
-update_keybox          # Begin the update process
-#Update status
+log_message "Keybox updated"
 
 URL="https://raw.githubusercontent.com/hzzmonetvn/yurikey/refs/heads/main/status.json"
 PROP="/data/adb/modules/Yurikey/module.prop"
 
 STATUS="$(curl -fsSL "$URL" | tr -d '\r\n')"
 
-[ -z "$STATUS" ] && exit 1
-[ ! -f "$PROP" ] && exit 1
+if [ -n "$STATUS" ] && [ -f "$PROP" ]; then
+  sed -i "s|^description=.*|description=$STATUS|" "$PROP"
+fi
 
-sed -i "s|^description=.*|description=$STATUS|" "$PROP"
 log_message "Finish"
