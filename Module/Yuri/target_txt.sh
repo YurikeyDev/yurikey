@@ -20,38 +20,58 @@ if [ -f "$tees" ]; then
 fi
 
 # add list special
-rm -rf $"t"
 fixed_targets="\
 android
+com.android.nativetest!
 com.android.vending!
 com.google.android.gsf!
 com.google.android.gms!
-io.github.vvb2060.keyattestation!
-io.github.vvb2060.mahoshojo!
 com.google.android.contactkeys!
 com.google.android.ims!
 com.google.android.safetycore!
 com.google.android.apps.walletnfcrel!
 com.google.android.apps.nbu.paisa.user!
-gr.nikolasspyr.integritycheck!
-com.youhu.laifu!
-com.whatsapp!
-com.whatsapp.w4b!
 com.openai.chatgpt!
 com.reveny.nativecheck!
-icu.nullptr.nativetest!
-com.android.nativetest!
-io.liankong.riskdetector!
-me.garfieldhan.holmes!
-luna.safe.luna!
+com.studio.duckdetector!
+com.whatsapp!
+com.whatsapp.w4b!
+com.youhu.laifu!
 com.zhenxi.hunter!
-com.studio.duckdetector!"
-for entry in $fixed_targets; do
-    if ! echo "$entry" >> "$t"; then
-        log_message "ERROR: Failed to write $entry to $t"
-        exit 1
-    fi
-done
+gr.nikolasspyr.integritycheck!
+icu.nullptr.nativetest!
+io.github.vvb2060.keyattestation!
+io.github.vvb2060.mahoshojo!
+io.liankong.riskdetector!
+luna.safe.luna!
+me.garfieldhan.holmes!"
+
+# modded script to add custom targets by Itsuka @DWd
+# always set a custom target in the first line
+# without duplicating it to a new line XD
+if [ -f "$t" ]; then
+  tmp_file="$t.tmp"
+  grep -v '^$' "$t" > "$tmp_file"
+
+  for entry in $fixed_targets; do
+    sed -i "/^$entry$/d" "$tmp_file"
+  done
+
+  {
+    for entry in $fixed_targets; do
+      echo "$entry"
+    done
+    cat "$tmp_file"
+  } > "$t"
+  rm "$tmp_file"
+else
+  for entry in $fixed_targets; do
+    ! echo "$entry" >> "$t"
+    log_message "ERROR: Failed to write $entry to $t"
+    exit 1
+  done
+fi
+# @DWd Itsuka script done√
 
 # add list
 log_message "Writing"
