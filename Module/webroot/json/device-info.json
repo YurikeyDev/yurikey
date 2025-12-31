@@ -1,5 +1,5 @@
 {
-  "android": "14",
-  "kernel": "5.15.149-android13-12882-Tam",
-  "root": "KernelSU-Next"
+  "android": "none",
+  "kernel": "none",
+  "root": "none"
 }
