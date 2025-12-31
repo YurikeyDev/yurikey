@@ -2,11 +2,9 @@
 
 # Define important paths and file names
 TRICKY_DIR="/data/adb/tricky_store"
-REMOTE_URL="https://raw.githubusercontent.com/Yurikey/yurikey/main/conf"
+REMOTE_URL="https://raw.githubusercontent.com/Yurii0307/yurikey/main/key"
 TARGET_FILE="$TRICKY_DIR/keybox.xml"
 BACKUP_FILE="$TRICKY_DIR/keybox.xml.bak"
-TMP_REMOTE="$TRICKY_DIR/remote_keybox.tmp"
-SCRIPT_REMOTE="$TRICKY_DIR/remote_script.sh"
 DEPENDENCY_MODULE="/data/adb/modules/tricky_store"
 DEPENDENCY_MODULE_UPDATE="/data/adb/modules_update/tricky_store"
 BBIN="/data/adb/Yurikey/bin"
@@ -17,6 +15,17 @@ log_message() {
 }
 
 log_message "Start"
+log_message "Writing"
+
+if ! command -v curl >/dev/null 2>&1 \
+   && ! command -v wget >/dev/null 2>&1 \
+   && ! command -v toybox >/dev/null 2>&1
+then
+  log_message "- Cannot work without missing command."
+  log_message "- Tip: You can install a working BusyBox with network tools from:"
+  log_message "- https://mmrl.dev/repository/grdoglgmr/busybox-ndk"
+  return 1
+fi
 
 # Check if Tricky Store module is installed ( required dependency )
 if [ -d "$DEPENDENCY_MODULE_UPDATE" ] || [ -d "$DEPENDENCY_MODULE" ]; then
@@ -24,29 +33,32 @@ if [ -d "$DEPENDENCY_MODULE_UPDATE" ] || [ -d "$DEPENDENCY_MODULE" ]; then
 else
   log_message "- Error: Tricky Store module file not found!"
   log_message "- Please install Tricky Store before using Yuri Keybox."
-  exit 0
+  return 0
 fi
-mv "$TARGET_FILE" "$BACKUP_FILE"
+if [ -f "$TARGET_FILE" ]; then
+  mv "$TARGET_FILE" "$BACKUP_FILE"
+fi
 # Function to download the remote keybox
 fetch_remote_keybox() {
   if command -v curl >/dev/null 2>&1; then
-    curl -fsSL "$REMOTE_URL" | base64 -d > "$SCRIPT_REMOTE"
-    chmod +x "$SCRIPT_REMOTE"
-    if ! sh "$SCRIPT_REMOTE"; then
+    curl -fsSL "$REMOTE_URL" | base64 -d > "$TARGET_FILE"
+    if [ ! -f "$TARGET_FILE" ]; then
       log_message "ERROR: Remote script failed or no vaild keybox found. Aborting."
       return 1
     fi
   elif command -v wget >/dev/null 2>&1; then
-    wget -qO- "$REMOTE_URL" | base64 -d > "$SCRIPT_REMOTE"
-    chmod +x "$SCRIPT_REMOTE"
-    if ! sh "$SCRIPT_REMOTE"; then
+    wget -qO- "$REMOTE_URL" | base64 -d > "$TARGET_FILE"
+    if [ ! -f "$TARGET_FILE" ]; then
+      log_message "ERROR: Remote script failed or no vaild keybox found. Aborting."
+      return 1
+    fi
+  elif command -v toybox >/dev/null 2>&1; then
+    toybox wget -qO- "$REMOTE_URL" | base64 -d > "$TARGET_FILE"
+    if [ ! -f "$TARGET_FILE" ]; then
       log_message "ERROR: Remote script failed or no vaild keybox found. Aborting."
       return 1
     fi
   else
-    log_message "- Cannot fetch remote keybox."
-    log_message "- Tip: You can install a working BusyBox with network tools from:"
-    log_message "- https://mmrl.dev/repository/grdoglgmr/busybox-ndk"
     return 1
   fi
   return 0
@@ -54,29 +66,10 @@ fetch_remote_keybox() {
 
 # Function to update the keybox file
 update_keybox() {
-  log_message "Writing"
   if ! fetch_remote_keybox; then
-    log_message "Failed to fetch writing keybox!"
-    return
+    mv "$BACKUP_FILE" "$TARGET_FILE"
+    return 1
   fi
-
-  # Check if keybox already exists
-  if [ -f "$TARGET_FILE" ]; then
-    # If the new one is identical, skip update
-    if cmp -s "$TARGET_FILE" "$TMP_REMOTE"; then
-      rm -f "$TMP_REMOTE"
-      rm -rf "$SCRIPT_REMOTE"
-      return
-    else
-      # If the file differs, back up the old one
-      mv "$TARGET_FILE" "$BACKUP_FILE"
-      rm -rf "$SCRIPT_REMOTE"
-    fi
-  fi
-
-  # Move the downloaded keybox into place
-  mv "$TMP_REMOTE" "$TARGET_FILE"
-  rm -rf "$SCRIPT_REMOTE"
 }
 
 # Start main logic

@@ -25,11 +25,10 @@ com.google.android.ims!
 com.google.android.safetycore!
 com.google.android.apps.walletnfcrel!
 com.google.android.apps.nbu.paisa.user!
-gr.nikolasspyr.integritycheck!
 com.youhu.laifu!
 com.whatsapp!
+com.studio.duckdetector!
 com.whatsapp.w4b!
-com.openai.chatgpt!
 com.reveny.nativecheck!
 icu.nullptr.nativetest!
 com.android.nativetest!

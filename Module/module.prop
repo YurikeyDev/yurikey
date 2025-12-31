@@ -1,7 +1,7 @@
 id=Yurikey
 name=Yuri Keybox Manager
-version=v2.32
-versionCode=232
+version=2.40
+versionCode=240
 author=Yurikey Dev
 banner=https://raw.githubusercontent.com/Yurii0307/yurikey/main/doc/banner.webp
 description=A systemless module to get strong integrity so easily

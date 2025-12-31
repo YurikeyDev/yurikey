@@ -9,7 +9,7 @@ log_message "Start"
 
 # Writing
 log_message "Writing"
-PKGS="com.android.vending"
+PKGS="com.android.vending com.google.android.gms com.google.android.gsf"
 
 for pkg in $PKGS; do
     if ! am force-stop "$pkg" >/dev/null 2>&1; then
@@ -17,7 +17,7 @@ for pkg in $PKGS; do
         exit 1
     fi
 
-    if ! cmd package trim-caches 0 "$pkg" >/dev/null 2>&1; then
+    if ! pm clear --cache-only "$pkg" >/dev/null 2>&1; then
         log_message "ERROR: Failed to clear cache for $pkg"
         exit 1
     fi

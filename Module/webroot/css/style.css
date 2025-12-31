@@ -331,6 +331,12 @@ body {
 .info-content {
   margin-top: 2rem;
 }
+.info-content p.success {
+  color: #6ee7b7;
+}
+.info-content p.error {
+  color: #fca5a5;
+}
 
 /* ============================================
    🔹 ACTION BOX AND BUTTONS
@@ -407,6 +413,9 @@ body {
 }
 .setting-btn:hover {
   background-color: #3a3a3a;
+}
+.setting-input::placeholder {
+  color: var(--nav-inactive);
 }
 .note {
   font-size: 12px;

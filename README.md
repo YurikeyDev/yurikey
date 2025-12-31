@@ -22,7 +22,7 @@ https://t.me/yurichattt
 
 https://t.me/yuriiarchives
 
-https://t.me/yuriispaces
+https://t.me/yuriifeedback
 
 https://t.me/yuriiservice 
 
@@ -66,7 +66,6 @@ For the error on the side "ERROR: curl or wget not found!"
 [Munch](https://github.com/SudoNothing404)  
 [Wes](https://github.com/ihatenodejs)  
 [Khx](https://github.com/dpejoh)  
-
 
 
 
