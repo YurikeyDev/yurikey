@@ -18,9 +18,7 @@ ui_print "*********************************"
 ui_print ""
 
 # Check code
-if ! command -v curl >/dev/null 2>&1 &&
-   ! command -v wget >/dev/null 2>&1 &&
-   ! command -v toybox >/dev/null 2>&1; then
+if ! command -v curl >/dev/null 2>&1; then
   ui_print "- Cannot work without missing command."
   ui_print "- Tip: You can install a working BusyBox with network tools from:"
   ui_print "- https://mmrl.dev/repository/grdoglgmr/busybox-ndk"
@@ -48,31 +46,11 @@ fi
 
 # Function to download the remote keybox
 fetch_remote_keybox() {
-  if command -v curl >/dev/null 2>&1; then
     curl -fsSL "$REMOTE_URL" | base64 -d > "$REMOTE_FILE"
     if [ ! -f "$REMOTE_FILE" ]; then
       ui_print "ERROR: Remote script failed or no vaild keybox found. Aborting."
       return 1
     fi
-  elif command -v wget >/dev/null 2>&1; then
-    wget -qO- "$REMOTE_URL" | base64 -d > "$REMOTE_FILE"
-    if [ ! -f "$REMOTE_FILE" ]; then
-      ui_print "ERROR: Remote script failed or no vaild keybox found. Aborting."
-      return 1
-    fi
-  elif command -v toybox >/dev/null 2>&1; then
-    toybox wget -qO- "$REMOTE_URL" | base64 -d > "$REMOTE_FILE"
-    if [ ! -f "$REMOTE_FILE" ]; then
-      ui_print "ERROR: Remote script failed or no vaild keybox found. Aborting."
-      return 1
-    fi
-  else
-    ui_print "- Cannot work without missing command."
-    ui_print "- Tip: You can install a working BusyBox with network tools from:"
-    ui_print "- https://mmrl.dev/repository/grdoglgmr/busybox-ndk"
-    return 1
-  fi
-  return 0
 }
 
 # Function to update the keybox file
