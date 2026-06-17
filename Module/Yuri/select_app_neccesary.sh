@@ -42,7 +42,7 @@ com.chunqiunativecheck?"
 for entry in $fixed_targets; do
     if ! echo "$entry" >> "$t"; then
         log_message "Error: Failed to write $entry to $t"
-        return 1
+        exit 1
     fi
 done
 

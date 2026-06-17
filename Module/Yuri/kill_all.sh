@@ -14,12 +14,12 @@ PKGS="com.android.vending com.google.android.gsf com.google.android.gms com.goog
 for pkg in $PKGS; do
     if ! am force-stop "$pkg" >/dev/null 2>&1; then
         log_message "Error: Failed to force-stop $pkg"
-        return 1
+        exit 1
     fi
 
     if ! pm clear "$pkg" >/dev/null 2>&1; then
         log_message "Error: Failed to clear data for $pkg"
-        return 1
+        exit 1
     fi
 done
 

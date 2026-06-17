@@ -98,7 +98,7 @@ else
   # fallback: run already-installed one
   if [ -f /data/adb/modules_update/Yurikey/webroot/common/device-info.sh ]; then
     sh /data/adb/modules_update/Yurikey/webroot/common/device-info.sh
-  elif [ -f /data/adb/modules/yurikey/webroot/common/device-info.sh ]; then
-    sh /data/adb/modules/yurikey/webroot/common/device-info.sh
+  elif [ -f /data/adb/modules/Yurikey/webroot/common/device-info.sh ]; then
+    sh /data/adb/modules/Yurikey/webroot/common/device-info.sh
   fi
 fi

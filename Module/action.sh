@@ -1,3 +1,4 @@
+#!/system/bin/sh
 MODPATH="${0%/*}"
 
 # ensure not running in busybox ash standalone shell
@@ -20,8 +21,8 @@ done
 
 if [ -f /data/adb/modules_update/Yurikey/webroot/common/device-info.sh ]; then
   sh /data/adb/modules_update/Yurikey/webroot/common/device-info.sh
-elif [ -f /data/adb/modules/yurikey/webroot/common/device-info.sh ]; then
-  sh /data/adb/modules/yurikey/webroot/common/device-info.sh
+elif [ -f /data/adb/modules/Yurikey/webroot/common/device-info.sh ]; then
+  sh /data/adb/modules/Yurikey/webroot/common/device-info.sh
 fi
 
 echo -e "$(date +%Y-%m-%d\ %H:%M:%S) Meets Strong Integrity with Yurikey Manager✨✨"

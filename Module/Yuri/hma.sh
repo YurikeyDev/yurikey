@@ -27,7 +27,7 @@ elif pm list packages | grep -q com.tsng.hidemyapplist; then
   log_message "HMA is deprecated and not supported, please use latest HMA-oss to get latest configs"
 else
   log_message "Error: HMA-oss not found, please install latest HMA-oss"
-  return 1
+  exit 1
 fi
 
 chmod 777 "$HMA_FILE"

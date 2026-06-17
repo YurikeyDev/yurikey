@@ -13,16 +13,16 @@ REQUIRED="1.3.0"
 # Check if Zygisk Next installed
 if [ ! -f "$TARGET_FILE" ]; then
   log_message "Error: Zygisk Next is not found, please install latest Zygisk Next."
-  return 1
+  exit 1
 fi
 
 # Extract the version string
 CURRENT=$(grep "^version=" "$TARGET_FILE" | cut -d'=' -f2 | cut -d' ' -f1)
 
 # Compare versions
-if [ "$(printf '%s\n%s' "$CURRENT" "$VERSION" | sort -V | head -n1)" != "$CURRENT" ]; then
-  log_messgae "Error: Zygisk Next version is too low, please install latest Zygisk Next."
-  return 1
+if [ "$(printf '%s\n%s' "$CURRENT" "$REQUIRED" | sort -V | head -n1)" != "$CURRENT" ]; then
+  log_message "Error: Zygisk Next version is too low, please install latest Zygisk Next."
+  exit 1
 fi
 
 znctl() {
@@ -46,7 +46,7 @@ set_zn_configs () {
 # Start main logic
 log_message "Writing"
 
-mkdir -p "$SCRIPT_FILE" # Make sure the directory exists
+mkdir -p "${SCRIPT_FILE%/*}" # Make sure the directory exists
 set_zn_configs          # Begin the update process
 
 log_message "Finish"

@@ -14,12 +14,12 @@ PKGS="com.android.vending"
 for pkg in $PKGS; do
     if ! am force-stop "$pkg" >/dev/null 2>&1; then
         log_message "Error: Failed to force-stop $pkg"
-        return 1
+        exit 1
     fi
 
     if ! cmd package trim-caches 0 "$pkg" >/dev/null 2>&1; then
         log_message "Error: Failed to clear cache for $pkg"
-        return 1
+        exit 1
     fi
 done
 

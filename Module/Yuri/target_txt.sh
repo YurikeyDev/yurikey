@@ -15,7 +15,7 @@ if [ -f "$tees" ]; then
     teeBroken=$(grep -E '^teeBroken=' "$tees" | cut -d '=' -f2 2>/dev/null || echo "false")
     if [ -z "$teeBroken" ]; then
         log_message "Error: Failed to parse teeBroken status"
-        return 1
+        exit 1
     fi
 fi
 
@@ -50,7 +50,7 @@ com.chunqiunativecheck?"
 for entry in $fixed_targets; do
     if ! echo "$entry" >> "$t"; then
         log_message "Error: Failed to write $entry to $t"
-        return 1
+        exit 1
     fi
 done
 

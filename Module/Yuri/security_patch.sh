@@ -11,17 +11,17 @@ sp="/data/adb/tricky_store/security_patch.txt"
 # Get current year / month / day
 current_year=$(date +%Y) || {
     log_message "Error: Failed to get current year"
-    return 1
+    exit 1
 }
 
 current_month=$(date +%m | sed 's/^0*//') || {
     log_message "Error: Failed to get current month"
-    return 1
+    exit 1
 }
 
 current_day=$(date +%d | sed 's/^0*//') || {
     log_message "Error: Failed to get current day"
-    return 1
+    exit 1
 }
 
 # Logic: Security Patch drop on the 5th. 
@@ -43,7 +43,7 @@ fi
 # Format the target month to always have two digits (e.g., 03)
 formatted_month=$(printf "%02d" "$target_month") || {
   log_message "Error: Failed to format month"
-  return 1
+  exit 1
 }
 
 patch_date="${target_year}-${formatted_month}-05"
@@ -59,7 +59,7 @@ EOF
 
 if [ $? -ne 0 ]; then
     log_message "Error: Failed to write $sp"
-    return 1
+    exit 1
 fi
 
 log_message "Finish"

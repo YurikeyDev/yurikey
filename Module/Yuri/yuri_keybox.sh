@@ -21,7 +21,7 @@ log_message "Start"
 if [ ! -d "$DEPENDENCY_MODULE_UPDATE" ] && [ ! -d "$DEPENDENCY_MODULE" ]; then
   log_message "Error: Tricky Store module file not found!"
   log_message "Please install Tricky Store before using Yuri Keybox."
-  return 0
+  exit 1
 fi
 
 # Backup keybox before fetching
