@@ -206,83 +206,7 @@ user_data() { # For /data/user/0
     remove_path "/data/user/0/com.juom"
 }
 
-reset_prop() { # Changing on build.prop file
-    while [ "$(getprop sys.boot_completed)" != "1" ]; do
-        sleep 1
-    done
-    # USB / ADB
-    resetprop sys.usb.adb.disabled 1
-    resetprop persist.sys.usb.config mtp
-    resetprop sys.usb.config mtp
-    resetprop sys.usb.state mtp
-    resetprop service.adb.root 0
-    resetprop service.adb.tcp.port -1
-    resetprop --delete persist.service.adb.enable
-    resetprop --delete persist.service.debuggable
-    
-    # Clear Detection HMA, Tools
-    resetprop --delete persist.zygote.app_data_isolation
-    resetprop --delete persist.hyperceiler.log.level
-    resetprop --delete persist.com.luckyzyx.luckytool.log.level
-    resetprop --delete persist.com.luckyzyx.luckytool.debug
-    resetprop --delete persist.com.luckyzyx.luckytool.enable
-    
 
-    # Development mode
-    resetprop persist.sys.developer_options 0
-    resetprop persist.sys.dev_mode 0
-    resetprop persist.sys.debuggable 0
-    settings put global development_settings_enabled 0
-    settings put global adb_enabled 0
-    settings put global oem_unlock_allowed 0
-    settings put global adb_enabled 0
-    settings put global development_settings_enabled 0
-    settings put global oem_unlock_allowed 0
-    settings put global adb_wifi_enabled 0
-    settings put global adb_wifi_port -1
-    
-    # Debug flags
-    resetprop ro.debuggable 0
-    resetprop ro.secure 1
-    resetprop ro.adb.secure 1
-    resetprop ro.build.type user
-    resetprop ro.build.tags release-keys
-    resetprop --delete persist.sys.developer_options
-    resetprop --delete persist.sys.dev_mode
-   
-    resetprop ro.boot.verifiedbootstate green
-    resetprop vendor.boot.verifiedbootstate green
-    resetprop ro.boot.flash.locked 1
-    resetprop ro.boot.vbmeta.device_state locked
-    resetprop vendor.boot.vbmeta.device_state locked
-    resetprop ro.secureboot.lockstate locked
-    resetprop ro.boot.warranty_bit 0
-    resetprop ro.boot.force_normal_boot 1
-    resetprop ro.boot.realme.lockstate 1
-    resetprop ro.boot.flash.locked 1  
-    resetprop ro.boot.verifiedbootstate green  
-    resetprop ro.boot.vbmeta.device_state locked  
-    resetprop ro.boot.secureboot 1  
-    resetprop ro.boot.veritymode enforcing  
-    resetprop ro.boot.verifiedbootstate green  
-    resetprop ro.boot.vbmeta.device_state locked  
-    resetprop ro.boot.secureboot enabled  
-
-    # OEM unlock
-    resetprop ro.oem_unlock_supported 0
-    resetprop sys.oem_unlock_allowed 0
-
-    # SELinux (only fake if it is actually enforcing)
-    if [ "$(getenforce 2>/dev/null)" = "Enforcing" ]; then
-        resetprop ro.boot.selinux enforcing
-        resetprop ro.build.selinux 1
-    fi
-
-    # Emulator traces
-    resetprop ro.kernel.qemu 0
-    resetprop ro.boot.qemu 0
-    resetprop ro.hardware.virtual_device 0
-}
 
 odex_files() { # Delete all odex files
     su -c 'find /data/app -type f -name base.odex -delete' 2>/dev/null
@@ -302,7 +226,7 @@ main() {
     system_data
     dev_paths
     user_data
-    reset_prop
+
 
     clear
     odex_files

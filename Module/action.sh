@@ -19,10 +19,8 @@ do
 done
   sh "$MODPATH/Yuri/pif.sh"
 
-if [ -f /data/adb/modules_update/Yurikey/webroot/common/device-info.sh ]; then
-  sh /data/adb/modules_update/Yurikey/webroot/common/device-info.sh
-elif [ -f /data/adb/modules/Yurikey/webroot/common/device-info.sh ]; then
-  sh /data/adb/modules/Yurikey/webroot/common/device-info.sh
+if [ -f "$MODPATH/webroot/common/device-info.sh" ]; then
+  sh "$MODPATH/webroot/common/device-info.sh"
 fi
 
 echo -e "$(date +%Y-%m-%d\ %H:%M:%S) Meets Strong Integrity with Yurikey Manager✨✨"

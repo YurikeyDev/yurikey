@@ -21,7 +21,7 @@ fi
 
 # add list special
 rm -rf "$t"
-fixed_targets="\
+cat <<EOF >> "$t"
 android
 com.android.vending
 com.google.android.gsf
@@ -46,13 +46,13 @@ com.eltavine.duckdetector?
 com.rem01gaming.disclosure?
 wu.keyChain.test?
 com.kikyps.crackme?
-com.chunqiunativecheck?"
-for entry in $fixed_targets; do
-    if ! echo "$entry" >> "$t"; then
-        log_message "Error: Failed to write $entry to $t"
-        exit 1
-    fi
-done
+com.chunqiunativecheck?
+EOF
+
+if [ $? -ne 0 ]; then
+    log_message "Error: Failed to write fixed targets to $t"
+    exit 1
+fi
 
 # add list
 log_message "Writing"

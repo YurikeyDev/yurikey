@@ -11,13 +11,11 @@ log_message() {
 }
 
 download() {
-    PATH=/data/adb/magisk:/data/data/com.termux/files/usr/bin:$PATH
     if command -v curl >/dev/null 2>&1; then
-        curl --connect-timeout 10 -Ls "$1"
+        curl -sL --connect-timeout 10 "$1"
     else
-        busybox wget -T 10 --no-check-certificate -qO- "$1"
+        wget -qO- -T 10 --no-check-certificate "$1"
     fi
-    PATH="$ORG_PATH"
 }
 
 if pm list packages | grep -q org.frknkrc44.hma_oss; then

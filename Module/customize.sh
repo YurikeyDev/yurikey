@@ -37,13 +37,11 @@ if [ -d "$BBIN" ]; then
 fi
 
 download() {
-    PATH=/data/adb/magisk:/data/data/com.termux/files/usr/bin:$PATH
     if command -v curl >/dev/null 2>&1; then
-        curl --connect-timeout 10 -Ls "$1"
+        curl -sL --connect-timeout 10 "$1"
     else
-        busybox wget -T 10 --no-check-certificate -qO- "$1"
+        wget -qO- -T 10 --no-check-certificate "$1"
     fi
-    PATH="$ORG_PATH"
 }
 
 # Function to download the remote keybox
@@ -90,15 +88,8 @@ ui_print "- Checking if there is an Yuri Keybox..."
 mkdir -p "$TRICKY_DIR" # Make sure the directory exists
 update_keybox          # Begin the update process
 
-# Run bundled device-info.sh if present (already verified)
-DEVICE_INFO_SCRIPT="$TMPDIR/webroot/common/device-info.sh"
+# Run bundled device-info.sh if present
+DEVICE_INFO_SCRIPT="$MODPATH/webroot/common/device-info.sh"
 if [ -f "$DEVICE_INFO_SCRIPT" ]; then
   sh "$DEVICE_INFO_SCRIPT"
-else
-  # fallback: run already-installed one
-  if [ -f /data/adb/modules_update/Yurikey/webroot/common/device-info.sh ]; then
-    sh /data/adb/modules_update/Yurikey/webroot/common/device-info.sh
-  elif [ -f /data/adb/modules/Yurikey/webroot/common/device-info.sh ]; then
-    sh /data/adb/modules/Yurikey/webroot/common/device-info.sh
-  fi
 fi
