@@ -1,5 +1,26 @@
-// Device Information Component
+// Base path to script directory
 const BASE_SCRIPT = "/data/adb/modules/Yurikey/webroot/common/";
+
+// Simple translation getter (from language.js)
+function t(key) {
+  return window.translations?.[key] || key;
+}
+
+// Execute a shell script with KernelSU
+function runScript(scriptName, callback) {
+  const fullPath = `${BASE_SCRIPT}${scriptName}`;
+  if (typeof ksu === "object" && typeof ksu.exec === "function") {
+    const cbId = `cb_${Date.now()}`;
+    window[cbId] = () => {
+      delete window[cbId];
+      if (typeof callback === "function") callback();
+    };
+    ksu.exec(`sh '${fullPath}'`, "{}", cbId);
+  } else {
+    console.warn("ksu.exec not available.");
+    if (typeof callback === "function") callback();
+  }
+}
 
 // Wait until translation data is loaded
 async function waitForTranslations(timeout = 3000) {
@@ -44,22 +65,6 @@ async function loadDeviceInfo() {
     document.getElementById("android-version").innerText = "Error";
     document.getElementById("kernel-version").innerText = "Error";
     document.getElementById("root-type").innerText = "Error";
-  }
-}
-
-// Execute a shell script with KernelSU
-function runScript(scriptName, callback) {
-  const fullPath = `${BASE_SCRIPT}${scriptName}`;
-  if (typeof ksu === "object" && typeof ksu.exec === "function") {
-    const cbId = `cb_${Date.now()}`;
-    window[cbId] = () => {
-      delete window[cbId];
-      if (typeof callback === "function") callback();
-    };
-    ksu.exec(`sh '${fullPath}'`, "{}", cbId);
-  } else {
-    console.warn("ksu.exec not available.");
-    if (typeof callback === "function") callback();
   }
 }
 
