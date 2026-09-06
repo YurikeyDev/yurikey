@@ -17,6 +17,13 @@ do
   fi
 done
   sh "$MODPATH/Yuri/pif.sh"
+# Hide Zygisk Next
+if [ -f "/data/adb/modules/zygisksu/bin/zygiskd" ]; then
+ ZN="/data/adb/modules/zygisksu/bin/zygiskd"
+ $ZN enforce-denylist just_umount
+ $ZN memory-type anonymous
+ $ZN linker builtin
+fi
 
 if [ -f /data/adb/modules_update/Yurikey/webroot/common/device-info.sh ]; then
   sh /data/adb/modules_update/Yurikey/webroot/common/device-info.sh

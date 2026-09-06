@@ -1,5 +1,5 @@
-***✨ v3.0.6 – Version Changes:***
+***✨ v3.0.7 – Version Changes:***
 
--> Various performance improvement
+-> Fix source code when it's not fully upload to github
 
-→ [All changes](https://github.com/YurikeyDev/yurikey/compare/v3.0.5...main).
+→ [All changes](https://github.com/YurikeyDev/yurikey/compare/v3.0.6...main).

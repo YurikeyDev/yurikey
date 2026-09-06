@@ -27,26 +27,26 @@ com.android.vending
 com.google.android.gsf
 com.google.android.gms
 com.google.android.ims
-io.github.vvb2060.keyattestation?
-io.github.vvb2060.mahoshojo?
-io.github.qwq233.keyattestation?
+io.github.vvb2060.keyattestation
+io.github.vvb2060.mahoshojo
+io.github.qwq233.keyattestation
 com.google.android.contactkeys
 com.google.android.safetycore
 com.google.android.apps.walletnfcrel
 com.google.android.apps.nbu.paisa.user
-com.reveny.nativecheck?
-icu.nullptr.nativetest?
-com.android.nativetest?
-io.liankong.riskdetector?
-me.garfieldhan.holmes?
-luna.safe.luna?
-com.zhenxi.hunter?
-com.studio.duckdetector?
-com.eltavine.duckdetector?
-com.rem01gaming.disclosure?
-wu.keyChain.test?
-com.kikyps.crackme?
-com.chunqiunativecheck?"
+com.reveny.nativecheck
+icu.nullptr.nativetest
+com.android.nativetest
+io.liankong.riskdetector
+me.garfieldhan.holmes
+luna.safe.luna
+com.zhenxi.hunter
+com.studio.duckdetector
+com.eltavine.duckdetector
+com.rem01gaming.disclosure
+wu.keyChain.test
+com.kikyps.crackme
+com.chunqiunativecheck"
 for entry in $fixed_targets; do
     if ! echo "$entry" >> "$t"; then
         log_message "Error: Failed to write $entry to $t"
