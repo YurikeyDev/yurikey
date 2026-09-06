@@ -1,5 +1,4 @@
 #!/system/bin/sh
-
 # Define important paths and file names
 TRICKY_DIR="/data/adb/tricky_store"
 REMOTE_URL="https://raw.githubusercontent.com/Yurii0307/yurikey/main/key"
@@ -14,9 +13,12 @@ ORG_PATH="$PATH"
 
 # Show UI banner
 ui_print ""
-ui_print "*********************************"
-ui_print "*****Yuri Keybox Installer*******"
-ui_print "*********************************"
+ui_print "__   __           _ _              "
+ui_print "\\ \\ / /   _ _ __ (_) | _____ _   _ "
+ui_print " \\ V / | | | '__|| | |/ / _ \\ | | |"
+ui_print "  | || |_| | |   | |   <  __/ |_| |"
+ui_print "  |_| \\__,_|_|   |_|_|\\_\\___|\\__, |"
+ui_print "                             |___/ "
 ui_print ""
 
 # Remove old module if legacy path exists (lowercase 'yurikey')
@@ -26,8 +28,8 @@ fi
 
 # Check if Tricky Store module is installed (required dependency)
 if [ ! -d "$DEPENDENCY_MODULE_UPDATE" ] && [ ! -d "$DEPENDENCY_MODULE" ]; then
-  ui_print "- Error: Tricky Store module file not found!"
-  ui_print "- Please install Tricky Store before using Yuri Keybox."
+  ui_print "- Error: Module Tricky Store file not found!"
+  ui_print "- Please install module Tricky Store before using module Yurikey Manager"
   return 0
 fi
 
@@ -59,9 +61,9 @@ get_keybox() {
 
 # Function to update the keybox file
 update_keybox() {
-  ui_print "- Fetching remote keybox..."
+  ui_print "- Fetching remote Yuri keybox..."
   if ! get_keybox; then
-    ui_print "- Failed to fetch keybox!"
+    ui_print "- Failed to fetch Yuri keybox!"
     return
   fi
 
@@ -74,8 +76,9 @@ update_keybox() {
       return
     else
       # If the file differs, back up the old one
-      ui_print "- Existing keybox is not by Yuri."
-      ui_print "- Creating a backup keybox..."
+      ui_print "- This keybox is not by Yuri."
+      ui_print "- Creating a backup keybox...."
+      ui_print "- Existing Yuri Keybox now!"
       mv "$TARGET_FILE" "$BACKUP_FILE"
       mv "$DECODE_FILE" "$TARGET_FILE"
     fi
